@@ -1,0 +1,63 @@
+* a{
+    text-decoration: none;
+}
+/* Color Class */
+.color-rosa{
+    color:#EF233C;
+}
+.color-oscuro{
+    color: #2B2D42;
+}
+.color-gris{
+    color:#8D99AE;
+}
+.bg-blanco{
+    background-color: #FFFFFF;
+}
+.bg-rosa{
+    background-color: #EF233C;
+}
+.bg-gris{
+    background-color: #8D99AE;
+}
+.bg-oscuro{
+    background-color: #2B2D42;
+}
+
+/* Nav Section */
+.p-s-logo{
+    margin-right: 10rem;
+    font-size: 1.60rem;
+}
+.p-s-logo:hover{
+    text-decoration: none;
+}
+.bd-oscuro{
+    border-bottom: 1px solid #2B2D42;
+}
+.item-nav-r:hover{
+    text-decoration: none;
+    color:#EF233C;
+}
+.item-nav-d:hover{
+    text-decoration: none;
+    color:#2B2D42;
+}
+.icon-login{
+    border-color: #8D99AE;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    color:#EF233C;
+    background-color: #FFFFFF;
+}
+.icon-login:focus{
+    outline: none;
+}
+.icon-login:hover{
+    text-decoration: none;
+    color: #8D99AE;
+}
+.nav-menuHamb:focus{
+    outline: none;
+}
