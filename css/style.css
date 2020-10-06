@@ -61,3 +61,8 @@
 .nav-menuHamb:focus{
     outline: none;
 }
+@media (min-width: 1199.98px) { 
+    .admin-login{
+        margin-left: 16rem;
+    }
+}
