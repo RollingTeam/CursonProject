@@ -66,3 +66,11 @@
         margin-left: 16rem;
     }
 }
+/* Reviews Section */
+.card-multicolor{
+    border-top: 2px solid #2B2D42;
+    border-right: 2px solid #EF233C;
+    border-bottom: 2px solid #8D99AE;
+    border-left: 2px solid #8D99AE;
+    border-radius: 10px;
+}

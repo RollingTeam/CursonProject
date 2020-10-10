@@ -64,6 +64,8 @@ function validarAcceso(){
                 //alert("ERES UN ADMINISTRADOR")
             }else{
                 alert("NO ERES UN ADMINISTRADOR")
+                // MOSTRAR LA OPCION EN LA LANDING PAGE PARA CARGAR REVIEWS Y ACTUALIZAR LO Q SERIA EL PERFIL
+                
             }
         }else{
             alert("Usuario o contraseña invalido")
