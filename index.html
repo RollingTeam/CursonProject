@@ -67,9 +67,9 @@
         </div>
     </nav>
     <main>
-        <div class="container">
+        <div class="container-fluid">
             <div class="row">
-                <div class="col-12 col-sm-12 col-md-6 pt-4">
+                <div class="col-12 col-sm-12 col-md-6 pt-4 pb-4">
                     <h2>¡Bienvenidos a CoursOn!</h2>
                     <br>
                     <p class="pt-4 mt-1">Lorem ipsum dolor sit amet consectetur adipisicing elit. In ex molestias
@@ -82,8 +82,8 @@
                         amet explicabo omnis esse adipisci.</p>
                     <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tenetur ipsum facere in enim vel unde
                         modi blanditiis aliquid minima suscipit.</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus, obcaecati.</p>
                 </div>
+                <!-- CAROUSEL -->
                 <div class="col-12 col-sm-12 col-md-6">
                     <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
                         <ol class="carousel-indicators">
@@ -93,24 +93,24 @@
                         </ol>
                         <div class="carousel-inner">
                             <div class="carousel-item active">
-                                <img src="http://lorempixel.com/output/city-q-g-500-500-4.jpg"
-                                    class="d-block w-100 img-flex" alt="...">
+                                <img src="http://lorempixel.com/output/cats-q-g-866-565-5.jpg"
+                                    class="d-block w-100 img-fluid" alt="...">
                                 <div class="carousel-caption d-none d-md-block">
                                     <h5>First slide label</h5>
                                     <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
                                 </div>
                             </div>
                             <div class="carousel-item">
-                                <img src="http://lorempixel.com/output/cats-q-g-500-500-10.jpg"
-                                    class="d-block w-100 img-flex" alt="...">
+                                <img src="http://lorempixel.com/output/nature-q-g-866-565-5.jpg"
+                                    class="d-block w-100 img-fluid" alt="...">
                                 <div class="carousel-caption d-none d-md-block">
                                     <h5>Second slide label</h5>
                                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                                 </div>
                             </div>
                             <div class="carousel-item">
-                                <img src="http://lorempixel.com/output/nature-q-g-500-500-2.jpg"
-                                    class="d-block w-100 img-flex" alt="...">
+                                <img src="http://lorempixel.com/output/city-q-g-866-565-5.jpg"
+                                    class="d-block w-100 img-fluid" alt="...">
                                 <div class="carousel-caption d-none d-md-block">
                                     <h5>Third slide label</h5>
                                     <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
@@ -135,43 +135,41 @@
             <div class="container">
                 <div class="row">
                     <div class="col">
+                        <h3 class="p-2">Más Destacados</h3>
                         <div class="card-deck">
                             <div class="card">
-                                <img src="https://picsum.photos/200/200/?blur" class="card-img-top" alt="...">
+                                <img class="card-img-top" src="https://picsum.photos/200/200/?blur" alt="Card image cap">
                                 <div class="card-body">
                                     <h5 class="card-title">Card title</h5>
-                                    <p class="card-text">This is a longer card with supporting text below as a natural
-                                        lead-in to additional content. This content is a little bit longer.</p>
-                                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                                </div>
-                            </div>
-                            <div class="card">
-                                <img src="https://picsum.photos/200/200/?blur" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <h5 class="card-title">Card title</h5>
-                                    <p class="card-text">This card has supporting text below as a natural lead-in to
-                                        additional content.</p>
-                                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                                </div>
-                            </div>
-                            <div class="card">
-                                <img src="https://picsum.photos/200/200/?blur" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <h5 class="card-title">Card title</h5>
-                                    <p class="card-text">This is a wider card with supporting text below as a natural
+                                    <span class="badge badge-pill badge-warning">Avanzado</span>
+                                    <p class="card-text p-1">This is a wider card with supporting text below as a natural
                                         lead-in to additional content. This card has even longer content than the first
                                         to show that equal height action.</p>
-                                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                                        <button type="button" class="btn btn-danger">Más Info</button>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                </div>
-                <br>
-                <div class="container">
-                    <div class="row">
-                        <div class="col">
-                            <span><button class="btn btn-primary d-flex ml-auto">Ver más</button></span>
+                            <div class="card">
+                                <img class="card-img-top" src="https://picsum.photos/200/200/?blur" alt="Card image cap">
+                                <div class="card-body">
+                                    <h5 class="card-title">Card title</h5>
+                                    <span class="badge badge-pill badge-dark">Básico</span>
+                                    <p class="card-text p-1">This is a wider card with supporting text below as a natural
+                                        lead-in to additional content. This card has even longer content than the first
+                                        to show that equal height action.</p>
+                                        <button type="button" class="btn btn-danger">Más Info</button>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <img class="card-img-top" src="https://picsum.photos/200/200/?blur" alt="Card image cap">
+                                <div class="card-body">
+                                    <h5 class="card-title">Card title</h5>
+                                    <span class="badge badge-pill badge-primary">Intermedio</span>
+                                    <p class="card-text p-1">This is a wider card with supporting text below as a natural
+                                        lead-in to additional content. This card has even longer content than the first
+                                        to show that equal height action.</p>
+                                    <button type="button" class="btn btn-danger">Más Info</button>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
