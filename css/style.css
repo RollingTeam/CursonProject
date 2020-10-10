@@ -66,3 +66,31 @@
         margin-left: 16rem;
     }
 }
+ul{
+    list-style: none;
+}
+ul li a{
+    text-decoration: none;
+    color: white;
+}
+ul li a:hover{
+    text-decoration: none;
+    color: #EF233C;
+}
+.bgdark{
+    background-color: black;
+}
+.botones{
+    font-size: 34px;
+    color: white;
+    padding-top: 21px;
+    padding-bottom: 21px;
+    padding-left: 3px;
+    padding-right: 3px;
+}
+.botones a{
+    text-decoration: none;
+}
+.botones i a:hover{
+    color: #2B2D42;
+}
