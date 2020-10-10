@@ -66,3 +66,22 @@
         margin-left: 16rem;
     }
 }
+
+#pasos .card{
+    height: 410px;
+}
+
+#pasos .card img{
+    
+    height: 200px;
+}
+
+#pasos .card-body{
+    background-color: #EDF2F4;
+}
+
+
+.cursonBtn{
+    color: white !important;
+    background-color: #EF233C !important;
+}

@@ -53,6 +53,71 @@
             </ul>
         </div>
     </nav>
+    <!-- Inicio Seccion Publica tu curso -->
+    <div class="container">
+        <div class="row text-center mb-4">
+            <div class="col">
+                <h2>¿Tenés un curso para ofrecer?</h2>
+            </div>
+        </div>
+        <div class="row text-center mb-3">
+            <div class="col">
+                <p>En CursOn ofrecemos la posibilidad de crear un espacio educativo, en donde podras brindar tus propios cursos
+                    sobre esos temas que tanto te apasionan! <br>
+                    En este sentido, CursOn actua como nexo entre los mentores y una comunidad de potenciales alumnos. <br>
+                    ¿Interesado? Estos son los pasos a seguir para publicar tu curso: </p>
+            </div>
+        </div>
+        <!-- Inicio Paso a paso -->
+        <div class="row mb-4" id="pasos">
+            <div class="card-deck">
+                <div class="col-12 col-sm-12 col-md-6 col-lg-3">
+                    <div class="card">
+                        <img src="https://cdn.pixabay.com/photo/2019/01/17/19/10/login-3938429_960_720.png" class="card-img-top" alt="paso1">
+                        <div class="card-body">
+                          <h5 class="card-title text-center">1. Registro</h5>
+                          <p class="card-text">Si eres nuevo en CursOn, registrate como usuario. En caso de ya tener un usuario, basta con iniciar sesión</p>
+                        </div>
+                      </div>
+                </div>
+                <div class="col-12 col-sm-12 col-md-6 col-lg-3">
+                    <div class="card">
+                        <img src="https://cdn.pixabay.com/photo/2017/06/10/07/18/list-2389219_960_720.png" class="card-img-top" alt="paso2">
+                        <div class="card-body">
+                          <h5 class="card-title text-center">2. Completar el formulario de solicitud</h5>
+                          <p class="card-text">Cuéntanos sobre el curso que deseas publicar: temática, contenido, duración, precio, cupos, etc. </p>
+                        </div>
+                      </div>
+                </div>
+                <div class="col-12 col-sm-12 col-md-6 col-lg-3">
+                    <div class="card">
+                        <img src="https://cdn.pixabay.com/photo/2015/12/08/17/40/magnifying-glass-1083378_960_720.png" class="card-img-top" alt="paso3">
+                        <div class="card-body">
+                          <h5 class="card-title text-center">3. Evaluación de solicitudes</h5>
+                          <p class="card-text">Tu solicitud será evaluada por un administrador y, si cumple con los estandares, se procede a
+                              la publicación del curso. </p>
+                        </div>
+                      </div>
+                </div>
+                <div class="col-12 col-sm-12 col-md-6 col-lg-3">
+                    <div class="card">
+                        <img src="https://cdn.pixabay.com/photo/2020/06/06/21/42/online-5268334_960_720.png" class="card-img-top" alt="paso4">
+                        <div class="card-body">
+                          <h5 class="card-title text-center ">4. Inicio de actividad</h5>
+                          <p class="card-text">Todo listo! Podés iniciar las clases de tu curso, desde la plataforma de CursOn.</p>
+                        </div>
+                      </div>
+                </div>
+              </div>
+        </div>
+        <div class="row text-center mb-4">
+            <div class="col">
+                <button class="btn cursonBtn" data-toggle="modal" data-target="#formPublicarCurso">Publicar mi curso</button>
+            </div>
+        </div>
+    </div>
+    <!-- Fin Seccion Publica tu curso -->
+
 <!-- Modal LOGIN-->
     <div class="modal" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-sm" role="document">
@@ -77,6 +142,76 @@
               <button type="button" class="btn btn-dark" data-dismiss="modal" onclick="validarAcceso()">LogIn</button>
               <button type="button" class="btn btn-dark">Cancelar</button>
             </div>
+          </div>
+        </div>
+      </div>
+    <!-- Fin Modal LOGUIN -->
+    <!-- Inicio Modal Publica tu curso -->
+    <div class="modal" tabindex="-1" id="formPublicarCurso">
+        <div class="modal-dialog">
+          <div class="modal-content" style="background-color: #EDF2F4;">
+            <div class="modal-header text text-center">
+              <h5 class="modal-title">Formulario de solicitud</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <form>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col">
+                            <div class="row">
+                                <div class="form-group col">
+                                        <input type="text" class="form-control" id="nombreCursoInput" placeholder="¿Nombre del curso?">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group col">
+                                        <textarea id="contenidoCursoInput" class="form-control" rows="3" placeholder="¿De que se tratan el curso?"></textarea>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group col-12 col-sm-12 col-md-6 col-md-6">
+                                        <input type="number" class="form-control" id="duracionCursoInput" placeholder="Duración (horas)">
+                                </div>
+                                <div class="form-group col-12 col-sm-12 col-md-6 col-md-6">
+                                        <input type="number" class="form-control" id="cuposCursoInput" placeholder="Cupo máximo">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group col-12 col-sm-12 col-md-6 col-md-6">
+                                    <label>Categoría del curso</label>
+                                    <select class="form-control" id="categoriaCursoInput">
+                                        <option>Tecnología</option>
+                                        <option>Hogar</option>
+                                        <option>Arte</option>
+                                        <option>Salud</option>
+                                        <option>Marketing</option>
+                                      </select>
+                                </div>
+                                <div class="form-group col-12 col-sm-12 col-md-6 col-md-6">
+                                    <label>Nivel de difcultad</label>
+                                    <select class="form-control" id="dificultadCursoInput">
+                                        <option>Facil</option>
+                                        <option>Intermedio</option>
+                                        <option>Dificil</option>
+                                      </select>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group col">
+                                    <label>Imagen de portada del curso:</label>
+                                    <input type="file" class="form-control-file" id="imagenCursoInput">
+                                  </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                        <button type="submit" class="btn cursonBtn">Enviar solicitud</button>
+                      </div>
+                </form>
           </div>
         </div>
       </div>
