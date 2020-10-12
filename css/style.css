@@ -69,6 +69,7 @@
         margin-left: 16rem;
     }
 }
+<<<<<<< HEAD
 /* Reviews Section */
 .card-multicolor{
     border-top: 2px solid #2B2D42;
@@ -176,4 +177,33 @@ ul li a:hover{
 .logo{
     width: 60%;
     height: 60%;
+=======
+
+
+.overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: black;
+  }
+
+
+.pasos:hover .overlay{
+    opacity: 0.7;
+}
+
+.paso{
+    color: white;
+}
+
+.cursonBtn{
+    color: white !important;
+    background-color: #EF233C !important;
+>>>>>>> developRodrigo
 }
