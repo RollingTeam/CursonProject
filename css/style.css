@@ -12,7 +12,7 @@
     color:#8D99AE;
 }
 .bg-blanco{
-    background-color: #FFFFFF;
+    background-color: #EDF2F4;
 }
 .bg-rosa{
     background-color: #EF233C;
@@ -96,3 +96,7 @@ ul li a:hover{
     color: #2B2D42;
 }
 /* LOGO NAVBAR */
+.logo{
+    width: 60%;
+    height: 60%;
+}
