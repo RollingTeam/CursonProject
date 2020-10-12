@@ -1,3 +1,4 @@
+
 * a{
     text-decoration: none;
 }
@@ -65,4 +66,31 @@
     .admin-login{
         margin-left: 16rem;
     }
+}
+
+/* ESTILO DE LAS CARDS */
+.card-img-top{
+    width: 100%;
+    height: 15rem;
+    object-fit: contain;
+} 
+
+/*BOTONES*/
+.btn-primary{
+    padding: 0.3rem 1rem !important;
+    background-color: #E53253 !important;
+    color: #FFFFFF !important;
+    border: 1rem 1rem !important;
+}
+
+.btn-primary:hover{
+    padding: 0.3rem 1rem !important;
+    background-color: #4FB99F !important;
+    color: #FFFFFF !important;
+    border: 1rem 1rem !important;
+}
+
+/* BOTON DE LA CATEGORIA */
+.boton{
+    background-color: #2B2D42 !important;
 }

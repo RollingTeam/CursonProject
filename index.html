@@ -1,88 +1,304 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Curson</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.0/css/all.css" integrity="sha384-OLYO0LymqQ+uHXELyx93kblK5YIS3B2ZfLGBmsJaUyor7CpMTBsahDHByqSuWW+q" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.0/css/all.css" integrity="sha384-OLYO0LymqQ+uHXELyx93kblK5YIS3B2ZfLGBmsJaUyor7CpMTBsahDHByqSuWW+q" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.0/css/all.css"
+        integrity="sha384-OLYO0LymqQ+uHXELyx93kblK5YIS3B2ZfLGBmsJaUyor7CpMTBsahDHByqSuWW+q" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.0/css/all.css"
+        integrity="sha384-OLYO0LymqQ+uHXELyx93kblK5YIS3B2ZfLGBmsJaUyor7CpMTBsahDHByqSuWW+q" crossorigin="anonymous">
 </head>
+
 <body>
     <nav class="navbar navbar-expand-xl bg-blanco bd-oscuro">
         <a class="navbar p-s-logo" href="#"><span class="color-rosa">Curs</span><span class="color-gris">On</span></a>
-        <button class="navbar-toggler nav-menuHamb" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler nav-menuHamb" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
             <span class="nav-menuHamb"><i class="fas fa-bars"></i></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-                <a class="nav-link color-rosa item-nav-d mx-lg-4" href="#">Inicio <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle color-oscuro item-nav-r mx-lg-4" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Cursos</a>
-                <div class="dropdown-menu">
-                    <a class="dropdown-item color-oscuro" href="#!">Mas Destacados</a>
-                    <a class="dropdown-item color-oscuro" href="#!">Cursos por Categorías</a>
-                    <a class="dropdown-item color-oscuro" href="#!">Ver todos</a>
-                </div>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link color-rosa item-nav-d mx-lg-4" href="#">Ofrecer Cursos</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link color-oscuro item-nav-r mx-lg-4" href="#">Reviews</a>
-            </li>
-            <li>
-                <form class="form-inline my-2 my-lg-0 mx-lg-4">
-                <input class="form-control mr-sm-2 mx-lg-2" type="text" placeholder="Buscar Curso" aria-label="Search">
-                <button class="btn btn-outline-dark my-2 my-sm-0" type="submit"><i class="fas fa-search"></i></button>
-                </form>
-            </li>
-            <li class="nav-item dropdown">
-                <button class="nav-link icon-login item-nav-r ml-lg-5" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user fa-xl"></i></button>
-                <div class="dropdown-menu">
-                    <a class="dropdown-item color-oscuro" data-toggle="modal" data-target="#exampleModal" href="#!">Login</a>
-                    <a class="dropdown-item color-oscuro" href="#!">Registrarme</a>
-                    <!--<a class="dropdown-item color-oscuro" href="#!">Mi Perfil</a>
+                <li class="nav-item active">
+                    <a class="nav-link color-rosa item-nav-d mx-lg-4" href="#">Inicio <span
+                            class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle color-oscuro item-nav-r mx-lg-4" data-toggle="dropdown" href="#"
+                        role="button" aria-haspopup="true" aria-expanded="false">Cursos</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item color-oscuro" href="#!">Mas Destacados</a>
+                        <a class="dropdown-item color-oscuro" href="#!">Cursos por Categorías</a>
+                        <a class="dropdown-item color-oscuro" href="#!">Ver todos</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link color-rosa item-nav-d mx-lg-4" href="#">Ofrecer Cursos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link color-oscuro item-nav-r mx-lg-4" href="#">Reviews</a>
+                </li>
+                <li>
+                    <form class="form-inline my-2 my-lg-0 mx-lg-4">
+                        <input class="form-control mr-sm-2 mx-lg-2" type="text" placeholder="Buscar Curso"
+                            aria-label="Search">
+                        <button class="btn btn-outline-dark my-2 my-sm-0" type="submit"><i
+                                class="fas fa-search"></i></button>
+                    </form>
+                </li>
+                <li class="nav-item dropdown">
+                    <button class="nav-link icon-login item-nav-r ml-lg-5" data-toggle="dropdown" href="#" role="button"
+                        aria-haspopup="true" aria-expanded="false"><i class="fas fa-user fa-xl"></i></button>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item color-oscuro" data-toggle="modal" data-target="#exampleModal"
+                            href="#!">Login</a>
+                        <a class="dropdown-item color-oscuro" href="#!">Registrarme</a>
+                        <!--<a class="dropdown-item color-oscuro" href="#!">Mi Perfil</a>
                     <a class="dropdown-item color-oscuro" href="#!">Mis Cursos</a>
                     <a class="dropdown-item color-oscuro" href="#!">Mis Favoritos</a>!-->
-                </div>
-            </li>
+                    </div>
+                </li>
             </ul>
         </div>
     </nav>
-<!-- Modal LOGIN-->
-    <div class="modal" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <!-- Modal LOGIN-->
+    <div class="modal" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
         <div class="modal-dialog modal-sm" role="document">
-          <div class="modal-content modal-sm">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel"><span class="color-rosa">Curs</span><span class="color-gris">On</span></h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
+            <div class="modal-content modal-sm">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel"><span class="color-rosa">Curs</span><span
+                            class="color-gris">On</span></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="exampleDropdownFormEmail1">User Name</label>
+                        <input type="email" class="form-control" id="inputUser"
+                            placeholder="Ingresa tu nombre de Usuario">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleDropdownFormPassword1">Password</label>
+                        <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+                    </div>
+                </div>
+                <div class="modal-footer display-flex justify-content-center ">
+                    <button type="button" class="btn btn-dark" data-dismiss="modal"
+                        onclick="validarAcceso()">LogIn</button>
+                    <button type="button" class="btn btn-dark">Cancelar</button>
+                </div>
             </div>
-            <div class="modal-body">
-                <div class="form-group">
-                    <label for="exampleDropdownFormEmail1">User Name</label>
-                    <input type="email" class="form-control" id="inputUser" placeholder="Ingresa tu nombre de Usuario">
-                  </div>
-                  <div class="form-group">
-                    <label for="exampleDropdownFormPassword1">Password</label>
-                    <input type="password" class="form-control" id="inputPassword" placeholder="Password">
-                  </div>
-            </div>
-            <div class="modal-footer display-flex justify-content-center ">
-              <button type="button" class="btn btn-dark" data-dismiss="modal" onclick="validarAcceso()">LogIn</button>
-              <button type="button" class="btn btn-dark">Cancelar</button>
-            </div>
-          </div>
         </div>
-      </div>
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-<script src="js/Modulos/Funciones/Setup.js"></script>
+    </div>
+    <!-- COMIENZO DE CURSOS POR CATEGORÍAS -->
+    <section id="cursosCategoria">
+        <div class="container mb-4"><br>
+            <div class="row pt-2 pb-2 pl-0 pr-0">
+                <h3>CURSOS POR CATEGORÍAS</h3>
+            </div>
+            <br>
+            <!-- BOTONES DE CATEGORIAS -->
+            <div class="row">
+                <!-- <div class="col-lg-2">
+                    <div class="btn-group-vertical boton" role="group" aria-label="Button group with nested dropdown">
+                        <button type="button" class="btn btn-primary boton">Programación</button>
+                        <button type="button" class="btn btn-primary boton">Carpintería</button>
+                        <button type="button" class="btn btn-primary boton">Marketing</button>
+                        <button type="button" class="btn btn-primary boton">Diseño</button>
+                    </div>
+                </div> -->
+                <div class="dropdown">
+                    <button class="btn-primary boton dropdown-toggle" type="button" id="dropdownMenuButton"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Categorías
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item btn-primary boton" href="#">Programación</a>
+                        <a class="dropdown-item btn-primary boton" href="#">Carpintería</a>
+                        <a class="dropdown-item btn-primary boton" href="#">Marketing</a>
+                        <a class="dropdown-item btn-primary boton" href="#">Diseño</a>
+                    </div>
+                </div>
+                <!-- TARJETAS DE CATEGORIAS -->
+                <div class="col-10 col-md-10">
+                    <div class="row">
+                        <!-- TARJETA 1 -->
+                        <div class="col">
+                            <div class="card">
+                                <img src="https://picsum.photos/id/1/400/200" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title"><strong> Curso de Office Online</strong></h5>
+                                    <span class="badge badge-warning">Intermedio</span>
+                                    <p class="card-text">En este curso aprenderás conocimientos y técnicas del paquete
+                                        Office.
+                                    </p>
+                                    <a href="#" class="btn btn-primary">Ver Más</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- TARJETA 2 -->
+                        <div class="col">
+                            <div class="card">
+                                <img src="https://picsum.photos/id/1/400/200" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title"><strong> Curso Básico de Photoshop</strong></h5>
+                                    <span class="badge badge-success">Principiante</span>
+                                    <p class="card-text">Un curso Práctico y didáctico con las mejores técnicas de la
+                                        actualidad.
+                                    </p>
+                                    <a href="#" class="btn btn-primary">Ver Más</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- PAGINACION -->
+                    <nav aria-label="Page navigation example">
+                        <ul class="pagination justify-content-center pagination-lg">
+                            <li class="page-item disabled">
+                                <a class="page-link btn btn-primary boton mt-2" href="#" aria-label="Previous">
+                                    <span aria-hidden="true">&laquo;</span>
+                                </a>
+                            </li>
+                            <li class="page-item">
+                                <a class="page-link btn btn-primary boton mt-2" href="#" aria-label="Next">
+                                    <span aria-hidden="true">&raquo;</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <!-- FíN DE PAGINACIÓN -->
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- FÍN DE CURSOS POR CATEGORÍAS -->
+
+    <!-- COMIENZO DE TODOS LOS CURSOS -->
+
+    <section id="cursos">
+        <div class="container">
+            <div class="row">
+                <h3>TODOS LOS CURSOS</h3>
+            </div>
+            <div class="row">
+                <!-- TARJETA 1 CARPINTERIA-->
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="card">
+                        <img src="https://picsum.photos/id/1/400/300" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title"><strong> Aprende Carpintería Online</strong></h5>
+                            <span class="badge badge-success">Principiante</span>
+                            <p class="card-text">En este curso aprenderás los conocimientos básicos de carpintería.</p>
+                            <a href="#" class="btn btn-primary float-right">Ver Más</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- TARJETA 2 FULLSTACK-->
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="card">
+                        <img src="./imagenes/fullstack.png" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Curso de Fullstack</h5>
+                            <span class="badge badge-success">Principiante</span>
+                            <p class="card-text">Aprenderás de cero los elementos básicos de htlm, css y javascript.
+                            </p>
+                            <a href="#" class="btn btn-primary float-right">Ver Más</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- TARJETA 3 MARKETING-->
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="card">
+                        <img src="./imagenes/curso de marketing.png" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Curso de Marketing Digital</h5>
+                            <span class="badge badge-secondary">Avanzado</span>
+                            <p class="card-text">Perfeccioná tu marca e imágen dentro del mercado laboral online.</p>
+                            <a href="#" class="btn btn-primary float-right">Ver Más</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- TARJETA 4 INGLES -->
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="card">
+                        <img src="./imagenes/curso_ingles.png" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Curso de Ingles</h5>
+                            <span class="badge badge-warning">Intermedio</span>
+                            <p class="card-text">Nuestro programa ofrece una forma rápida y eficaz para mejorar tus
+                                conocimientos del idioma</p>
+                            <a href="#" class="btn btn-primary float-right">Ver Más</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- TARJETA 5 E-COMERCE-->
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="card">
+                        <img src="./imagenes/e comerce.png" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Curso de E-comerce</h5>
+                            <span class="badge badge-warning">Intermedio</span>
+                            <p class="card-text">Aprendé a gestionar de manera integral una tienda online, con las
+                                mejores estrategias orientadas a venta online.</p>
+                            <a href="#" class="btn btn-primary float-right">Ver Más</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- TARJETA 6 PROGRAMACION-->
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="card">
+                        <img src="./imagenes/curso programacion.png" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Curso de Programación</h5>
+                            <span class="badge badge-secondary">Avanzado</span>
+                            <p class="card-text">Perfeccioná y domina los lenguajes de código, herramientas,
+                                arquitectura, bases de datos y más.</p>
+                            <a href="#" class="btn btn-primary float-right">Ver Más</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <nav aria-label="Page navigation example">
+                        <ul class="pagination justify-content-center">
+                            <li class="page-item disabled">
+                                <a class="page-link btn btn-primary boton mt-2" href="#" aria-label="Previous">
+                                    <span aria-hidden="true">&laquo;</span>
+                                </a>
+                            </li>
+                            <li class="page-item"><a class="page-link btn btn-primary boton mt-2" href="#">1</a></li>
+                            <li class="page-item"><a class="page-link btn btn-primary boton mt-2" href="#">2</a></li>
+                            <li class="page-item"><a class="page-link btn btn-primary boton mt-2" href="#">3</a></li>
+                            <li class="page-item">
+                                <a class="page-link btn btn-primary boton mt-2" href="#" aria-label="Next">
+                                    <span aria-hidden="true">&raquo;</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- TERMINAN LOS CURSOS! -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+    <script src="js/Modulos/Funciones/Setup.js"></script>
 </body>
+
 </html>
