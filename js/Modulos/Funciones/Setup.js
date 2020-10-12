@@ -169,7 +169,6 @@ function validarAcceso(){
     }else{
         alert("No te encuentras registrado en CursOn")
     }
-
 }
 
 function validarReview(){
@@ -258,5 +257,6 @@ function actualizarReviews(){
     //DEBERIA CARGAR DE NUEVO LA PAGINA PARA QUE SE CARGUEN LAS NUEVAS REVIEWS
     //location.reload();
 }
+
 
 
