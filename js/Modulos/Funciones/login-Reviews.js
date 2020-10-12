@@ -1,7 +1,3 @@
-//import {Usuario} from "../Clases/Usuarios"
-//import {Reviews} from '..Clases/Reviews.js'
-import {cargarReviews} from './gestionarReviews'
-
 class Usuario{
     constructor(userName,userPassword,userFirstName,userLastName,userRole,userStatus,userEmail){
     this.userName= userName
@@ -34,7 +30,7 @@ let users=[];
 let adminUserB = new Usuario("belenadmin","12345","Belen","Neme","1","1","belen@gmail.com");
 //adminUserB.userRole=Roles[0]
 
-let regularUserB = new Usuario("BelenUser","654321","Belen","Neme","2","2","b@gmail.com");
+let regularUserB = new Usuario("BelenUser","654321","Belen","Neme","2","1","b@gmail.com");
 //regularUserB.userRole=Roles[1]
 users.push(adminUserB,regularUserB);
 
@@ -58,8 +54,11 @@ function validarAcceso(){
         return i.userName===us
     })
     //console.log(u);
+    let userLogueados=[];
     if(u){
         if(u.userPassword===pass){
+            userLogueados.push(u);
+            localStorage.setItem("usuariosLogueados",JSON.stringify(userLogueados))
             if(u.userRole==="1"){
                 //MOSTRAR PAGINA DE ADMINISTRADOR
                 window.location.replace("file:///C:/Users/belen/OneDrive/Documentos/RollingCode/3I/CursonProject/adminHome.html")
@@ -72,7 +71,14 @@ function validarAcceso(){
                 btnAddReviews.className="btn-review"
                 mainRevContainer.appendChild(btnAddReviews)
                 btnAddReviews.addEventListener("click",function(e){
+                    let numOpenForm= document.getElementsByClassName("form-review")
+                    
+                    if(numOpenForm.length>=1){
+                        return "";
+                    }else{
                     let fecReview= getFecha();
+                    let userLog= getUserLogueado();
+                    console.log(userLog)
                     console.log(fecReview)
                     let formReview= document.createElement("div");
                     formReview.className="form-review"
@@ -84,7 +90,7 @@ function validarAcceso(){
                                 <label class="color-rosa">Nombre:</label>
                             </div>
                             <div class="form-group d-flex justify-content-center">
-                                <input type="text" id="reviewUser" placeholder="Ingresa tu nombre" class="input-review">
+                                <input type="text" id="reviewUser"  class="input-review" value="${userLog}">
                             </div>
                         </div>
                         <div class="col-md-5">
@@ -110,7 +116,7 @@ function validarAcceso(){
                                 <label class="color-rosa">Comentario:</label>
                             </div>
                             <div class="form-group d-flex justify-content-center">
-                                <input type="text" id="reviewComentario" placeholder="Ingresa aqui tu comentario" class="input-review">
+                                <textarea id="reviewComentario" placeholder="Ingresa aqui tu comentario" class="form-control"></textarea>
                             </div>
                         </div>
                     </div>
@@ -120,31 +126,31 @@ function validarAcceso(){
                                 <label class="color-rosa">Calificacion:</label>
                             </div>
                             <div class="form-check-inline d-flex justify-content-center">
-                                <input class="form-check-input" type="radio" name="exampleRadios" id="calificacion" value="5" checked>
+                                <input class="form-check-input" type="radio" name="calificacion" id="calificacion" value="5" checked>
                                 <label class="form-check-label" for="exampleRadios1">
                                 5
                                 </label>
                             </div>
                             <div class="form-check-inline d-flex justify-content-center">
-                                <input class="form-check-input" type="radio" name="exampleRadios" id="calificacion" value="4">
+                                <input class="form-check-input" type="radio" name="calificacion" id="calificacion" value="4">
                                 <label class="form-check-label" for="exampleRadios1">
                                 4
                                 </label>
                             </div>
                             <div class="form-check-inline d-flex justify-content-center">
-                                <input class="form-check-input" type="radio" name="exampleRadios" id="calificacion" value="3">
+                                <input class="form-check-input" type="radio" name="calificacion" id="calificacion" value="3">
                                 <label class="form-check-label" for="exampleRadios1">
                                 3
                                 </label>
                             </div>
                             <div class="form-check-inline d-flex justify-content-center">
-                                <input class="form-check-input" type="radio" name="exampleRadios" id="calificacion" value="2">
+                                <input class="form-check-input" type="radio" name="calificacion" id="calificacion" value="2">
                                 <label class="form-check-label" for="exampleRadios1">
                                 2
                                 </label>
                             </div>
                             <div class="form-check-inline d-flex justify-content-center">
-                                <input class="form-check-input" type="radio" name="exampleRadios" id="calificacion" value="1">
+                                <input class="form-check-input" type="radio" name="calificacion" id="calificacion" value="1">
                                 <label class="form-check-label" for="exampleRadios1">
                                 1
                                 </label>
@@ -159,7 +165,7 @@ function validarAcceso(){
                     </form>`
                     formReview.innerHTML=formRevContent;
                     mainRevContainer.appendChild(formReview);
-                    
+                    }
                 })
 
             }
@@ -175,7 +181,7 @@ function validarAcceso(){
 function validarReview(){
     let rUser = document.getElementById("reviewUser")
     let rCurso = document.getElementById("reviewCurso")
-    let rCalificacion = document.getElementById("calificacion")
+    let rCalificacion = document.querySelector('input[name=calificacion]:checked');
     let rComentario = document.getElementById("reviewComentario")
     let rFecha= document.getElementById("reviewDate")
 
@@ -220,7 +226,6 @@ const limpiarFormReview = () => {
     let rCurso = document.getElementById("reviewCurso")
     let rCalificacion = document.getElementById("calificacion")
     let rComentario = document.getElementById("reviewComentario")
-    //let rFecha= document.getElementById("reviewDate")
 
     rUser.value = "";
     rComentario.value = "";
@@ -233,9 +238,9 @@ const limpiarFormReview = () => {
 };
 
 function ocultarReview(){
+    let cont= document.getElementById("mainRevContainer");
     let formR= document.getElementsByClassName("form-review");
-    formR.className="oultarForm"
-    alert("Me hiciste click")
+    cont.removeChild(formR[0]);
 }
 
 function getFecha(){
@@ -247,16 +252,115 @@ function getFecha(){
     return fecha;
 }
 
-function actualizarReviews(){
+function getUserLogueado(){
+    let userNombre;
+    let userLogDB= JSON.parse(localStorage.getItem("usuariosLogueados"));
+    userLogDB.map(function(u){
+        return userNombre= `${u.userFirstName}${" "}${u.userLastName}` 
+    })
+    return userNombre;
+}
+
+//Reviews Section 
+class Reviews{
+    constructor(nombreCurso,nombreUser,comentario,fecha,calificacionCurso){
+        this.nombreCurso= nombreCurso
+        this.nombreUser= nombreUser
+        this.comentario= comentario
+        this.fecha=fecha
+        this.calificacionCurso=calificacionCurso
+    }
+}
+
+//Cargar array de Reviews en LocalStorage
+let rev1= new Reviews("PHP Avanzado","Florencia","Me parecio un curso super interesante","2020-10-06",5);
+let rev2= new Reviews("Diseño de Interior","Florencia","Me parecio un curso super interesante","2020-10-06",1);
+let rev3= new Reviews("Diseño de Moda","Florencia","Me parecio un curso super interesante","2020-08-05",2);
+let rev4= new Reviews("PHP Avanzado","Florencia","Me parecio un curso super interesante","2020-11-06",3);
+let rev5= new Reviews("Diseño de Interior","Florencia","Me parecio un curso super interesante","2020-10-06",4);
+let rev6= new Reviews("Diseño de Moda","Florencia","Me parecio un curso super interesante","2020-08-06",5);
+let rev7= new Reviews("Diseño de Moda","Florencia","Me parecio un curso super interesante","2020-10-09",3);
+
+let reviews=[]
+reviews.push(rev1,rev2,rev3,rev4,rev5,rev6,rev7)
+localStorage.setItem("reviews",JSON.stringify(reviews))
+
+//Cargar Reviews en la LandingPage
+
+cargarReviews();
+//myFunction()
+function cargarReviews(){
+    //Buscar en el localStorage el conjunto de Reviews almacenadas
+    ordenarReviews();
+    let reviewsLS = localStorage.getItem("reviews",reviews)
+    let reviewsDB = JSON.parse(reviewsLS)
+    reviewContainer.innerHTML=""
+    for(let i=0 ; i< reviewsDB.length ; i++){
+        while(i<6){
+            let reviewContainer= document.getElementById("reviewContainer")
+            let estrellas="";
+            if(reviewsDB[i].calificacionCurso==1){
+                estrellas= `<i class="fas fa-star fa-start-color"></i>
+                            <i class="far fa-star fa-start-color-secondary"></i>
+                            <i class="far fa-star fa-start-color-secondary"></i>
+                            <i class="far fa-star fa-start-color-secondary"></i>
+                            <i class="far fa-star fa-start-color-secondary"></i>`
+            }else if(reviewsDB[i].calificacionCurso==2){
+                estrellas= `<i class="fas fa-star fa-start-color"></i>
+                            <i class="fas fa-star fa-start-color"></i>
+                            <i class="far fa-star fa-start-color-secondary"></i>
+                            <i class="far fa-star fa-start-color-secondary"></i>
+                            <i class="far fa-star fa-start-color-secondary"></i>`
+            }else if(reviewsDB[i].calificacionCurso==3){
+                estrellas= `<i class="fas fa-star fa-start-color"></i>
+                            <i class="fas fa-star fa-start-color"></i>
+                            <i class="fas fa-star fa-start-color"></i>
+                            <i class="far fa-star fa-start-color-secondary"></i>
+                            <i class="far fa-star fa-start-color-secondary"></i>`
+            }else if(reviewsDB[i].calificacionCurso==4){
+                estrellas= `<i class="fas fa-star fa-start-color"></i>
+                            <i class="fas fa-star fa-start-color"></i>
+                            <i class="fas fa-star fa-start-color"></i>
+                            <i class="fas fa-star fa-start-color"></i>
+                            <i class="far fa-star fa-start-color-secondary"></i>`
+            }else if(reviewsDB[i].calificacionCurso==5){
+                estrellas= `<i class="fas fa-star fa-start-color"></i>
+                            <i class="fas fa-star fa-start-color"></i>
+                            <i class="fas fa-star fa-start-color"></i>
+                            <i class="fas fa-star fa-start-color"></i>
+                            <i class="fas fa-star fa-start-color"></i>`
+            }
+            let reviewContent=`
+            <div class="col-md-4 mt-3" id="contReview">
+                <div class="card card-multicolor">
+                    <div class="card-body card-multicolor py-1 px-3">
+                        <h6 class="card-title">${reviewsDB[i].nombreCurso}</h6>
+                        <p class="card-text mb-2">${reviewsDB[i].comentario}</p>
+                        <span class="float-left color-rosa pr-2"><i class="fas fa-user"></i></span><span class="float-left"> ${reviewsDB[i].nombreUser}</span>
+                        <span class="float-right">${estrellas}</span><br>
+                        <span class="float-right color-gris">${reviewsDB[i].fecha}</span>
+                    </div>
+                </div>
+            </div>`
+            reviewContainer.innerHTML+=reviewContent
+            i+=1
+        }
+    }
+}
+
+function ordenarReviews(){
     let reviewsDB= JSON.parse(localStorage.getItem("reviews"));
     reviewsDB.sort(function(a,b){
-        return a.calificacionCurso - b.calificacionCurso
+        return new Date(b.fecha) - new Date (a.fecha)
     });
     console.log(reviewsDB)
     let rev= JSON.stringify(reviewsDB)
     localStorage.setItem("reviews",rev)
-    //DEBERIA CARGAR DE NUEVO LA PAGINA PARA QUE SE CARGUEN LAS NUEVAS REVIEWS
-    //location.reload();
 }
 
+function myFunction() {
+    setInterval(function(){
+    cargarReviews();
+    },60000)
+}
 

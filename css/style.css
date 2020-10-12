@@ -11,6 +11,9 @@
 .color-gris{
     color:#8D99AE;
 }
+.color-blanco{
+    color: #FFFFFF;
+}
 .bg-blanco{
     background-color: #FFFFFF;
 }
@@ -73,4 +76,70 @@
     border-bottom: 2px solid #8D99AE;
     border-left: 2px solid #8D99AE;
     border-radius: 10px;
+}
+.size-review{
+    font-size: 25px;
+}
+.btn-review{
+    color: #8D99AE;
+    background-color: #FFFFFF;
+    border-radius: 60px;
+    border-color: #2B2D42;
+    margin-top: 14px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: center;
+    width: 201px;
+    height: 32px;
+}
+.btn-review:focus{
+    outline: none;
+}
+.form-review{
+    margin-top: 12px;
+    margin-bottom: 12px;
+    border: 1px solid #cdd2db;
+    border-radius: 10px;
+}
+.input-review{
+    border-color: #8D99AE;
+    border-radius: 5px;
+}
+.bd-gris{
+    border: 2px solid #8D99AE;
+}
+.valida{
+    outline: 0 none;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='none' stroke='%23dc3545' viewBox='0 0 12 12'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/%3e%3ccircle cx='6' cy='8.2' r='.6' fill='%23dc3545' stroke='none'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right calc(.375em + .1875rem) center;
+    background-size: calc(.75em + .375rem) calc(.75em + .375rem);
+}
+
+.ok{
+    padding-right: calc(1.5em + .75rem);
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8' viewBox='0 0 8 8'%3e%3cpath fill='%2328a745' d='M2.3 6.73L.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right calc(.375em + .1875rem) center;
+    background-size: calc(.75em + .375rem) calc(.75em + .375rem);
+}
+.ocultarForm{
+    visibility: hidden;
+}
+.btn-review-form{
+    color: #8D99AE;
+    background-color: #FFFFFF;
+    border-radius: 60px;
+    border-color: #2B2D42;
+    width: 110px;
+}
+.btn-review-form:focus{
+    outline: none;
+}
+.fa-start-color{
+    color: rgb(235, 210, 68);
+}
+.fa-start-color-secondary{
+    color:#8D99AE
 }

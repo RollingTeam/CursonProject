@@ -1,4 +1,4 @@
-class Reviews{
+export class Reviews{
     cosntructor(nombreCurso,nombreUser,comentario,fecha,calificacionCurso){
         this.nombreCurso= nombreCurso
         this.nombreUser= nombreUser
