@@ -177,9 +177,8 @@ ul li a:hover{
 .logo{
     width: 60%;
     height: 60%;
-=======
-
-
+}
+/* Publica tu Curso Section */
 .overlay {
     position: absolute;
     top: 0;
@@ -205,5 +204,5 @@ ul li a:hover{
 .cursonBtn{
     color: white !important;
     background-color: #EF233C !important;
->>>>>>> developRodrigo
 }
+/*****************************/
