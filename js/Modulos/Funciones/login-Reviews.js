@@ -363,4 +363,3 @@ function myFunction() {
     cargarReviews();
     },60000)
 }
-
