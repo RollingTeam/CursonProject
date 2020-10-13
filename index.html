@@ -15,22 +15,21 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-xl bg-blanco">
-        <a class="navbar p-s-logo" href="#"><span class="color-rosa">Curs</span><span class="color-gris">On</span></a>
-        <button class="navbar-toggler nav-menuHamb" type="button" data-toggle="collapse"
-            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-            aria-label="Toggle navigation">
-            <span class="nav-menuHamb"><i class="fas fa-bars"></i></span>
+    <nav class="navbar navbar-expand-lg navbar-light bg-blanco p-2">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03"
+            aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
+        <a class="navbar-brand" href="#"><img src="./img/logo-rect.png" class="img-fluid ml-2 logo" alt="logo"></a>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+            <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
                 <li class="nav-item active">
-                    <a class="nav-link color-rosa item-nav-d mx-lg-4" href="#">Inicio <span
+                    <a class="nav-link" href="index.html"><strong class="color-oscuro item-nav-d">Inicio</strong><span
                             class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle color-oscuro item-nav-r mx-lg-4" data-toggle="dropdown" href="#"
-                        role="button" aria-haspopup="true" aria-expanded="false">Cursos</a>
+                    <a class="nav-link dropdown-toggle item-nav-d mx-lg-4" data-toggle="dropdown" href="#" role="button"
+                        aria-haspopup="true" aria-expanded="false"><strong class="color-rosa">Cursos</strong></a>
                     <div class="dropdown-menu">
                         <a class="dropdown-item color-oscuro" href="#!">Mas Destacados</a>
                         <a class="dropdown-item color-oscuro" href="#!">Cursos por Categorías</a>
@@ -38,34 +37,30 @@
                     </div>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link color-rosa item-nav-d mx-lg-4" href="#">Ofrecer Cursos</a>
+                    <a class="nav-link" href="#"><strong class="color-oscuro item-nav-r">Publicá tu Curso</strong></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link color-oscuro item-nav-r mx-lg-4" href="#">Reviews</a>
+                    <a class="nav-link" href="#"><strong class="color-rosa item-nav-d">Reviews</strong></a>
                 </li>
-                <li>
-                    <form class="form-inline my-2 my-lg-0 mx-lg-4">
-                        <input class="form-control mr-sm-2 mx-lg-2" type="text" placeholder="Buscar Curso"
-                            aria-label="Search">
-                        <button class="btn btn-outline-dark my-2 my-sm-0" type="submit"><i
-                                class="fas fa-search"></i></button>
-                    </form>
+                <li class="nav-item pl-2 pr-2 pt-1">
+                    <button data-toggle="modal" data-target="#exampleModal" type="button"
+                        class="btn btn-outline-dark btn-sm">Log In</button>
                 </li>
-                <li class="nav-item dropdown">
-                    <button class="nav-link icon-login item-nav-r ml-lg-5" data-toggle="dropdown" href="#" role="button"
-                        aria-haspopup="true" aria-expanded="false"><i class="fas fa-user fa-xl"></i></button>
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item color-oscuro" data-toggle="modal" data-target="#exampleModal"
-                            href="#!">Login</a>
-                        <a class="dropdown-item color-oscuro" href="#!">Registrarme</a>
-                        <!--<a class="dropdown-item color-oscuro" href="#!">Mi Perfil</a>
-                    <a class="dropdown-item color-oscuro" href="#!">Mis Cursos</a>
-                    <a class="dropdown-item color-oscuro" href="#!">Mis Favoritos</a>!-->
-                    </div>
+                <li class="nav-item pl-2 pr-2 pt-1">
+                    <button type="button" class="btn btn-outline-danger btn-sm">Sign Up</button>
                 </li>
             </ul>
         </div>
+        <div class="fixed-top">
+            <div class="collapse" id="navbarToggleExternalContent">
+                <div class="bg-dark p-4">
+                    <h5 class="text-white h4">Collapsed content</h5>
+                    <span class="text-muted">Toggleable via the navbar brand.</span>
+                </div>
+            </div>
+        </div>
     </nav>
+    <!-- FIN DEL NAV -->
     <main>
         <div class="container-fluid">
             <div class="row">
@@ -138,33 +133,39 @@
                         <h3 class="p-2">Más Destacados</h3>
                         <div class="card-deck">
                             <div class="card">
-                                <img class="card-img-top" src="https://picsum.photos/200/200/?blur" alt="Card image cap">
+                                <img class="card-img-top" src="https://picsum.photos/200/200/?blur"
+                                    alt="Card image cap">
                                 <div class="card-body">
                                     <h5 class="card-title">Card title</h5>
                                     <span class="badge badge-pill badge-warning">Avanzado</span>
-                                    <p class="card-text p-1">This is a wider card with supporting text below as a natural
+                                    <p class="card-text p-1">This is a wider card with supporting text below as a
+                                        natural
                                         lead-in to additional content. This card has even longer content than the first
                                         to show that equal height action.</p>
-                                        <button type="button" class="btn btn-danger">Más Info</button>
+                                    <button type="button" class="btn btn-danger">Más Info</button>
                                 </div>
                             </div>
                             <div class="card">
-                                <img class="card-img-top" src="https://picsum.photos/200/200/?blur" alt="Card image cap">
+                                <img class="card-img-top" src="https://picsum.photos/200/200/?blur"
+                                    alt="Card image cap">
                                 <div class="card-body">
                                     <h5 class="card-title">Card title</h5>
                                     <span class="badge badge-pill badge-dark">Básico</span>
-                                    <p class="card-text p-1">This is a wider card with supporting text below as a natural
+                                    <p class="card-text p-1">This is a wider card with supporting text below as a
+                                        natural
                                         lead-in to additional content. This card has even longer content than the first
                                         to show that equal height action.</p>
-                                        <button type="button" class="btn btn-danger">Más Info</button>
+                                    <button type="button" class="btn btn-danger">Más Info</button>
                                 </div>
                             </div>
                             <div class="card">
-                                <img class="card-img-top" src="https://picsum.photos/200/200/?blur" alt="Card image cap">
+                                <img class="card-img-top" src="https://picsum.photos/200/200/?blur"
+                                    alt="Card image cap">
                                 <div class="card-body">
                                     <h5 class="card-title">Card title</h5>
                                     <span class="badge badge-pill badge-primary">Intermedio</span>
-                                    <p class="card-text p-1">This is a wider card with supporting text below as a natural
+                                    <p class="card-text p-1">This is a wider card with supporting text below as a
+                                        natural
                                         lead-in to additional content. This card has even longer content than the first
                                         to show that equal height action.</p>
                                     <button type="button" class="btn btn-danger">Más Info</button>
@@ -176,14 +177,43 @@
             </div>
             <hr>
     </main>
+    <!-- FOOTER -->
+    <footer>
+        <div class="container-fluid bgdark text-white">
+            <div class="row">
+                <div class="col-12 col-sm-6 text-center p-3">
+                    <ul class="p-0">
+                        <li><a href="#">Inicio</a></li>
+                        <li><a href="#">Cursos Destacados</a></li>
+                        <li><a href="#">Categorías</a></li>
+                        <li><a href="#">Cursos</a></li>
+                        <li><a href="#">Ofrecer Cursos</a></li>
+                        <li><a href="#">Reviews</a></li>
+                    </ul>
+                </div>
+                <div class="col-12 col-sm-6 text-center pt-4">
+                    <a data-toggle="modal" data-target="#exampleModal" href="#!"><button type="button"
+                            class="btn btn-danger btn-lg">LogIn / SignUp</button></a>
+                    <br>
+                    <a href="#"><i class="fab fa-discord botones"></i></a>
+                    <a href="#"><i class="fab fa-twitter botones"></i></a>
+                    <a href="#"><i class="fab fa-facebook botones"></i></a>
+                    <a href="#"><i class="fab fa-instagram botones"></i></a>
+                </div>
+            </div>
+            <div class="row text-center m-0 p-2">
+                <p class="mx-auto">2020 &copy; Diseñado y desarrolado por estudiantes de Rolling Code School</p>
+            </div>
+        </div>
+    </footer>
     <!-- Modal LOGIN-->
+
     <div class="modal" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
         <div class="modal-dialog modal-sm" role="document">
             <div class="modal-content modal-sm">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel"><span class="color-rosa">Curs</span><span
-                            class="color-gris">On</span></h5>
+                    <img src="./img/logoModal.png" alt="logo curson" class="img-fluid">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -198,6 +228,9 @@
                         <label for="exampleDropdownFormPassword1">Password</label>
                         <input type="password" class="form-control" id="inputPassword" placeholder="Password">
                     </div>
+                </div>
+                <div class="text-center">
+                    <h6>Aún no tenés cuenta? <a href="#">Registrate</a></h6>
                 </div>
                 <div class="modal-footer display-flex justify-content-center ">
                     <button type="button" class="btn btn-dark" data-dismiss="modal"
