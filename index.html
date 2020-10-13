@@ -103,27 +103,20 @@
             <div class="row pt-2 pb-2 pl-0 pr-0">
                 <h3>CURSOS POR CATEGORÍAS</h3>
             </div>
-            <br>
             <!-- BOTONES DE CATEGORIAS -->
             <div class="row">
-                <!-- <div class="col-lg-2">
-                    <div class="btn-group-vertical boton" role="group" aria-label="Button group with nested dropdown">
-                        <button type="button" class="btn btn-primary boton">Programación</button>
-                        <button type="button" class="btn btn-primary boton">Carpintería</button>
-                        <button type="button" class="btn btn-primary boton">Marketing</button>
-                        <button type="button" class="btn btn-primary boton">Diseño</button>
-                    </div>
-                </div> -->
-                <div class="dropdown">
-                    <button class="btn-primary boton dropdown-toggle" type="button" id="dropdownMenuButton"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Categorías
-                    </button>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item btn-primary boton" href="#">Programación</a>
-                        <a class="dropdown-item btn-primary boton" href="#">Carpintería</a>
-                        <a class="dropdown-item btn-primary boton" href="#">Marketing</a>
-                        <a class="dropdown-item btn-primary boton" href="#">Diseño</a>
+                <div class="col-lg-2">
+                    <div class="dropdown">
+                        <button class="btn-primary boton dropdown-toggle" type="button" id="dropdownMenuButton"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Categorías
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item btn-primary boton" id="programacion" href="#">Programación</a>
+                            <a class="dropdown-item btn-primary boton" id="carpinteria" href="#">Carpintería</a>
+                            <a class="dropdown-item btn-primary boton" id="marketing" href="#">Marketing</a>
+                            <a class="dropdown-item btn-primary boton" id="diseño" href="#">Diseño</a>
+                        </div>
                     </div>
                 </div>
                 <!-- TARJETAS DE CATEGORIAS -->
@@ -139,7 +132,10 @@
                                     <p class="card-text">En este curso aprenderás conocimientos y técnicas del paquete
                                         Office.
                                     </p>
-                                    <a href="#" class="btn btn-primary">Ver Más</a>
+                                    <button type="button" class="btn btn-primary float-right" data-toggle="modal"
+                                        data-target="#modalVerMas">
+                                        Ver Más
+                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -153,7 +149,10 @@
                                     <p class="card-text">Un curso Práctico y didáctico con las mejores técnicas de la
                                         actualidad.
                                     </p>
-                                    <a href="#" class="btn btn-primary">Ver Más</a>
+                                    <button type="button" class="btn btn-primary float-right" data-toggle="modal"
+                                        data-target="#modalVerMas">
+                                        Ver Más
+                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -196,75 +195,95 @@
                             <h5 class="card-title"><strong> Aprende Carpintería Online</strong></h5>
                             <span class="badge badge-success">Principiante</span>
                             <p class="card-text">En este curso aprenderás los conocimientos básicos de carpintería.</p>
-                            <a href="#" class="btn btn-primary float-right">Ver Más</a>
+                            <button type="button" class="btn btn-primary float-right" data-toggle="modal"
+                                data-target="#modalVerMas">
+                                Ver Más
+                            </button>
                         </div>
                     </div>
                 </div>
                 <!-- TARJETA 2 FULLSTACK-->
                 <div class="col-12 col-md-6 col-lg-4">
                     <div class="card">
-                        <img src="./imagenes/fullstack.png" class="card-img-top" alt="...">
+                        <img src="https://picsum.photos/id/1/400/300" class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title">Curso de Fullstack</h5>
                             <span class="badge badge-success">Principiante</span>
                             <p class="card-text">Aprenderás de cero los elementos básicos de htlm, css y javascript.
                             </p>
-                            <a href="#" class="btn btn-primary float-right">Ver Más</a>
+                            <button type="button" class="btn btn-primary float-right" data-toggle="modal"
+                                data-target="#modalVerMas">
+                                Ver Más
+                            </button>
                         </div>
                     </div>
                 </div>
                 <!-- TARJETA 3 MARKETING-->
                 <div class="col-12 col-md-6 col-lg-4">
                     <div class="card">
-                        <img src="./imagenes/curso de marketing.png" class="card-img-top" alt="...">
+                        <img src="https://picsum.photos/id/1/400/300" class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title">Curso de Marketing Digital</h5>
                             <span class="badge badge-secondary">Avanzado</span>
                             <p class="card-text">Perfeccioná tu marca e imágen dentro del mercado laboral online.</p>
-                            <a href="#" class="btn btn-primary float-right">Ver Más</a>
+                            <button type="button" class="btn btn-primary float-right" data-toggle="modal"
+                                data-target="#modalVerMas">
+                                Ver Más
+                            </button>
                         </div>
                     </div>
                 </div>
                 <!-- TARJETA 4 INGLES -->
                 <div class="col-12 col-md-6 col-lg-4">
                     <div class="card">
-                        <img src="./imagenes/curso_ingles.png" class="card-img-top" alt="...">
+                        <img src="https://picsum.photos/id/1/400/300" class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title">Curso de Ingles</h5>
                             <span class="badge badge-warning">Intermedio</span>
                             <p class="card-text">Nuestro programa ofrece una forma rápida y eficaz para mejorar tus
                                 conocimientos del idioma</p>
-                            <a href="#" class="btn btn-primary float-right">Ver Más</a>
+                            <button type="button" class="btn btn-primary float-right" data-toggle="modal"
+                                data-target="#modalVerMas">
+                                Ver Más
+                            </button>
                         </div>
                     </div>
                 </div>
                 <!-- TARJETA 5 E-COMERCE-->
                 <div class="col-12 col-md-6 col-lg-4">
                     <div class="card">
-                        <img src="./imagenes/e comerce.png" class="card-img-top" alt="...">
+                        <img src="https://picsum.photos/id/1/400/300" class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title">Curso de E-comerce</h5>
                             <span class="badge badge-warning">Intermedio</span>
                             <p class="card-text">Aprendé a gestionar de manera integral una tienda online, con las
                                 mejores estrategias orientadas a venta online.</p>
-                            <a href="#" class="btn btn-primary float-right">Ver Más</a>
+                            <button type="button" class="btn btn-primary float-right" data-toggle="modal"
+                                data-target="#modalVerMas">
+                                Ver Más
+                            </button>
                         </div>
                     </div>
                 </div>
                 <!-- TARJETA 6 PROGRAMACION-->
                 <div class="col-12 col-md-6 col-lg-4">
                     <div class="card">
-                        <img src="./imagenes/curso programacion.png" class="card-img-top" alt="...">
+                        <img src="https://picsum.photos/id/1/400/300" class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title">Curso de Programación</h5>
                             <span class="badge badge-secondary">Avanzado</span>
                             <p class="card-text">Perfeccioná y domina los lenguajes de código, herramientas,
                                 arquitectura, bases de datos y más.</p>
-                            <a href="#" class="btn btn-primary float-right">Ver Más</a>
+                            <!-- <a href="#" data-toggle="modalVerMas" data-target="#modalVerMas" class="btn btn-primary float-right">Ver Más</a> -->
+                            <button type="button" class="btn btn-primary float-right" data-toggle="modal"
+                                data-target="#modalVerMas">
+                                Ver Más
+                            </button>
                         </div>
                     </div>
                 </div>
             </div>
+            <!-- PAGINACION -->
             <div class="row">
                 <div class="col">
                     <nav aria-label="Page navigation example">
@@ -286,8 +305,62 @@
                     </nav>
                 </div>
             </div>
+            <!-- FIN PAGINACION -->
         </div>
     </section>
+    <!-- MODAL DE LOS BOTONES "VER MÁS" -->
+    <div class="modal fade left" id="modalVerMas" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-notify modal-info modal-side modal-top-left" role="document">
+            <!--Content-->
+            <div class="modal-content">
+                <!--Header-->
+                <div class="modal-header">
+                    <div class="nombreCurso">
+                        <p class="heading lead">Nombre del Curso</p>
+                    </div>
+
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true" class="white-text">&times;</span>
+                    </button>
+                </div>
+
+                <!--Body-->
+                <div class="modal-body">
+
+                    <img src="https://picsum.photos/id/1/500/200" id="imagenModal" alt="" class="img-fluid">
+
+                    
+                        <span class="badge badge-warning categorias">categoria</span>
+                    
+                        <span class="badge badge-primary fecha">Inicia 15/10/20</span>
+                
+                        <span class="badge badge-pill badge-info cupos">Quedan 3 cupos</span>
+                    
+
+                    <div class="text-center">
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Debitis incidunt delectus non atque
+                            quaerat enim hic aperiam sit sint adipisci dolores molestias minus soluta, accusamus
+                            explicabo, consequuntur id et dolorum vitae facere aut placeat rerum, nobis culpa.
+                            Perferendis magnam eos rem, dolor odit corporis voluptatibus alias, iusto sunt
+                            exercitationem repellat?</p>
+                    </div>
+                </div>
+
+                <!--Footer-->
+                <div class="modal-footer justify-content-center">
+                    <a href="" type="button" class="btn btn-primary">Inscribirse <i class="far fa-user ml-1 white-text"></i></a>
+                    <a type="button" class="btn btn-outline-info waves-effect" data-dismiss="modal">Cancelar</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- BOTONES MODAL -->
+    <div class="text-center">
+        <a href="" class="btn btn-default btn-rounded" data-toggle="modal" data-target="#sideModalTLInfo">Launch
+            Modal Info <i class="far fa-eye ml-1"></i></a>
+    </div>
+    <!-- FIN DEL MODAL -->
     <!-- TERMINAN LOS CURSOS! -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"

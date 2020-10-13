@@ -93,4 +93,17 @@
 /* BOTON DE LA CATEGORIA */
 .boton{
     background-color: #2B2D42 !important;
+    color: #4FB99F !important;
+}
+
+/* MODAL */
+/* header */
+.modal-header{
+    background-color:  #2B2D42;
+    color: #8D99AE;
+}
+
+/* BOTON MODAL */
+.btn-outline-info{
+    background-color: #2B2D42 !important;
 }
