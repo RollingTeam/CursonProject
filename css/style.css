@@ -1,3 +1,9 @@
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
 * a{
     text-decoration: none;
 }
@@ -99,4 +105,7 @@ ul li a:hover{
 .logo{
     width: 60%;
     height: 60%;
+}
+.hmin{
+    min-height: 100vh;
 }
