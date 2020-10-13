@@ -65,6 +65,19 @@ function validarAcceso(){
                 //alert("ERES UN ADMINISTRADOR")
             }else{
                 //alert("NO ERES UN ADMINISTRADOR")
+                //BORRAR BOTON LOGUIN y MOSTRAR BOTON DE PUBLiCAR CURSO
+                let publicarLogIn = document.getElementById('publicarLogIn')
+                botonesPublicar.removeChild(publicarLogIn)
+                let btnPublicar = document.createElement('button')
+                btnPublicar.innerText = 'Publicar Curso'
+                // btnPublicar.setAttribute('id','formPublicarCurso')
+                btnPublicar.className = 'btn cursonBtn'
+                botonesPublicar.appendChild(btnPublicar)
+                btnPublicar.addEventListener('click', function(e){
+                    let formPublicar = document.getElementById('formPublicarCurso')
+                    formPublicar.setAttribute('aria-hidden','false')
+                })
+                
                 // MOSTRAR BOTON PARA CARGAR REVIEWS Y ACTUALIZAR LO Q SERIA EL PERFIL
                 let btnAddReviews= document.createElement("button")
                 btnAddReviews.innerText="Nueva Review"

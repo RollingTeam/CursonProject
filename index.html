@@ -181,9 +181,8 @@
             </div>
             <hr>
     </main>
-
     <!-- Inicio Seccion Publica tu curso -->
-    <div class="container">
+    <div class="container" id="mainPublicarContainer">
         <div class="row text-center mb-4">
             <div class="col">
                 <h2>¿Tenés un curso para ofrecer?</h2>
@@ -233,8 +232,8 @@
             </div>
         </div>
         <div class="row text-center mb-4">
-            <div class="col">
-                <button class="btn cursonBtn" data-toggle="modal" data-target="#formPublicarCurso">Publicar mi curso</button>
+            <div class="col" id="botonesPublicar">
+                <button class="btn cursonBtn" data-toggle="modal" data-target="#exampleModal" id="publicarLogIn">Log In</button>
             </div>
         </div>
     </div>
@@ -285,7 +284,7 @@
         </div>
     </div>
     <!-- Inicio Modal Publica tu curso -->
-    <div class="modal" tabindex="-1" id="formPublicarCurso">
+    <div class="modal" tabindex="-1" id="formPublicarCurso" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content" style="background-color: #EDF2F4;">
             <div class="modal-header text text-center">
