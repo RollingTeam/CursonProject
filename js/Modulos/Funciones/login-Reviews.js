@@ -68,11 +68,9 @@ function validarAcceso(){
                 //BORRAR BOTON LOGUIN y MOSTRAR BOTON DE PUBLiCAR CURSO
                 let publicarLogIn = document.getElementById('publicarLogIn')
                 botonesPublicar.removeChild(publicarLogIn)
-                
+
                //Haciendo visible el Boton para Publicar Curso
                 document.getElementById('enviarSolicitud').style = 'display:inline-block'
-                let enviarSolicitud = document.getElementsById('enviarSolicitud')
-                enviarSolicitud.className='btn cursonBtn'
                 
                 // MOSTRAR BOTON PARA CARGAR REVIEWS Y ACTUALIZAR LO Q SERIA EL PERFIL
                 let btnAddReviews= document.createElement("button")
