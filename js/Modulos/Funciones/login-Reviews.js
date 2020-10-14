@@ -174,7 +174,13 @@ function validarAcceso(){
                     mainRevContainer.appendChild(formReview);
                     }
                 })
-
+                //CAMBIANDO EL NAV CON EL DROPDOWN DE OPCIONES PARA EL USER LOGUEADO
+                /**************ELIMINO LOS DOS BOTONES DE LOGIN Y SINGUP DEL NAV************/
+                let btnLogin= document.getElementById("LogInOpcion");
+                let btnSingUp= document.getElementById("SignUpOpcion")
+                ulNav.removeChild(btnLogin)
+                ulNav.removeChild(btnSingUp)
+                document.getElementById('menuUser').style = 'display:inline-block'
             }
         }else{
             alert("Usuario o contraseña invalido")

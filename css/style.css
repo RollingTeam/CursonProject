@@ -69,6 +69,10 @@
         margin-left: 16rem;
     }
 }
+.ocultarUser{
+    display:none
+}
+
 /* Reviews Section */
 .card-multicolor{
     border-top: 2px solid #2B2D42;
@@ -204,8 +208,6 @@ ul li a:hover{
     color: white !important;
     background-color: #EF233C !important;
 }
-/*****************************/
-
 .ocultarBtnSolicitud{
     display: none;
     color: white !important;
@@ -222,4 +224,6 @@ ul li a:hover{
 .ocultarBtnSolicitud:focus{
     outline: none;
 }
+/*****************************/
+
 

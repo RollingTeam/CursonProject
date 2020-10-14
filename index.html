@@ -15,15 +15,15 @@
 
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-blanco p-2">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03"
+        <button class="navbar-toggler nav-menuHamb" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03"
             aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <a class="navbar-brand" href="#"><img src="./img/logo-rect.png" class="img-fluid ml-2 logo" alt="logo"></a>
         <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-            <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+            <ul class="navbar-nav ml-auto mt-2 mt-lg-0" id="ulNav">
                 <li class="nav-item active">
-                    <a class="nav-link" href="index.html"><strong class="color-oscuro item-nav-d">Inicio</strong><span
+                    <a class="nav-link" href="#"><strong class="color-oscuro item-nav-d">Inicio</strong><span
                             class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item dropdown">
@@ -41,23 +41,22 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#reviews"><strong class="color-rosa item-nav-d">Reviews</strong></a>
                 </li>
-                <li class="nav-item pl-2 pr-2 pt-1">
+                <li class="nav-item pl-2 pr-2 pt-1" id="LogInOpcion">
                     <button data-toggle="modal" data-target="#exampleModal" type="button"
                         class="btn btn-outline-dark btn-sm">Log In</button>
                 </li>
-                <li class="nav-item pl-2 pr-2 pt-1">
+                <li class="nav-item pl-2 pr-2 pt-1" id="SignUpOpcion">
                     <button type="button" class="btn btn-outline-danger btn-sm">Sign Up</button>
                 </li>
-                <!--<li class="nav-item dropdown">
+                <li class="nav-item dropdown ocultarUser" id="menuUser">
                     <button class="nav-link icon-login item-nav-r ml-lg-5" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user fa-xl"></i></button>
                     <div class="dropdown-menu">
-                        <a class="dropdown-item color-oscuro" data-toggle="modal" data-target="#exampleModal" href="#!">Login</a>
-                        <a class="dropdown-item color-oscuro" href="#!">Registrarme</a>
                         <a class="dropdown-item color-oscuro" href="#!">Mi Perfil</a>
                         <a class="dropdown-item color-oscuro" href="#!">Mis Cursos</a>
                         <a class="dropdown-item color-oscuro" href="#!">Mis Favoritos</a>
+                        <a class="dropdown-item color-oscuro" href="#!">Log Out</a>
                     </div>
-                </li>-->
+                </li>
             </ul>
         </div>
         <div class="fixed-top">
