@@ -35,7 +35,7 @@ let regularUserB = new Usuario("BelenUser","654321","Belen","Neme","2","1","b@gm
 users.push(adminUserB,regularUserB);
 
 //Manejo del LocalStorage
-localStorage.clear();
+//localStorage.clear();
 localStorage.setItem("users",JSON.stringify(users));
 
 //Validar Acceso de los Usuarios
@@ -61,7 +61,7 @@ function validarAcceso(){
             localStorage.setItem("usuariosLogueados",JSON.stringify(userLogueados))
             if(u.userRole==="1"){
                 //MOSTRAR PAGINA DE ADMINISTRADOR
-                window.location.replace("file:///C:/Users/belen/OneDrive/Documentos/RollingCode/3I/CursonProject/adminHome.html")
+                window.location.assign("file:///C:/Users/belen/OneDrive/Documentos/RollingCode/3I/CursonProject/adminHome.html")
                 //alert("ERES UN ADMINISTRADOR")
             }else{
                 //alert("NO ERES UN ADMINISTRADOR")
@@ -294,9 +294,8 @@ let rev5= new Reviews("Diseño de Interior","Florencia","Me parecio un curso sup
 let rev6= new Reviews("Diseño de Moda","Florencia","Me parecio un curso super interesante","2020-08-06",5);
 let rev7= new Reviews("Diseño de Moda","Florencia","Me parecio un curso super interesante","2020-10-09",3);
 
-let reviews=[]
+let reviews=localStorage.setItem("reviews",JSON.stringify(reviews))||[];
 reviews.push(rev1,rev2,rev3,rev4,rev5,rev6,rev7)
-localStorage.setItem("reviews",JSON.stringify(reviews))
 
 //Cargar Reviews en la LandingPage
 
@@ -369,10 +368,4 @@ function ordenarReviews(){
     console.log(reviewsDB)
     let rev= JSON.stringify(reviewsDB)
     localStorage.setItem("reviews",rev)
-}
-
-function myFunction() {
-    setInterval(function(){
-    cargarReviews();
-    },60000)
 }
