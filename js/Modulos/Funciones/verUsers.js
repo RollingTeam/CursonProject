@@ -44,6 +44,7 @@ usuarios.push(adminUserB,regularUserB, regularUserF, adminUserR, profesorUserG);
 localStorage.clear()
 localStorage.setItem('usuarios', JSON.stringify(usuarios))
 
+let datos = []
 const numberUsers = document.getElementById('numberUsers')
 const activeUsers = document.getElementById('activeUsers')
 const inactveUsers = document.getElementById('inactiveUsers')
@@ -90,17 +91,21 @@ function verNumeroUsuarios(){
 
 }
 
+//Funcion suspender usuario: debe cambiar de estado "activo" a "inactivo"
+function suspenderUsuario (name) {
+    //buscar el usuario
+    console.log(name)
+    let persona = datos.find(function(user){
+        return user.userName === name
+    })
+    console.log(persona)
+    confirm(`${persona.userFirstName} ${persona.userLastName}`)
+    //cambiar la propiedad
+    //enviar nuevaente datos al local storage
+}
+
 //Se asigna a una variable el cuerpo de la tabla
 const tbody = document.getElementById('cuerpoTabla')
-
-
-//Funcion suspender usuario: debe cambiar de estado "activo" a "inactivo"
-// function suspenderUsuario(){
-//     let datos = JSON.parse(localStorage.getItem(usuarios))
-//     let suspender = confirm('Deseas suspender a ${}')
-//     )}
-
-
 
 // Se define la funcion cargar
 function cargarUsuarios () {
@@ -125,7 +130,7 @@ function cargarUsuarios () {
             <td>${usuario.userName}</td>
           <td>${estado}</td>
            <td>${role}</td>
-            <td><button class = "btn btn-danger" onclick= supenderUsuario(${usuario.index})>Suspender</button></td>
+            <td><button class = "btn btn-danger" onclick= "suspenderUsuario(${usuario.userName})">Suspender</button> <button class = "btn btn-primary">Alta Admin</button></td>
          </tr>`;
 
     tbody.innerHTML += tablaUsuario
