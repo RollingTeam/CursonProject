@@ -75,6 +75,14 @@
     object-fit: contain;
 } 
 
+.card-text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
 /*BOTONES*/
 .btn-primary{
     padding: 0.3rem 1rem !important;

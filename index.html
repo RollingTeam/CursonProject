@@ -181,20 +181,21 @@
 
     <!-- COMIENZO DE TODOS LOS CURSOS -->
 
-    <section id="cursos">
+    <section>
         <div class="container">
-            <div class="row">
+            <div class="row" >
                 <h3>TODOS LOS CURSOS</h3>
             </div>
-            <div class="row">
+            <div class="row" id="cursos">
                 <!-- TARJETA 1 CARPINTERIA-->
                 <div class="col-12 col-md-6 col-lg-4">
                     <div class="card">
-                        <img src="https://picsum.photos/id/1/400/300" class="card-img-top" alt="...">
+                        <img src="https://picsum.photos/id/1/400/300" class="card-img-top" id="imagenCursoInput" alt="...">
                         <div class="card-body">
-                            <h5 class="card-title"><strong> Aprende Carpintería Online</strong></h5>
-                            <span class="badge badge-success">Principiante</span>
-                            <p class="card-text">En este curso aprenderás los conocimientos básicos de carpintería.</p>
+                            <h5 class="card-title" id="nombreCursoInput"><strong> Aprende Carpintería Online</strong></h5>
+                            <span class="badge badge-success" id="dificultadCursoInput">Principiante</span><span class="badge badge-dark" id="categoriaCursoInput">categoria</span>
+                            <p class="card-text" id="contenidoCursoInput">En este curso aprenderás los conocimientos básicos de carpintería.</p>
+                            <span class="badge badge-info" id="fechaCursoInput">inicia 15/10/2020</span>
                             <button type="button" class="btn btn-primary float-right" data-toggle="modal"
                                 data-target="#modalVerMas">
                                 Ver Más
@@ -208,9 +209,10 @@
                         <img src="https://picsum.photos/id/1/400/300" class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title">Curso de Fullstack</h5>
-                            <span class="badge badge-success">Principiante</span>
+                            <span class="badge badge-success">Principiante</span><span class="badge badge-dark" id="categoriaCursoInput">categoria</span>
                             <p class="card-text">Aprenderás de cero los elementos básicos de htlm, css y javascript.
                             </p>
+                            <span class="badge badge-info" id="duracionCursoInput">6 meses</span>
                             <button type="button" class="btn btn-primary float-right" data-toggle="modal"
                                 data-target="#modalVerMas">
                                 Ver Más
@@ -224,7 +226,7 @@
                         <img src="https://picsum.photos/id/1/400/300" class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title">Curso de Marketing Digital</h5>
-                            <span class="badge badge-secondary">Avanzado</span>
+                            <span class="badge badge-secondary">Avanzado</span><span class="badge badge-dark" id="categoriaCursoInput">categoria</span>
                             <p class="card-text">Perfeccioná tu marca e imágen dentro del mercado laboral online.</p>
                             <button type="button" class="btn btn-primary float-right" data-toggle="modal"
                                 data-target="#modalVerMas">
@@ -239,7 +241,7 @@
                         <img src="https://picsum.photos/id/1/400/300" class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title">Curso de Ingles</h5>
-                            <span class="badge badge-warning">Intermedio</span>
+                            <span class="badge badge-warning">Intermedio</span><span class="badge badge-dark" id="categoriaCursoInput">categoria</span>
                             <p class="card-text">Nuestro programa ofrece una forma rápida y eficaz para mejorar tus
                                 conocimientos del idioma</p>
                             <button type="button" class="btn btn-primary float-right" data-toggle="modal"
@@ -255,7 +257,7 @@
                         <img src="https://picsum.photos/id/1/400/300" class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title">Curso de E-comerce</h5>
-                            <span class="badge badge-warning">Intermedio</span>
+                            <span class="badge badge-warning">Intermedio</span><span class="badge badge-dark" id="categoriaCursoInput">categoria</span>
                             <p class="card-text">Aprendé a gestionar de manera integral una tienda online, con las
                                 mejores estrategias orientadas a venta online.</p>
                             <button type="button" class="btn btn-primary float-right" data-toggle="modal"
@@ -271,7 +273,7 @@
                         <img src="https://picsum.photos/id/1/400/300" class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title">Curso de Programación</h5>
-                            <span class="badge badge-secondary">Avanzado</span>
+                            <span class="badge badge-secondary">Avanzado</span><span class="badge badge-dark" id="categoriaCursoInput">categoria</span>
                             <p class="card-text">Perfeccioná y domina los lenguajes de código, herramientas,
                                 arquitectura, bases de datos y más.</p>
                             <!-- <a href="#" data-toggle="modalVerMas" data-target="#modalVerMas" class="btn btn-primary float-right">Ver Más</a> -->
@@ -313,11 +315,11 @@
         aria-hidden="true">
         <div class="modal-dialog modal-notify modal-info modal-side modal-top-left" role="document">
             <!--Content-->
-            <div class="modal-content">
+            <div class="modal-content" id="modalTarjeta">
                 <!--Header-->
                 <div class="modal-header">
                     <div class="nombreCurso">
-                        <p class="heading lead">Nombre del Curso</p>
+                        <p class="heading lead" id="nombreCursoInput">Nombre del Curso</p>
                     </div>
 
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -328,17 +330,14 @@
                 <!--Body-->
                 <div class="modal-body">
 
-                    <img src="https://picsum.photos/id/1/500/200" id="imagenModal" alt="" class="img-fluid">
-
+                    <img src="https://picsum.photos/id/1/500/200" id="imagenCursoInput" alt="" class="img-fluid">
                     
-                        <span class="badge badge-warning categorias">categoria</span>
-                    
-                        <span class="badge badge-primary fecha">Inicia 15/10/20</span>
+                        <span class="badge badge-primary" id="duracionCursoInput">3 Meses</span>
                 
-                        <span class="badge badge-pill badge-info cupos">Quedan 3 cupos</span>
+                        <span class="badge badge-pill badge-info" id="cuposCursoInput">Quedan 3 cupos</span>
                     
 
-                    <div class="text-center mt-2">
+                    <div class="text-center mt-2" id="contenidoCursoInput">
                         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Debitis incidunt delectus non atque
                             quaerat enim hic aperiam sit sint adipisci dolores molestias minus soluta, accusamus
                             explicabo, consequuntur id et dolorum vitae facere aut placeat rerum, nobis culpa.
@@ -354,11 +353,6 @@
                 </div>
             </div>
         </div>
-    </div>
-    <!-- BOTONES MODAL -->
-    <div class="text-center">
-        <a href="" class="btn btn-default btn-rounded" data-toggle="modal" data-target="#sideModalTLInfo">Launch
-            Modal Info <i class="far fa-eye ml-1"></i></a>
     </div>
     <!-- FIN DEL MODAL -->
     <!-- TERMINAN LOS CURSOS! -->
