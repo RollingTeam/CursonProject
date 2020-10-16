@@ -1,3 +1,4 @@
+
 * a{
     text-decoration: none;
 }
@@ -256,3 +257,47 @@ ul li a:hover{
     font-size: 5rem;
 }
 
+/*********** CURSOS POR CATEGORIA - TODOS LOS CURSOS ***********/
+/* ESTILO DE LAS CARDS */
+.card-img-top{
+    width: 100%;
+    height: 15rem;
+    object-fit: contain;
+} 
+.card-curso{
+    border: 2px solid #2B2D42 !important;
+}
+/*BOTONES CARDS*/
+.btn-primary-curso{
+    padding: 0.3rem 1rem !important;
+    background-color: #E53253 !important;
+    color: #FFFFFF !important;
+    border: 1rem 1rem !important;
+}
+.btn-primary-curso:hover{
+    padding: 0.3rem 1rem !important;
+    background-color: #8D99AE !important;
+    color: #FFFFFF !important;
+    border: 1rem 1rem !important;
+}
+.btn-primary:focus{
+    outline: none !important;
+} 
+
+/* BOTON DE LA CATEGORIA */
+.boton{
+    background-color: #2B2D42 !important;
+    color: #4FB99F !important;
+}
+/* MODAL */
+/* header */
+/*.modal-header{
+    background-color:  #cdd2db;
+    color: #2B2D42;
+}*/
+
+/* BOTON MODAL */
+.btn-outline-info{
+    background-color: #2B2D42 !important;
+}
+/*******Fin Section Gabriel********/
