@@ -52,22 +52,22 @@ if (
     return ""
 }
 
- cursos = JSON.parse(localStorage.getItem("cursos")) || [] 
+cursos = JSON.parse(localStorage.getItem("cursos")) || [] 
  //Manejar de Forma Automática la asignacion del ID
- if(cursos.length < 1){
+if(cursos.length < 1){
     identificadorCurso = 1;
     console.log("El array estaba vacio, pase por aqui")
- }else{
+}else{
     let ultimoCurso = cursos[cursos.length-1]
     console.log(ultimoCurso)
     identificadorCurso= ultimoCurso.idCurso +1 
- }
+}
 
- let newCurso = new Cursos(identificadorCurso,nombreCurso.value,descripCurso.value,categoriaCruso.value,nivelCurso.value,cupoCurso.value,duracionCurso.value,imagenCurso.value)
- cursos.push(newCurso);
- localStorage.setItem("cursos",JSON.stringify(cursos))
- limpiarFormCurso();
- alert("El curso fue guardado en el Local Storage");
+let newCurso = new Cursos(identificadorCurso,nombreCurso.value,descripCurso.value,categoriaCruso.value,nivelCurso.value,cupoCurso.value,duracionCurso.value,imagenCurso.value)
+cursos.push(newCurso);
+localStorage.setItem("cursos",JSON.stringify(cursos))
+limpiarFormCurso();
+alert("El curso fue guardado en el Local Storage");
 cargarCursos();
 }
 
@@ -91,18 +91,18 @@ function limpiarFormCurso(){
 
 cargarCursos();
 function cargarCursos(){
-     cursos = localStorage.getItem("cursos")
-     let cursosDB = JSON.parse(cursos)
-     cursosContainer.innerHTML=""
-     for(let i=0 ; i< cursosDB.length ; i++){
-         while(i<6){
+    cursos = localStorage.getItem("cursos")
+    let cursosDB = JSON.parse(cursos)
+    cursosContainer.innerHTML=""
+    for(let i=0 ; i< cursosDB.length ; i++){
+        while(i<6){
             let cursoContenido= `<div class="col-12 col-md-6 col-lg-4">
             <div class="card card-curso m-2">
-                <img src="https://picsum.photos/id/1/400/300" class="card-img-top" alt="...">
+                <img src="https://picsum.photos/id/1/400/300" class="card-img-top img-fluid" alt="...">
                 <div class="card-body">
                     <h5 class="card-title"><strong>${cursosDB[i].nombreCurso}</strong></h5>
                     <span class="badge" id="badgeNivel">${cursosDB[i].nivelCurso}</span>
-                    <p class="card-text">${cursosDB[i].descripcionCurso}</p>
+                    <p class="card-text p-1">${cursosDB[i].descripcionCurso}</p>
                     <button onclick="mostrarModalCurso(${cursosDB[i].idCurso})" class="btn btn-primary-curso float-right" data-toggle="modal" data-target="#modalVerMas">
                     Ver Más
                     </button>
@@ -118,22 +118,22 @@ function cargarCursos(){
             }else if(cursosDB[i].nivelCurso=="Avanzado"){
                 badgeNivelColor.className="badge badge-secondary"
             }
-             i+=1
+            i+=1
         }
-     }
+    }
 }
 
 function mostrarModalCurso (idCurs){
     let cursosLS= JSON.parse(localStorage.getItem("cursos"))
     let cursoDB = cursosLS.find(function (cur) {
-      return cur.idCurso === idCurs;
+    return cur.idCurso === idCurs;
     });
 
     let modalForm= document.getElementById("modal-form-content");
     let contentModalForm= `
     <div class="modal-header">
         <div class="nombreCurso">
-            <p class="heading lead">${cursoDB.nombreCurso}</p>
+            <h5 class="modal-title" id="staticBackdropLabel">${cursoDB.nombreCurso}</h5>
         </div>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true" class="white-text">&times;</span>
