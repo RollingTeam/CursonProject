@@ -107,7 +107,7 @@ function cargarCursos(){
 
             let cursoContenido= `<div class="col-12 col-md-6 col-lg-4">
             <div class="card card-curso m-2">
-                <img src="https://picsum.photos/id/1/400/300" class="card-img-top" alt="...">
+                <img src="https://picsum.photos/id/1/400/300" class="card-img-top img-fluid" alt="...">
                 <div class="card-body">
                     <h5 class="card-title"><strong>${cursosDB[i].nombreCurso}</strong></h5>
                     ${badgeColor}
@@ -133,7 +133,7 @@ function mostrarModalCurso (idCurs){
 
     let modalForm= document.getElementById("modal-form-content");
     let contentModalForm= `
-    <div class="modal-header">
+    <div class="modal-header p-1">
         <div class="nombreCurso">
             <p class="heading lead">${cursoDB.nombreCurso}</p>
         </div>
