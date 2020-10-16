@@ -294,8 +294,9 @@ let rev5= new Reviews("Diseño de Interior","Florencia","Me parecio un curso sup
 let rev6= new Reviews("Diseño de Moda","Florencia","Me parecio un curso super interesante","2020-08-06",5);
 let rev7= new Reviews("Diseño de Moda","Florencia","Me parecio un curso super interesante","2020-10-09",3);
 
-let reviews=localStorage.setItem("reviews",JSON.stringify(reviews))||[];
+let reviews=[];
 reviews.push(rev1,rev2,rev3,rev4,rev5,rev6,rev7)
+localStorage.setItem("reviews",JSON.stringify(reviews))
 
 //Cargar Reviews en la LandingPage
 

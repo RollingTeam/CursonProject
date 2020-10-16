@@ -263,15 +263,14 @@
         <!-- FÍN DE CURSOS POR CATEGORÍAS -->
     
         <!-- COMIENZO DE TODOS LOS CURSOS -->
-    
+        
         <section id="cursos">
             <div class="container">
-                <div class="row">
-                    <h3>TODOS LOS CURSOS</h3>
-                </div>
-                <div class="row">
+                <hr class="bg-gris">
+                <h3 class="size-review color-rosa mb-4">Todos los Cursos</h3>
+                <div id="cursosContainer" class="row">
                     <!-- TARJETA 1 CARPINTERIA-->
-                    <div class="col-12 col-md-6 col-lg-4">
+                    <!--<div class="col-12 col-md-6 col-lg-4">
                         <div class="card">
                             <img src="https://picsum.photos/id/1/400/300" class="card-img-top" alt="...">
                             <div class="card-body">
@@ -285,7 +284,7 @@
                             </div>
                         </div>
                     </div>
-                    <!-- TARJETA 2 FULLSTACK-->
+                    <!-- TARJETA 2 FULLSTACK
                     <div class="col-12 col-md-6 col-lg-4">
                         <div class="card">
                             <img src="https://picsum.photos/id/1/400/300" class="card-img-top" alt="...">
@@ -301,7 +300,7 @@
                             </div>
                         </div>
                     </div>
-                    <!-- TARJETA 3 MARKETING-->
+                    <!-- TARJETA 3 MARKETING
                     <div class="col-12 col-md-6 col-lg-4">
                         <div class="card">
                             <img src="https://picsum.photos/id/1/400/300" class="card-img-top" alt="...">
@@ -316,7 +315,7 @@
                             </div>
                         </div>
                     </div>
-                    <!-- TARJETA 4 INGLES -->
+                    <!-- TARJETA 4 INGLES 
                     <div class="col-12 col-md-6 col-lg-4">
                         <div class="card">
                             <img src="https://picsum.photos/id/1/400/300" class="card-img-top" alt="...">
@@ -332,7 +331,7 @@
                             </div>
                         </div>
                     </div>
-                    <!-- TARJETA 5 E-COMERCE-->
+                    <!-- TARJETA 5 E-COMERCE
                     <div class="col-12 col-md-6 col-lg-4">
                         <div class="card">
                             <img src="https://picsum.photos/id/1/400/300" class="card-img-top" alt="...">
@@ -348,7 +347,7 @@
                             </div>
                         </div>
                     </div>
-                    <!-- TARJETA 6 PROGRAMACION-->
+                    <!-- TARJETA 6 PROGRAMACION
                     <div class="col-12 col-md-6 col-lg-4">
                         <div class="card">
                             <img src="https://picsum.photos/id/1/400/300" class="card-img-top" alt="...">
@@ -364,7 +363,7 @@
                                 </button>
                             </div>
                         </div>
-                    </div>
+                    </div>-->
                 </div>
                 <!-- PAGINACION -->
                 <div class="row">
@@ -396,7 +395,7 @@
             aria-hidden="true">
             <div class="modal-dialog modal-notify modal-info modal-side modal-top-left" role="document">
                 <!--Content-->
-                <div class="modal-content">
+                <div class="modal-content" id="modal-form-content">
                     <!--Header-->
                     <div class="modal-header">
                         <div class="nombreCurso">
@@ -432,16 +431,11 @@
     
                     <!--Footer-->
                     <div class="modal-footer justify-content-center">
-                        <a href="" type="button" class="btn btn-primary">Inscribirse <i class="far fa-user ml-1 white-text"></i></a>
+                        <a href="" type="button" class="btn btn-primary-curso">Inscribirse <i class="far fa-user ml-1 white-text"></i></a>
                         <a type="button" class="btn btn-outline-info waves-effect" data-dismiss="modal">Cancelar</a>
                     </div>
                 </div>
             </div>
-        </div>
-        <!-- BOTONES MODAL -->
-        <div class="text-center">
-            <a href="" class="btn btn-default btn-rounded" data-toggle="modal" data-target="#sideModalTLInfo">Launch
-                Modal Info <i class="far fa-eye ml-1"></i></a>
         </div>
         <!-- FIN DEL MODAL -->
         <!-- TERMINAN LOS CURSOS! -->
@@ -593,11 +587,11 @@
                                       </select>
                                 </div>
                                 <div class="form-group col-12 col-sm-12 col-md-6 col-md-6">
-                                    <label>Nivel de difcultad</label>
+                                    <label>Nivel del Curso</label>
                                     <select class="form-control" id="dificultadCursoInput">
-                                        <option>Facil</option>
+                                        <option>Principiante</option>
                                         <option>Intermedio</option>
-                                        <option>Dificil</option>
+                                        <option>Avanzado</option>
                                       </select>
                                 </div>
                             </div>
@@ -650,8 +644,6 @@
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-<!--<script src="js/Modulos/Funciones/Setup.js" type="module"></script>
-<script src="js/Modulos/Funciones/gestionarReviews.js" ></script>!-->
 <script src="js/Modulos/Funciones/login-Reviews.js"></script>
 <script src="js/Modulos/Funciones/gestionarCursos.js"></script>
     
