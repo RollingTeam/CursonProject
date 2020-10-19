@@ -41,8 +41,8 @@ let profesorUserG = new Usuario('profesorGabriel', '12345', 'Gabriel', 'Moreira'
 usuarios.push(adminUserB,regularUserB, regularUserF, adminUserR, profesorUserG);
 
 //manejo de local storage
-localStorage.clear()
-localStorage.setItem('usuarios', JSON.stringify(usuarios))
+// localStorage.clear()
+// localStorage.setItem('usuarios', JSON.stringify(usuarios))
 
 let datos = []
 const numberUsers = document.getElementById('numberUsers')
