@@ -133,7 +133,7 @@ function cargarUsuarios () {
             <td>${usuario.userName}</td>
             <td>${estado}</td>
             <td>${role}</td>
-            <td><button type="button" class = "btn btn-danger" onclick= "suspenderUsuario(${usuario.userName});">Suspender</button></td>
+            <td><button type="button" class = "btn btn-danger" onclick= "suspenderUsuario(${usuario.userName});">Suspender</button><button class = "btn btn-primary">Alta Admin</button></td></td>
         </tr>`;
 
     tbody.innerHTML += tablaUsuario
