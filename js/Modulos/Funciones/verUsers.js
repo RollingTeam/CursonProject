@@ -41,10 +41,16 @@ let profesorUserG = new Usuario('profesorGabriel', '12345', 'Gabriel', 'Moreira'
 usuarios.push(adminUserB,regularUserB, regularUserF, adminUserR, profesorUserG);
 
 //manejo de local storage
+<<<<<<< HEAD
 // localStorage.clear()
 // localStorage.setItem('usuarios', JSON.stringify(usuarios))
+=======
+//localStorage.clear()
+let datos = localStorage.getItem("usuarios") || []
+localStorage.setItem('usuarios', JSON.stringify(usuarios))
+>>>>>>> c47fced8f28084471385110b04ed19e46f2c24f0
 
-let datos = []
+//let datos = []
 const numberUsers = document.getElementById('numberUsers')
 const activeUsers = document.getElementById('activeUsers')
 const inactveUsers = document.getElementById('inactiveUsers')
@@ -91,6 +97,9 @@ function verNumeroUsuarios(){
 
 }
 
+//Se asigna a una variable el cuerpo de la tabla
+const tbody = document.getElementById('cuerpoTabla')
+
 //Funcion suspender usuario: debe cambiar de estado "activo" a "inactivo"
 function suspenderUsuario (name) {
     //buscar el usuario
@@ -104,8 +113,7 @@ function suspenderUsuario (name) {
     //enviar nuevaente datos al local storage
 }
 
-//Se asigna a una variable el cuerpo de la tabla
-const tbody = document.getElementById('cuerpoTabla')
+
 
 // Se define la funcion cargar
 function cargarUsuarios () {
@@ -125,13 +133,13 @@ function cargarUsuarios () {
                 role = 'Mentor'
                 break;
         }
-        let tablaUsuario=`<tr class="text-center">
+        let tablaUsuario =`<tr class="text-center">
         <th scope="row">${usuario.userFirstName} ${usuario.userLastName}</th>
             <td>${usuario.userName}</td>
-          <td>${estado}</td>
-           <td>${role}</td>
-            <td><button class = "btn btn-danger" onclick= "suspenderUsuario(${usuario.userName})">Suspender</button> <button class = "btn btn-primary">Alta Admin</button></td>
-         </tr>`;
+            <td>${estado}</td>
+            <td>${role}</td>
+            <td><button type="button" class = "btn btn-danger" onclick= "suspenderUsuario(${usuario.userName});">Suspender</button><button class = "btn btn-primary">Alta Admin</button></td></td>
+        </tr>`;
 
     tbody.innerHTML += tablaUsuario
     })
