@@ -52,24 +52,54 @@ function verNumeroCursos(){
 
 const tbody = document.getElementById('cuerpoTablaCursos')
 
-/*//Funcion suspender usuario: debe cambiar de estado "activo" a "inactivo"
-function suspenderUsuario (name) {
-    //buscar el usuario
-    console.log(name)
-    let persona = datos.find(function(user){
-        return user.userName === name
+function eliminarCurso(idCurso){
+    let cursoSearch = datos.find(function(cur){
+        return cur.idCurso === idCurso
     })
-    console.log(persona)
-    confirm(`${persona.userFirstName} ${persona.userLastName}`)
-    //cambiar la propiedad
-    //enviar nuevaente datos al local storage
-}*/
+
+    let newArray = datos.filter(function (cur) {
+        return cur.idCurso != cursoSearch.idCurso;
+    });
+
+    let valor = confirm(`¿Esta seguro de eliminar el curso ${cursoSearch.nombreCurso}?`)
+    if(valor){
+        localStorage.setItem("cursos", JSON.stringify(newArray));
+        cargarTablaCursos();
+    }
+}
+
+function suspenderCurso(idCurso){
+    let cursoSearch = datos.find(function(cur){
+        return cur.idCurso === idCurso
+    })
+    let valor = confirm(`¿Esta seguro de inactivar el curso ${cursoSearch.nombreCurso}?`)
+    if(valor){
+        cursoSearch.estadoCurso = 3
+        console.log(cursoSearch.estadoCurso)
+        localStorage.setItem("cursos", JSON.stringify(datos));
+        cargarTablaCursos();
+        verNumeroCursos()
+    }
+}
+
+function activarCurso(idCurso){
+    let cursoSearch = datos.find(function(cur){
+        return cur.idCurso === idCurso
+    })
+    let valor = confirm(`¿Esta seguro de activar el curso ${cursoSearch.nombreCurso}?`)
+    if(valor){
+        cursoSearch.estadoCurso = 1
+        console.log(cursoSearch.estadoCurso)
+        localStorage.setItem("cursos", JSON.stringify(datos));
+        cargarTablaCursos();
+        verNumeroCursos();
+    }
+}
 
 function cargarTablaCursos () {
     tbody.innerHTML = ""
     datos = JSON.parse(localStorage.getItem('cursos'))
     datos.map((curso) => {
-        //let estado = curso.estadoCurso== '1' ? 'Activo' : 'Inactivo';
         let estadoCurso = '';
         switch (curso.estadoCurso){
             case 1:
@@ -82,12 +112,25 @@ function cargarTablaCursos () {
                 estadoCurso = 'Inactivo'
                 break;
         }
+        let btnSuspender
+        let btnActivar
+        if(curso.estadoCurso==1){
+            btnSuspender = `<button type="button" class = "btn btn-danger" onclick= "suspenderCurso(${curso.idCurso});">Suspender</button>`
+        }else{
+            btnSuspender= ""
+        }
+        if(curso.estadoCurso==3){
+            btnActivar = `<button type="button" class = "btn btn-danger" onclick= "activarCurso(${curso.idCurso});">Activar</button>`
+        }else{
+            btnActivar = ""
+        }
+
         let tablaCurso =`<tr class="text-center">
         <th scope="row">${curso.nombreCurso}</th>
             <td>${curso.categoriaCurso}</td>
             <td>${curso.cupoCurso}</td>
             <td>${estadoCurso}</td>
-            <td><button type="button" class = "btn btn-danger" onclick= "EliminarCurso(${curso.idCurso});">Suspender</button></td>
+            <td><button type="button" class = "btn btn-danger mr-1" onclick= "eliminarCurso(${curso.idCurso});">Eliminar</button>${btnSuspender} ${btnActivar}</td>
         </tr>`;
 
     tbody.innerHTML += tablaCurso
