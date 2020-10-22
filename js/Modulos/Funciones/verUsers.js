@@ -24,33 +24,29 @@ class Usuario{
 //     {estadoId:"2", estadoName:"Inactivo"},
 // ]
 
-let usuarios = []
+let usuarios = localStorage.getItem('usuarios') || []
 
-let adminUserB = new Usuario("belenadmin","12345","Belen","Neme","1","1","belen@gmail.com");
-//adminUserB.userRole=Roles[0]
+// let adminUserB = new Usuario("belenadmin","12345","Belen","Neme","1","1","belen@gmail.com");
+// //adminUserB.userRole=Roles[0]
 
-let regularUserB = new Usuario("BelenUser","654321","Belen","Neme","2","2","b@gmail.com");
-//regularUserB.userRole=Roles[1]
+// let regularUserB = new Usuario("BelenUser","654321","Belen","Neme","2","2","b@gmail.com");
+// //regularUserB.userRole=Roles[1]
 
-let regularUserF = new Usuario("FlorUser","654321","Flor","Pistan","2","2","FlorUser@gmail.com");
+// let regularUserF = new Usuario("FlorUser","654321","Flor","Pistan","2","2","FlorUser@gmail.com");
 
-let adminUserR = new Usuario('rodrigoM', '12345', 'Rodrigo', 'Martinez', '1', '1', 'rodrigoM@gmail.com')
+// let adminUserR = new Usuario('rodrigoM', '12345', 'Rodrigo', 'Martinez', '1', '1', 'rodrigoM@gmail.com')
 
-let profesorUserG = new Usuario('profesorGabriel', '12345', 'Gabriel', 'Moreira', '2', '2', 'profesorG@gmail.com')
+// let profesorUserG = new Usuario('profesorGabriel', '12345', 'Gabriel', 'Moreira', '2', '2', 'profesorG@gmail.com')
 
-usuarios.push(adminUserB,regularUserB, regularUserF, adminUserR, profesorUserG);
+// usuarios.push(adminUserB,regularUserB, regularUserF, adminUserR, profesorUserG);
 
 //manejo de local storage
-<<<<<<< HEAD
 // localStorage.clear()
 // localStorage.setItem('usuarios', JSON.stringify(usuarios))
-=======
-//localStorage.clear()
-let datos = localStorage.getItem("usuarios") || []
-localStorage.setItem('usuarios', JSON.stringify(usuarios))
->>>>>>> c47fced8f28084471385110b04ed19e46f2c24f0
 
-//let datos = []
+let datos = JSON.parse(usuarios)
+//Se asigna a una variable el cuerpo de la tabla
+const tbody = document.getElementById('cuerpoTabla')
 const numberUsers = document.getElementById('numberUsers')
 const activeUsers = document.getElementById('activeUsers')
 const inactveUsers = document.getElementById('inactiveUsers')
@@ -59,14 +55,14 @@ const mentorUsers = document.getElementById('mentorUsers')
 function verNumeroUsuarios(){
     //NUMERO TOTAL DE USUARIOS
     numberUsers.innerHTML = "";
-    let numeroTotal = usuarios.length
+    let numeroTotal = datos.length
     let total = `<span class = "statisticsData">${numeroTotal}</span>`
     numberUsers.innerHTML = total
 
     //NUMERO DE USUARIOS ACTIVOS
     activeUsers.innerHTML = "";
     let totalActivos = 0;
-    usuarios.map(function (user){
+    datos.map(function (user){
         if (user.userStatus === '1'){
             totalActivos += 1
         } else {
@@ -85,7 +81,7 @@ function verNumeroUsuarios(){
     // NUMERO DE USUARIOS MENTORES
     mentorUsers.innerHTML = "";
     let totalMentores = 0;
-    usuarios.map(function(user){
+    datos.map(function(user){
         if(user.userRole === '3'){
             totalMentores += 1;
         } else {
@@ -97,28 +93,146 @@ function verNumeroUsuarios(){
 
 }
 
-//Se asigna a una variable el cuerpo de la tabla
-const tbody = document.getElementById('cuerpoTabla')
+//FUNCIONES PARA FILTRAR
+// filtrarDatos = () =>{
+//     tbody.innerHTML = ''
+//     let arrayFiltrado = [];
+//     let estado = document.getElementById('estado')
+//     let role = document.getElementById('role')
+    
+//     //Se filtra y guardan en un array los objetos que coinciden con el value del select
+//     let personaEstado = datos.filter(function (user){
+//                 return user.userStatus === estado.value
+//     })
 
-//Funcion suspender usuario: debe cambiar de estado "activo" a "inactivo"
-function suspenderUsuario (name) {
-    //buscar el usuario
-    console.log(name)
-    let persona = datos.find(function(user){
-        return user.userName === name
+//     let personaRole = datos.filter(function (user){
+//                 return user.userRole === role.value
+//     })
+
+//     for(i=0; i<personaEstado.length; i++){
+//         for(j=0;j<personaRole.length; j++){
+//             if(personaEstado[i] === personaRole[j]){
+//                 arrayFiltrado.push(personaEstado[i])
+//                 console.log(arrayFiltrado)
+//             }
+//         }
+//     }
+
+//     //Se hace un map para cargar de forma dinamica los usuarios que coinciden con la busqueda
+//     arrayFiltrado.map(function(user){
+//         let estado = user.userStatus== '1' ? 'Activo' : 'Inactivo';
+//         let role = '';
+//         switch (user.userRole){
+//             case '1':
+//                 role = 'Admin'
+//                 break;
+//             case '2':
+//                 role = 'Estudiante'
+//                 break;
+//             case '3':
+//                 role = 'Mentor'
+//                 break;
+//         }
+//         let tablaStatus = `<tr class="text-center">
+//     <th scope="row">${user.userFirstName} ${user.userLastName}</th>
+//         <td>${user.userName}</td>
+//         <td>${estado}</td>
+//         <td>${role}</td>
+//         <td><button type="button" class = "btn btn-danger" onclick= "suspenderUsuario(${user.userName});">Suspender</button><button class = "btn btn-primary">Alta Admin</button></td></td>
+//     </tr>`
+
+//     tbody.innerHTML += tablaStatus  
+//     })
+    
+//     if (estado.value === '0'){
+//         cargarUsuarios()
+//     }
+// }
+
+
+// FUNCIONES DE FILTROS
+filtrarDatos = () =>{
+    let estado = document.getElementById('estado')
+    let role = document.getElementById('role')
+    console.log(estado.value)
+    let busquedaEstado = datos.filter(function (user){
+                return (user.userStatus === estado.value && user.userRole === role.value)
     })
-    console.log(persona)
-    confirm(`${persona.userFirstName} ${persona.userLastName}`)
-    //cambiar la propiedad
-    //enviar nuevaente datos al local storage
+    console.log(busquedaEstado)
+    
+    if (busquedaEstado != false){
+        datos = busquedaEstado
+    } else {
+        datos = JSON.parse(localStorage.getItem('usuarios')) || [];
+    }
+
+    cargarUsuarios()
 }
+
+
+//FUNCIONES DE USUARIO
+function suspenderUsuario (name) {
+    
+    datos = JSON.parse(localStorage.getItem('usuarios')) || [];
+
+    //buscar el usuario
+    let persona = datos.find(function(user){
+        if(user.userName === name) {
+            let confirmar = confirm(`¿Deseas suspender a ${user.userFirstName} ${user.userLastName}?`)
+            if (confirmar){
+                return user.userStatus='2'
+            }
+        }
+    })
+    
+    localStorage.setItem('usuarios', JSON.stringify(datos))
+    cargarUsuarios()
+    verNumeroUsuarios()
+}
+
+function habilitarUsuario (name) {
+    
+    datos = JSON.parse(localStorage.getItem('usuarios')) || []
+
+    //buscar el usuario
+    let persona = datos.find(function(user){
+        if(user.userName === name) {
+            let confirmar = confirm(`¿Deseas habilitar a ${user.userFirstName} ${user.userLastName}?`)
+            if (confirmar){
+                return user.userStatus='1'
+            }
+        }
+    })
+    
+    localStorage.setItem('usuarios', JSON.stringify(datos))
+    cargarUsuarios()
+    verNumeroUsuarios()
+}
+
+function altaAdmin (name) {
+
+    datos = JSON.parse(localStorage.getItem('usuarios')) || []
+
+    let persona = datos.find(function(user){
+        if(user.userName === name && user.userRole != '1') {
+            let confirmar = confirm(`¿Deseas convertir a ${user.userFirstName} ${user.userLastName} en administrador?`)
+            if (confirmar){
+                return user.userRole='1'
+            }
+        }
+    })
+    
+    localStorage.setItem('usuarios', JSON.stringify(datos))
+    cargarUsuarios()
+    verNumeroUsuarios()
+}
+
 
 
 
 // Se define la funcion cargar
 function cargarUsuarios () {
     tbody.innerHTML = ""
-    datos = JSON.parse(localStorage.getItem('usuarios'))
     datos.map((usuario) => {
         let estado = usuario.userStatus== '1' ? 'Activo' : 'Inactivo';
         let role = '';
@@ -133,14 +247,30 @@ function cargarUsuarios () {
                 role = 'Mentor'
                 break;
         }
+        let btnSuspender;
+        let btnHabilitar;
+        let btnAlta;
+
+        if(usuario.userStatus === '1'){
+            btnSuspender = `<button type = 'button' class='btn btn-danger mr-2' onclick = "suspenderUsuario('${usuario.userName}')">Suspender</button>`
+            btnAlta = `<button type = 'button' class = 'btn btn-info mr-2' onclick = "altaAdmin('${usuario.userName}')">Alta admin</button>`
+        } else {
+            btnSuspender = ""
+            btnAlta = ""
+        }
+        if(usuario.userStatus === '2'){
+            btnHabilitar = `<button type = 'button' class='btn btn-success  ' onclick = "habilitarUsuario('${usuario.userName}')">Habilitar</button>`
+        } else {
+            btnHabilitar = ""
+        }
+        
         let tablaUsuario =`<tr class="text-center">
         <th scope="row">${usuario.userFirstName} ${usuario.userLastName}</th>
             <td>${usuario.userName}</td>
             <td>${estado}</td>
             <td>${role}</td>
-            <td><button type="button" class = "btn btn-danger" onclick= "suspenderUsuario(${usuario.userName});">Suspender</button><button class = "btn btn-primary">Alta Admin</button></td></td>
+            <td>${btnHabilitar}${btnSuspender}${btnAlta}</td>
         </tr>`;
-
     tbody.innerHTML += tablaUsuario
     })
 }

@@ -92,8 +92,23 @@
                             <tr>
                                 <th scope="col">Nombre</th>
                                 <th scope="col">Usuario</th>
-                                <th scope="col">Estado</th>
-                                <th scope="col">Role</th>
+                                <th scope="col">Estado: 
+                                    <!-- <select name="estado" id="estado" onchange="filtrarEstado()"> -->
+                                    <select name="role" id="estado" onchange="filtrarDatos()">
+                                        <option value="0">Todos</option>
+                                        <option value="1">Activo</option>
+                                        <option value="2">Inactivo</option>
+                                    </select>
+                                </th>
+                                <th scope="col">Rol: 
+                                    <!-- <select name="role" id="role" onchange="filtrarRole()"> -->
+                                    <select name="role" id="role" onchange="filtrarDatos()">
+                                        <option value="0">Todos</option>
+                                        <option value="1">Admin</option>
+                                        <option value="2">Estudiante</option>
+                                        <option value="3">Profesor</option>
+                                    </select>
+                                </th>
                                 <th scope="col">Acciones</th>
                             </tr>
                           </thead>
