@@ -4,6 +4,10 @@ body {
     margin: 0;
     padding: 0;
 }
+.hmin {
+    min-height: 100%;
+}
+
 * a{
     text-decoration: none;
 }
