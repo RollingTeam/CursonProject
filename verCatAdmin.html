@@ -37,8 +37,13 @@
                         <a class="dropdown-item color-oscuro" href="#!">Ver Cursos</a>
                     </div>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#"><strong class="color-oscuro item-nav-r">Categorías</strong></a>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle item-nav-d mx-lg-4" data-toggle="dropdown" href="#" role="button"
+                        aria-haspopup="true" aria-expanded="false"><strong class="color-oscuro">Categorías</strong></a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item color-oscuro" href="crearCatAdmin.html">Nueva Categoría</a>
+                        <a class="dropdown-item color-oscuro" href="#!">Ver Categorías</a>
+                    </div>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#"><strong class="color-rosa item-nav-d">Solicitudes</strong></a>
@@ -79,10 +84,12 @@
                                     <th scope="col">#</th>
                                     <th scope="col">Nombre</th>
                                     <th scope="col">Estado</th>
-                                    <th scope="col"></th>
+                                    <!-- <th scope="col"></th> -->
                                 </tr>
                             </thead>
-                            <tbody id="cuerpoCat"></tbody>
+                            <tbody id="cuerpoTabla">
+
+                            </tbody>
                         </table>
                     </div>
                 </div>

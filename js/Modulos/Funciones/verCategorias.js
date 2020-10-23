@@ -24,3 +24,6 @@ let datos = localStorage.getItem("categorias") || []
 localStorage.setItem("categorias", JSON.stringify(categorias));
 
 //Cargar Categorías
+function cargarCategorias() {
+    
+}
