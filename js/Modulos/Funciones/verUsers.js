@@ -93,62 +93,6 @@ function verNumeroUsuarios(){
 
 }
 
-//FUNCIONES PARA FILTRAR
-// filtrarDatos = () =>{
-//     tbody.innerHTML = ''
-//     let arrayFiltrado = [];
-//     let estado = document.getElementById('estado')
-//     let role = document.getElementById('role')
-    
-//     //Se filtra y guardan en un array los objetos que coinciden con el value del select
-//     let personaEstado = datos.filter(function (user){
-//                 return user.userStatus === estado.value
-//     })
-
-//     let personaRole = datos.filter(function (user){
-//                 return user.userRole === role.value
-//     })
-
-//     for(i=0; i<personaEstado.length; i++){
-//         for(j=0;j<personaRole.length; j++){
-//             if(personaEstado[i] === personaRole[j]){
-//                 arrayFiltrado.push(personaEstado[i])
-//                 console.log(arrayFiltrado)
-//             }
-//         }
-//     }
-
-//     //Se hace un map para cargar de forma dinamica los usuarios que coinciden con la busqueda
-//     arrayFiltrado.map(function(user){
-//         let estado = user.userStatus== '1' ? 'Activo' : 'Inactivo';
-//         let role = '';
-//         switch (user.userRole){
-//             case '1':
-//                 role = 'Admin'
-//                 break;
-//             case '2':
-//                 role = 'Estudiante'
-//                 break;
-//             case '3':
-//                 role = 'Mentor'
-//                 break;
-//         }
-//         let tablaStatus = `<tr class="text-center">
-//     <th scope="row">${user.userFirstName} ${user.userLastName}</th>
-//         <td>${user.userName}</td>
-//         <td>${estado}</td>
-//         <td>${role}</td>
-//         <td><button type="button" class = "btn btn-danger" onclick= "suspenderUsuario(${user.userName});">Suspender</button><button class = "btn btn-primary">Alta Admin</button></td></td>
-//     </tr>`
-
-//     tbody.innerHTML += tablaStatus  
-//     })
-    
-//     if (estado.value === '0'){
-//         cargarUsuarios()
-//     }
-// }
-
 
 // FUNCIONES DE FILTROS
 filtrarDatos = () => {
@@ -263,14 +207,14 @@ function cargarUsuarios () {
         let btnAlta;
 
         if(usuario.userStatus === '1'){
-            btnSuspender = `<button type = 'button' class='btn btn-danger mr-2' onclick = "suspenderUsuario('${usuario.userName}')">Suspender</button>`
-            btnAlta = `<button type = 'button' class = 'btn btn-info mr-2' onclick = "altaAdmin('${usuario.userName}')">Alta admin</button>`
+            btnSuspender = `<button type = 'button' title = 'Suspender usuario' class='btn btn-danger mr-2' onclick = "suspenderUsuario('${usuario.userName}')"><i class="fas fa-user-alt-slash"></i></button>`
+            btnAlta = `<button type = 'button' title = 'Alta administrador' class = 'btn btn-info mr-2' onclick = "altaAdmin('${usuario.userName}')"><i class="fas fa-users-cog"></i></button>`
         } else {
             btnSuspender = ""
             btnAlta = ""
         }
         if(usuario.userStatus === '2'){
-            btnHabilitar = `<button type = 'button' class='btn btn-success  ' onclick = "habilitarUsuario('${usuario.userName}')">Habilitar</button>`
+            btnHabilitar = `<button type = 'button' title = 'Habilitar usuario' class='btn btn-success' onclick = "habilitarUsuario('${usuario.userName}')"><i class="fas fa-user-check"></i></button>`
         } else {
             btnHabilitar = ""
         }
