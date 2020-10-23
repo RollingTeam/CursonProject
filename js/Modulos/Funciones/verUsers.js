@@ -151,24 +151,35 @@ function verNumeroUsuarios(){
 
 
 // FUNCIONES DE FILTROS
-filtrarDatos = () =>{
-    let estado = document.getElementById('estado')
-    let role = document.getElementById('role')
-    console.log(estado.value)
-    let busquedaEstado = datos.filter(function (user){
-                return (user.userStatus === estado.value && user.userRole === role.value)
-    })
-    console.log(busquedaEstado)
-    
-    if (busquedaEstado != false){
-        datos = busquedaEstado
+filtrarDatos = () => {
+    let storage = JSON.parse(localStorage.getItem("usuarios"));
+    let estado = document.getElementById("estado");
+    let role = document.getElementById("role");
+    if (estado.value > 0 && role.value > 0) {
+      let busquedaEstado = storage.filter(function (user) {
+        return user.userStatus === estado.value && user.userRole === role.value;
+      });
+      datos = busquedaEstado;
     } else {
-        datos = JSON.parse(localStorage.getItem('usuarios')) || [];
+      if (role.value > 0) {
+        let busquedaEstado = storage.filter(function (user) {
+          return user.userRole === role.value;
+        });
+        datos = busquedaEstado;
+      } else {
+        if (estado.value > 0) {
+          let busquedaEstado = storage.filter(function (user) {
+            return user.userStatus === estado.value;
+          });
+          datos = busquedaEstado;
+        } else {
+          datos = storage;
+        }
+      }
     }
-
-    cargarUsuarios()
-}
-
+    
+    cargarUsuarios();
+  };
 
 //FUNCIONES DE USUARIO
 function suspenderUsuario (name) {
