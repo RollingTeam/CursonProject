@@ -97,7 +97,7 @@ function cargarCursos(){
 
                 let cursoContenido= `<div class="col-12 col-md-6 col-lg-4">
                 <div class="card card-curso m-2">
-                    <img src="https://picsum.photos/id/1/400/300" class="card-img-top img-fluid" alt="...">
+                    <img src=${cursosDB[i].imagenCurso} class="card-img-top img-fluid" alt="...">
                     <div class="card-body">
                         <h5 class="card-title"><strong>${cursosDB[i].nombreCurso}</strong></h5>
                         ${badgeColor}
@@ -141,8 +141,7 @@ function mostrarTodo(){
 
             let cursoContenido= `<div class="col-12 col-md-6 col-lg-4">
             <div class="card card-curso m-2">
-                <img src="https://picsum.photos/id/1/400/300" class="card-img-top img-fluid" alt="...">
-                <div class="card-body">
+            <img src=${destacados[i].imagenCurso} class="card-img-top img-fluid" alt="...">                <div class="card-body">
                     <h5 class="card-title"><strong>${cursosDB[i].nombreCurso}</strong></h5>
                     ${badgeColor}
                     <p class="card-text">${cursosDB[i].descripcionCurso}</p>
@@ -179,7 +178,7 @@ function mostrarModalCurso (idCurs){
         </button>
     </div>
     <div class="modal-body">
-        <img src="https://picsum.photos/id/1/500/200" id="imagenModal" alt="" class="img-fluid">
+    <img src=${destacados[i].imagenCurso} class="card-img-top img-fluid" alt="...">
         <span class="badge badge-warning categorias">${cursoDB.categoriaCurso}</span>
         <span class="badge badge-primary fecha">Inicia 15/10/20</span>
         <span class="badge badge-pill badge-info cupos">${cursoDB.cupoCurso} Lugares Disponibles</span>

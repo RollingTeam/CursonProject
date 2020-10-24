@@ -237,7 +237,7 @@ function editarCurso(idCurso){
                     <div class="row">
                         <div class="form-group col">
                             <label class="color-rosa">Imagen de Portada del Curso</label>
-                            <input type="file" class="form-control-file" id="imagenCursoInput">
+                            <input type="url" class="form-control-fie" id="imagenCursoInput" value=${cursoSearch.imagenCurso}>
                         </div>
                     </div>
                     </div>
