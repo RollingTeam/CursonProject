@@ -337,3 +337,9 @@ ul li a:hover{
 min-height: 450px !important;
 max-height:450px !important
 }
+
+/* Ajustar Tamaño de las Imagenes de las Cards */
+.card-img-top{
+    min-height: 200px !important;
+    max-height: 200px !important;
+}
