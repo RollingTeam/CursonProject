@@ -47,7 +47,6 @@ function verNumeroCursos(){
     })
     let totalPending = `<span class = "statisticsData">${totalPendientes}</span>`
     pendientesCursos.innerHTML = totalPending
-
 }
 
 const tbody = document.getElementById('cuerpoTablaCursos')
@@ -136,7 +135,6 @@ function cargarTablaCursos () {
     tbody.innerHTML += tablaCurso
     })
 }
-
 
 cargarTablaCursos()
 verNumeroCursos()

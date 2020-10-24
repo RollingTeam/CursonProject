@@ -18,7 +18,6 @@ class Cursos{
 // 3 == Inactivo
 
 let cursos = localStorage.getItem("cursos") || [];
-
 let identificadorCurso;
 function agregarCurso(){
 
@@ -48,10 +47,8 @@ if (
  //Manejar de Forma Automática la asignacion del ID
  if(cursos.length < 1){
     identificadorCurso = 1;
-    //console.log("El array estaba vacio, pase por aqui")
  }else{
     let ultimoCurso = cursos[cursos.length-1]
-    //console.log(ultimoCurso)
     identificadorCurso= ultimoCurso.idCurso +1 
  }
 
@@ -111,7 +108,6 @@ function cargarCursos(){
                     </div>
                 </div>
                 </div>`
-                
                 cursosContainer.innerHTML+=cursoContenido
                 i+=1
             }
