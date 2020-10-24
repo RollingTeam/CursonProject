@@ -68,7 +68,8 @@ function validarAcceso(){
             localStorage.setItem("usuariosLogueados",JSON.stringify(userLogueados))
             if(u.userRole==="1"){
                 //MOSTRAR PAGINA DE ADMINISTRADOR
-                window.location="adminHome.html"
+                window.location.assign("adminHome.html")
+                //alert("ERES UN ADMINISTRADOR")
             }else{
                 publicarCursoOn()
                 agregarReviewOn()

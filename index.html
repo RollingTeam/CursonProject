@@ -19,7 +19,8 @@
             aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <a class="navbar-brand" href="#"><img src="./img/logo-rect.png" class="img-fluid ml-2 logo" alt="logo"></a>
+        <a class="navbar-brand m-0" href="#"><img src="./img/logo-navbar.png" class="img-fluid logo"
+                alt="logo curson navbar"></a>
         <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
             <ul class="navbar-nav ml-auto mt-2 mt-lg-0" id="ulNav">
                 <li class="nav-item active">
@@ -41,6 +42,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#reviews"><strong class="color-rosa item-nav-d">Reviews</strong></a>
                 </li>
+            </ul>
+            <ul class="navbar-nav float-right mt-2 mt-lg-0">
+                <li class="nav-item pl-2 pr-2 pt-1">
                 <li class="nav-item pl-2 pr-2 pt-1" id="LogInOpcion">
                     <button data-toggle="modal" data-target="#exampleModal" type="button"
                         class="btn btn-outline-dark btn-sm">Log In</button>
@@ -48,7 +52,7 @@
                 <li class="nav-item pl-2 pr-2 pt-1" id="SignUpOpcion">
                     <button type="button" class="btn btn-outline-danger btn-sm">Sign Up</button>
                 </li>
-                <li class="nav-item dropdown ocultarUser" id="menuUser">
+                <!-- <li class="nav-item dropdown ocultarUser" id="menuUser">
                     <button class="nav-link icon-login item-nav-r ml-lg-5" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user fa-xl"></i></button>
                     <div class="dropdown-menu">
                         <a class="dropdown-item color-oscuro" href="#!">Mi Perfil</a>
@@ -56,7 +60,7 @@
                         <a class="dropdown-item color-oscuro" href="misFavoritos.html">Mis Favoritos</a>
                         <a class="dropdown-item color-oscuro" onclick="logOut()">Log Out</a>
                     </div>
-                </li>
+                </li> -->
             </ul>
         </div>
         <div class="fixed-top">
@@ -71,7 +75,7 @@
     <!-- FIN DEL NAV -->
     <!--Main Section-->
     <main>
-        <div class="container-fluid">
+        <div class="container-fluid hmin">
             <div class="row">
                 <div class="col-12 col-sm-12 col-md-6 pt-4 pb-4">
                     <h2>¡Bienvenidos a CoursOn!</h2>
@@ -130,12 +134,12 @@
             </div>
             <hr>
             <!-- CARDS MAS DESTACADOS -->
-            <div class="container">
+            <div class="container" >
+                <h3 class="p-2">Más Destacados</h3>
                 <div class="row">
                     <div class="col">
-                        <h3 class="p-2">Más Destacados</h3>
-                        <div class="card-deck">
-                            <div class="card">
+                        <div class="card-deck" id="tarjetas">
+                            <!-- <div class="card">
                                 <img class="card-img-top img-fluid" src="https://picsum.photos/200/200/?blur"
                                     alt="Card image cap">
                                 <div class="card-body">
@@ -173,12 +177,11 @@
                                         to show that equal height action.</p>
                                     <button type="button" class="btn btn-danger">Más Info</button>
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                 </div>
             </div>
-            <hr>
     </main>
         <!-- COMIENZO DE CURSOS POR CATEGORÍAS -->
         <section id="cursosCategoria">
@@ -379,7 +382,7 @@
         <div class="modal-dialog modal-sm" role="document">
             <div class="modal-content modal-sm">
                 <div class="modal-header">
-                    <img src="./img/logoModal.png" alt="logo curson" class="img-fluid">
+                    <img src="./img/logo-modal.png" alt="logo curson" class="img-fluid">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -510,7 +513,7 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 <script src="js/Modulos/Funciones/login-Reviews.js"></script>
 <script src="js/Modulos/Funciones/gestionarCursos.js"></script>
-
+<script src="js/Modulos/Funciones/destacados.js"></script>
 </body>
 
 </html>
