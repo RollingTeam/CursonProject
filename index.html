@@ -15,8 +15,9 @@
 
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-blanco p-2">
-        <button class="navbar-toggler nav-menuHamb" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03"
-            aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler nav-menuHamb" type="button" data-toggle="collapse"
+            data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false"
+            aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <a class="navbar-brand m-0" href="#"><img src="./img/logo-navbar.png" class="img-fluid logo"
@@ -48,10 +49,11 @@
                         class="btn btn-outline-dark btn-sm">Log In</button>
                 </li>
                 <li class="nav-item pl-2 pr-2 pt-1" id="SignUpOpcion">
-                    <button type="button" class="btn btn-outline-danger btn-sm">Sign Up</button>
+                    <button data-toggle="modal" data-target="#exampleModal2" type="button" class="btn btn-outline-danger btn-sm">Sign Up</button>
                 </li>
                 <li class="nav-item dropdown ocultarUser" id="menuUser">
-                    <button class="nav-link icon-login item-nav-r ml-lg-5" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user fa-xl"></i></button>
+                    <button class="nav-link icon-login item-nav-r ml-lg-5" data-toggle="dropdown" href="#" role="button"
+                        aria-haspopup="true" aria-expanded="false"><i class="fas fa-user fa-xl"></i></button>
                     <div class="dropdown-menu">
                         <a class="dropdown-item color-oscuro" href="#!">Mi Perfil</a>
                         <a class="dropdown-item color-oscuro" href="misCursos.html">Mis Cursos</a>
@@ -78,9 +80,12 @@
                 <div class="col-12 col-sm-12 col-md-6 pt-4 pb-4">
                     <h2>¡Bienvenidos a CoursOn!</h2>
                     <br>
-                    <p class="pt-4 mt-1">Somos una plataforma online con el propósito de proporcionar un espacio dedicado a estudiantes y mentores</p>
-                    <p>Si eres estudiantes, podrás encontrar gran variedad de cursos de diversas categorías, desde arte y música hasta ciencia y programación</p>
-                    <p>Si sos profesor te brindamos la posibilidad de publicar tu curso en nuestra web y convertirte en mentor.</p>
+                    <p class="pt-4 mt-1">Somos una plataforma online con el propósito de proporcionar un espacio
+                        dedicado a estudiantes y mentores</p>
+                    <p>Si eres estudiantes, podrás encontrar gran variedad de cursos de diversas categorías, desde arte
+                        y música hasta ciencia y programación</p>
+                    <p>Si sos profesor te brindamos la posibilidad de publicar tu curso en nuestra web y convertirte en
+                        mentor.</p>
                     <p><strong><i>Curson, time to learn!</i></strong></p>
                 </div>
                 <!-- CAROUSEL -->
@@ -93,24 +98,22 @@
                         </ol>
                         <div class="carousel-inner">
                             <div class="carousel-item active">
-                                <img src="img/codigo.jpg"
-                                    class="d-block w-100 img-fluid" alt="...">
+                                <img src="img/codigo.jpg" class="d-block w-100 img-fluid" alt="...">
                                 <div class="carousel-caption d-none d-md-block">
                                     <h5>Programación</h5>
                                     <p>HTML5, CSS3, JavaScript, Phyton y más.</p>
                                 </div>
                             </div>
                             <div class="carousel-item">
-                                <img src="img/compu.jpg"
-                                    class="d-block w-100 img-fluid" alt="...">
+                                <img src="img/compu.jpg" class="d-block w-100 img-fluid" alt="...">
                                 <div class="carousel-caption d-none d-md-block">
                                     <h5 class="text-dark">Productividad Personal</h5>
-                                    <p class="text-dark">¿Cómo ser productivo? Aquí podrás encontrar cursos para mejorar tu productividad personal.</p>
+                                    <p class="text-dark">¿Cómo ser productivo? Aquí podrás encontrar cursos para mejorar
+                                        tu productividad personal.</p>
                                 </div>
                             </div>
                             <div class="carousel-item">
-                                <img src="img/lettering.jpg"
-                                    class="d-block w-100 img-fluid" alt="...">
+                                <img src="img/lettering.jpg" class="d-block w-100 img-fluid" alt="...">
                                 <div class="carousel-caption d-none d-md-block">
                                     <h5>Lettering</h5>
                                     <p>Aprendé el arte del hand lettering con Bego Viñuela.</p>
@@ -132,7 +135,7 @@
             </div>
             <hr>
             <!-- CARDS MAS DESTACADOS -->
-            <div class="container" >
+            <div class="container">
                 <h3 class="p-2">Más Destacados</h3>
                 <div class="row">
                     <div class="col">
@@ -181,88 +184,88 @@
                 </div>
             </div>
     </main>
-        <!-- COMIENZO DE CURSOS POR CATEGORÍAS -->
-        <section id="cursosCategoria">
-            <div class="container mb-4"><br>
-                <div class="row pt-2 pb-2 pl-0 pr-0">
-                    <h3>CURSOS POR CATEGORÍAS</h3>
+    <!-- COMIENZO DE CURSOS POR CATEGORÍAS -->
+    <section id="cursosCategoria">
+        <div class="container mb-4"><br>
+            <div class="row pt-2 pb-2 pl-0 pr-0">
+                <h3>CURSOS POR CATEGORÍAS</h3>
+            </div>
+            <!-- BOTONES DE CATEGORIAS -->
+            <div class="row">
+                <div class="col-lg-2">
+                    <div class="dropdown">
+                        <button class="btn-primary boton dropdown-toggle" type="button" id="dropdownMenuButton"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Categorías
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item btn-primary boton" id="programacion" href="#">Programación</a>
+                            <a class="dropdown-item btn-primary boton" id="carpinteria" href="#">Carpintería</a>
+                            <a class="dropdown-item btn-primary boton" id="marketing" href="#">Marketing</a>
+                            <a class="dropdown-item btn-primary boton" id="diseño" href="#">Diseño</a>
+                        </div>
+                    </div>
                 </div>
-                <!-- BOTONES DE CATEGORIAS -->
-                <div class="row">
-                    <div class="col-lg-2">
-                        <div class="dropdown">
-                            <button class="btn-primary boton dropdown-toggle" type="button" id="dropdownMenuButton"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Categorías
-                            </button>
-                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <a class="dropdown-item btn-primary boton" id="programacion" href="#">Programación</a>
-                                <a class="dropdown-item btn-primary boton" id="carpinteria" href="#">Carpintería</a>
-                                <a class="dropdown-item btn-primary boton" id="marketing" href="#">Marketing</a>
-                                <a class="dropdown-item btn-primary boton" id="diseño" href="#">Diseño</a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- TARJETAS DE CATEGORIAS -->
-                    <div class="col-10 col-md-10">
-                        <div class="row">
-                            <!-- TARJETA 1 -->
-                            <div class="col">
-                                <div class="card">
-                                    <img src="https://picsum.photos/id/1/400/200" class="card-img-top" alt="...">
-                                    <div class="card-body">
-                                        <h5 class="card-title"><strong> Curso de Office Online</strong></h5>
-                                        <span class="badge badge-warning">Intermedio</span>
-                                        <p class="card-text">En este curso aprenderás conocimientos y técnicas del paquete
-                                            Office.
-                                        </p>
-                                        <button type="button" class="btn btn-primary float-right" data-toggle="modal"
-                                            data-target="#modalVerMas">
-                                            Ver Más
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- TARJETA 2 -->
-                            <div class="col">
-                                <div class="card">
-                                    <img src="https://picsum.photos/id/1/400/200" class="card-img-top" alt="...">
-                                    <div class="card-body">
-                                        <h5 class="card-title"><strong> Curso Básico de Photoshop</strong></h5>
-                                        <span class="badge badge-success">Principiante</span>
-                                        <p class="card-text">Un curso Práctico y didáctico con las mejores técnicas de la
-                                            actualidad.
-                                        </p>
-                                        <button type="button" class="btn btn-primary float-right" data-toggle="modal"
-                                            data-target="#modalVerMas">
-                                            Ver Más
-                                        </button>
-                                    </div>
+                <!-- TARJETAS DE CATEGORIAS -->
+                <div class="col-10 col-md-10">
+                    <div class="row">
+                        <!-- TARJETA 1 -->
+                        <div class="col">
+                            <div class="card">
+                                <img src="https://picsum.photos/id/1/400/200" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title"><strong> Curso de Office Online</strong></h5>
+                                    <span class="badge badge-warning">Intermedio</span>
+                                    <p class="card-text">En este curso aprenderás conocimientos y técnicas del paquete
+                                        Office.
+                                    </p>
+                                    <button type="button" class="btn btn-primary float-right" data-toggle="modal"
+                                        data-target="#modalVerMas">
+                                        Ver Más
+                                    </button>
                                 </div>
                             </div>
                         </div>
-                        <!-- PAGINACION -->
-                        <nav aria-label="Page navigation example">
-                            <ul class="pagination justify-content-center pagination-lg">
-                                <li class="page-item disabled">
-                                    <a class="page-link btn btn-primary boton mt-2" href="#" aria-label="Previous">
-                                        <span aria-hidden="true">&laquo;</span>
-                                    </a>
-                                </li>
-                                <li class="page-item">
-                                    <a class="page-link btn btn-primary boton mt-2" href="#" aria-label="Next">
-                                        <span aria-hidden="true">&raquo;</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </nav>
-                        <!-- FíN DE PAGINACIÓN -->
+                        <!-- TARJETA 2 -->
+                        <div class="col">
+                            <div class="card">
+                                <img src="https://picsum.photos/id/1/400/200" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title"><strong> Curso Básico de Photoshop</strong></h5>
+                                    <span class="badge badge-success">Principiante</span>
+                                    <p class="card-text">Un curso Práctico y didáctico con las mejores técnicas de la
+                                        actualidad.
+                                    </p>
+                                    <button type="button" class="btn btn-primary float-right" data-toggle="modal"
+                                        data-target="#modalVerMas">
+                                        Ver Más
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
+                    <!-- PAGINACION -->
+                    <nav aria-label="Page navigation example">
+                        <ul class="pagination justify-content-center pagination-lg">
+                            <li class="page-item disabled">
+                                <a class="page-link btn btn-primary boton mt-2" href="#" aria-label="Previous">
+                                    <span aria-hidden="true">&laquo;</span>
+                                </a>
+                            </li>
+                            <li class="page-item">
+                                <a class="page-link btn btn-primary boton mt-2" href="#" aria-label="Next">
+                                    <span aria-hidden="true">&raquo;</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <!-- FíN DE PAGINACIÓN -->
                 </div>
             </div>
-        </section>
-        <!-- FÍN DE CURSOS POR CATEGORÍAS -->
-    
+        </div>
+    </section>
+    <!-- FÍN DE CURSOS POR CATEGORÍAS -->
+
     <!-- COMIENZO DE TODOS LOS CURSOS -->
     <section id="cursos">
         <div class="container">
@@ -277,7 +280,8 @@
         </div>
     </section>
     <!-- MODAL DE LOS BOTONES "VER MÁS" -->
-    <div class="modal fade left" id="modalVerMas" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal fade left" id="modalVerMas" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+        aria-hidden="true">
         <div class="modal-dialog modal-notify modal-info modal-side modal-top-left" role="document">
             <div class="modal-content" id="modal-form-content">
             </div>
@@ -293,9 +297,11 @@
         </div>
         <div class="row text-center mb-3">
             <div class="col">
-                <p>En CursOn ofrecemos la posibilidad de crear un espacio educativo, en donde podras brindar tus propios cursos
+                <p>En CursOn ofrecemos la posibilidad de crear un espacio educativo, en donde podras brindar tus propios
+                    cursos
                     sobre esos temas que tanto te apasionan! <br>
-                    En este sentido, CursOn actua como nexo entre los mentores y una comunidad de potenciales alumnos. <br>
+                    En este sentido, CursOn actua como nexo entre los mentores y una comunidad de potenciales alumnos.
+                    <br>
                     ¿Interesado? Estos son los pasos a seguir para publicar tu curso: </p>
             </div>
         </div>
@@ -303,41 +309,51 @@
         <div class="row mb-4">
             <div class="col-12 col-sm-12 col-md-6 col-lg-3">
                 <div class="pasos">
-                    <img class="img-fluid" src="https://cdn.pixabay.com/photo/2014/05/02/21/49/home-office-336373_960_720.jpg" alt="paso1">
+                    <img class="img-fluid"
+                        src="https://cdn.pixabay.com/photo/2014/05/02/21/49/home-office-336373_960_720.jpg" alt="paso1">
                     <div class="overlay">
-                        <div class="text-center mt-4 paso"><strong>1. Registro</strong> <br> Debes registarte como usuario en CursOn. Si ya tienes un usuario, basta con iniciar sesión.</div>
+                        <div class="text-center mt-4 paso"><strong>1. Registro</strong> <br> Debes registarte como
+                            usuario en CursOn. Si ya tienes un usuario, basta con iniciar sesión.</div>
                     </div>
                 </div>
             </div>
             <div class="col-12 col-sm-12 col-md-6 col-lg-3">
                 <div class="pasos">
-                    <img class="img-fluid" src="https://cdn.pixabay.com/photo/2017/10/12/22/17/business-2846221_960_720.jpg" alt="paso2">
+                    <img class="img-fluid"
+                        src="https://cdn.pixabay.com/photo/2017/10/12/22/17/business-2846221_960_720.jpg" alt="paso2">
                     <div class="overlay">
-                        <div class="text-center mt-4 paso"><strong>2. Completar formulario</strong> <br> Cuentanos de que se trata el curso que ofreces: nombre, contenido, duración, etc.</div>
+                        <div class="text-center mt-4 paso"><strong>2. Completar formulario</strong> <br> Cuentanos de
+                            que se trata el curso que ofreces: nombre, contenido, duración, etc.</div>
                     </div>
                 </div>
             </div>
             <div class="col-12 col-sm-12 col-md-6 col-lg-3">
                 <div class="pasos">
-                    <img class="img-fluid" src="https://cdn.pixabay.com/photo/2015/04/20/13/18/notebook-731212_960_720.jpg" alt="paso3">
+                    <img class="img-fluid"
+                        src="https://cdn.pixabay.com/photo/2015/04/20/13/18/notebook-731212_960_720.jpg" alt="paso3">
                     <div class="overlay">
-                        <div class="text-center mt-4 paso"><strong>3. Evalución de solicitud</strong> <br> Tu solicitud será evaluda y serás notificado una vez sea aprobada.</div>
+                        <div class="text-center mt-4 paso"><strong>3. Evalución de solicitud</strong> <br> Tu solicitud
+                            será evaluda y serás notificado una vez sea aprobada.</div>
                     </div>
                 </div>
             </div>
-             <div class="col-12 col-sm-12 col-md-6 col-lg-3">
+            <div class="col-12 col-sm-12 col-md-6 col-lg-3">
                 <div class="pasos">
-                    <img class="img-fluid" src="https://cdn.pixabay.com/photo/2015/06/08/15/11/typewriter-801921_960_720.jpg" alt="">
+                    <img class="img-fluid"
+                        src="https://cdn.pixabay.com/photo/2015/06/08/15/11/typewriter-801921_960_720.jpg" alt="">
                     <div class="overlay">
-                        <div class="text-center mt-4 paso"><strong>1. Registro</strong> <br> Debes registarte, de lo contrario loguearte.</div>
-                        </div>
+                        <div class="text-center mt-4 paso"><strong>1. Registro</strong> <br> Debes registarte, de lo
+                            contrario loguearte.</div>
                     </div>
+                </div>
             </div>
         </div>
         <div class="row text-center mb-4">
             <div class="col" id="botonesPublicar">
-                <button class="btn cursonBtn" data-toggle="modal" data-target="#exampleModal" id="publicarLogIn">Log In</button>
-                <button class="ocultarBtnSolicitud" id="enviarSolicitud" data-toggle="modal" data-target="#exampleSolicitud">Publicar Curso</button>
+                <button class="btn cursonBtn" data-toggle="modal" data-target="#exampleModal" id="publicarLogIn">Log
+                    In</button>
+                <button class="ocultarBtnSolicitud" id="enviarSolicitud" data-toggle="modal"
+                    data-target="#exampleSolicitud">Publicar Curso</button>
             </div>
         </div>
     </div>
@@ -349,13 +365,14 @@
             <hr class="bg-gris">
             <label class="color-rosa size-review">Reviews</label>
             <div id="reviewContainer" class="row">
-               <!--Aqui cargamos mediante Js 6 reviews para mostrar en el LandingPage-->
+                <!--Aqui cargamos mediante Js 6 reviews para mostrar en el LandingPage-->
             </div>
         </div>
     </section>
 
     <!-- Modal LOGIN-->
-    <div class="modal" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
         <div class="modal-dialog modal-sm" role="document">
             <div class="modal-content modal-sm">
                 <div class="modal-header">
@@ -376,122 +393,170 @@
                     </div>
                 </div>
                 <div class="text-center">
-                    <h6>Aún no tenés cuenta? <a href="#">Registrate</a></h6>
+                    <h6>Aún no tenés cuenta?<button data-toggle="modal" data-target="#exampleModal2" type="button"
+                        class="btn btn-outline-dark btn-sm ml-1">Registrate</button></h6>
                 </div>
                 <div class="modal-footer display-flex justify-content-center ">
-                    <button type="button" class="btn btn-dark" data-dismiss="modal"
+                    <button type="button" class="btn btn-danger" data-dismiss="modal"
                         onclick="validarAcceso()">LogIn</button>
-                    <button type="button" class="btn btn-dark">Cancelar</button>
+                    <button type="button" class="btn btn-light">Cancelar</button>
                 </div>
             </div>
         </div>
     </div>
-
+    <!-- MODAL SIGN UP -->
+    <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content modal-sm">
+                <div class="modal-header">
+                    <img src="./img/logo-modal.png" alt="logo curson" class="img-fluid">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="exampleDropdownFormEmail1">Nombre y Apellido</label>
+                        <input type="text" class="form-control" id="inputUser"
+                            placeholder="Ingresa tu nombre de nombre completo" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleDropdownFormEmail1">User Name</label>
+                        <input type="text" class="form-control" id="inputUser"
+                            placeholder="Ingresa tu nombre de Usuario" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleDropdownFormEmail1">Email</label>
+                        <input type="email" class="form-control" id="inputUser"
+                            placeholder="Ingresa tu email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleDropdownFormPassword1">Password</label>
+                        <input type="password" class="form-control" id="inputPassword" placeholder="Password" required>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <h6>¿Ya tenés cuenta?<button data-toggle="modal" data-target="#exampleModal" type="button"
+                        class="btn btn-outline-dark btn-sm ml-1">Iniciar Sesión</h6>
+                </div>
+                <div class="modal-footer display-flex justify-content-center ">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Sign Up</button>
+                    <button type="button" class="btn btn-light">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- Inicio Modal Publica tu curso -->
     <div class="modal" tabindex="-1" id="exampleSolicitud" aria-hidden="true">
         <div class="modal-dialog">
-          <div class="modal-content" style="background-color: #EDF2F4;">
-            <div class="modal-header text text-center">
-              <h5 class="modal-title">Formulario de solicitud</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <form>
-            <div class="modal-body">
-                <div class="row">
-                    <div class="col">
-                            <div class="row">
-                                <div class="form-group col">
-                                        <input type="text" class="form-control" id="nombreCursoInput" placeholder="¿Nombre del curso?">
+            <div class="modal-content" style="background-color: #EDF2F4;">
+                <div class="modal-header text text-center">
+                    <h5 class="modal-title">Formulario de solicitud</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col">
+                                <div class="row">
+                                    <div class="form-group col">
+                                        <input type="text" class="form-control" id="nombreCursoInput"
+                                            placeholder="¿Nombre del curso?">
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="row">
-                                <div class="form-group col">
-                                        <textarea id="contenidoCursoInput" class="form-control" rows="3" placeholder="¿De que se tratan el curso?"></textarea>
+                                <div class="row">
+                                    <div class="form-group col">
+                                        <textarea id="contenidoCursoInput" class="form-control" rows="3"
+                                            placeholder="¿De que se tratan el curso?"></textarea>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="row">
-                                <div class="form-group col-12 col-sm-12 col-md-6 col-md-6">
-                                        <input type="number" class="form-control" id="duracionCursoInput" placeholder="Duración (horas)">
+                                <div class="row">
+                                    <div class="form-group col-12 col-sm-12 col-md-6 col-md-6">
+                                        <input type="number" class="form-control" id="duracionCursoInput"
+                                            placeholder="Duración (horas)">
+                                    </div>
+                                    <div class="form-group col-12 col-sm-12 col-md-6 col-md-6">
+                                        <input type="number" class="form-control" id="cuposCursoInput"
+                                            placeholder="Cupo máximo">
+                                    </div>
                                 </div>
-                                <div class="form-group col-12 col-sm-12 col-md-6 col-md-6">
-                                        <input type="number" class="form-control" id="cuposCursoInput" placeholder="Cupo máximo">
+                                <div class="row">
+                                    <div class="form-group col-12 col-sm-12 col-md-6 col-md-6">
+                                        <label>Categoría del curso</label>
+                                        <select class="form-control" id="categoriaCursoInput">
+                                            <option>Tecnología</option>
+                                            <option>Hogar</option>
+                                            <option>Arte</option>
+                                            <option>Salud</option>
+                                            <option>Marketing</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group col-12 col-sm-12 col-md-6 col-md-6">
+                                        <label>Nivel del Curso</label>
+                                        <select class="form-control" id="dificultadCursoInput">
+                                            <option>Principiante</option>
+                                            <option>Intermedio</option>
+                                            <option>Avanzado</option>
+                                        </select>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="row">
-                                <div class="form-group col-12 col-sm-12 col-md-6 col-md-6">
-                                    <label>Categoría del curso</label>
-                                    <select class="form-control" id="categoriaCursoInput">
-                                        <option>Tecnología</option>
-                                        <option>Hogar</option>
-                                        <option>Arte</option>
-                                        <option>Salud</option>
-                                        <option>Marketing</option>
-                                      </select>
+                                <div class="row">
+                                    <div class="form-group col">
+                                        <label>Imagen de portada del curso:</label>
+                                        <input type="file" class="form-control-file" id="imagenCursoInput">
+                                    </div>
                                 </div>
-                                <div class="form-group col-12 col-sm-12 col-md-6 col-md-6">
-                                    <label>Nivel del Curso</label>
-                                    <select class="form-control" id="dificultadCursoInput">
-                                        <option>Principiante</option>
-                                        <option>Intermedio</option>
-                                        <option>Avanzado</option>
-                                      </select>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="form-group col">
-                                    <label>Imagen de portada del curso:</label>
-                                    <input type="file" class="form-control-file" id="imagenCursoInput">
-                                  </div>
-                            </div>
                             </div>
                         </div>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
                         <button type="submit" class="btn cursonBtn">Enviar solicitud</button>
-                      </div>
+                    </div>
                 </form>
-          </div>
-        </div>
-    </div>
-<!-- FOOTER -->
-<footer>
-    <div class="container-fluid bgdark text-white mt-5">
-        <div class="row">
-            <div class="col-12 col-sm-6 text-center p-3">
-                <ul class="p-0">
-                    <li><a href="#">Inicio</a></li>
-                    <li><a href="#">Cursos Destacados</a></li>
-                    <li><a href="#">Categorías</a></li>
-                    <li><a href="#">Cursos</a></li>
-                    <li><a href="#">Ofrecer Cursos</a></li>
-                    <li><a href="#">Reviews</a></li>
-                </ul>
-            </div>
-            <div class="col-12 col-sm-6 text-center pt-4">
-                <a data-toggle="modal" data-target="#exampleModal" href="#!"><button type="button"
-                        class="btn btn-danger btn-lg">LogIn / SignUp</button></a>
-                <br>
-                <a href="#"><i class="fab fa-discord botones"></i></a>
-                <a href="#"><i class="fab fa-twitter botones"></i></a>
-                <a href="#"><i class="fab fa-facebook botones"></i></a>
-                <a href="#"><i class="fab fa-instagram botones"></i></a>
             </div>
         </div>
-        <div class="row text-center m-0 p-2">
-            <p class="mx-auto">2020 &copy; Diseñado y desarrolado por estudiantes de Rolling Code School</p>
-        </div>
     </div>
-</footer>
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-<script src="js/Modulos/Funciones/login-Reviews.js"></script>
-<script src="js/Modulos/Funciones/gestionarCursos.js"></script>
-<script src="js/Modulos/Funciones/destacados.js"></script>
+    <!-- FOOTER -->
+    <footer>
+        <div class="container-fluid bgdark text-white mt-5">
+            <div class="row">
+                <div class="col-12 col-sm-6 text-center p-3">
+                    <ul class="p-0">
+                        <li><a href="#">Inicio</a></li>
+                        <li><a href="#">Cursos Destacados</a></li>
+                        <li><a href="#">Categorías</a></li>
+                        <li><a href="#">Cursos</a></li>
+                        <li><a href="#">Ofrecer Cursos</a></li>
+                        <li><a href="#">Reviews</a></li>
+                    </ul>
+                </div>
+                <div class="col-12 col-sm-6 text-center mt-5">
+                    <a href="#"><i class="fab fa-discord botones"></i></a>
+                    <a href="#"><i class="fab fa-twitter botones"></i></a>
+                    <a href="#"><i class="fab fa-facebook botones"></i></a>
+                    <a href="#"><i class="fab fa-instagram botones"></i></a>
+                </div>
+            </div>
+            <div class="row text-center m-0 p-2">
+                <p class="mx-auto">2020 &copy; Diseñado y desarrolado por estudiantes de Rolling Code School</p>
+            </div>
+        </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+    <script src="js/Modulos/Funciones/login-Reviews.js"></script>
+    <script src="js/Modulos/Funciones/gestionarCursos.js"></script>
+    <script src="js/Modulos/Funciones/destacados.js"></script>
 </body>
 </html>
-
-

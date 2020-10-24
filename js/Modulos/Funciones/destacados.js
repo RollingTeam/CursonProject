@@ -15,12 +15,12 @@ function agregarDestacados() {
             }
             let cuerpoCard = `<div class="col-md-4 mt-3"
             <div class="card card-curso m-2">
-            <img src=${destacados[i].imagenCurso} class="card-img-top img-fluid" alt="...">
+            <img src=${destacados[i].imagenCurso} class="card-img-top img-fluid" alt="imagen del curso">
             <div class="card-body">
                 <h5 class="card-title"><strong>${destacados[i].nombreCurso}</strong></h5>
                 ${badgeColor}
                 <p class="card-text p-1">${destacados[i].descripcionCurso}</p>
-                <button onclick="mostrarModalCurso(${destacados[i].idCurso})" class="btn btn-primary-curso float-right" data-toggle="modal" data-target="#modalVerMas">
+                <button onclick="mostrarModalCurso(${destacados[i].idCurso}) "class="btn btn-primary-curso float-right" data-toggle="modal" data-target="#modalVerMas">
                 Ver más
                 </button>
                 </div>
