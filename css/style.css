@@ -274,7 +274,6 @@ ul li a:hover{
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
-
 }
 .card-img-top{
     width: 100%;
@@ -282,7 +281,7 @@ ul li a:hover{
     object-fit: contain;
 } 
 .card-curso{
-    border: 2px solid #2B2D42 !important;
+    border: 1px solid #2B2D42 !important;
 }
 /*BOTONES CARDS*/
 .btn-primary-curso{
@@ -308,10 +307,18 @@ ul li a:hover{
 }
 /* MODAL */
 /* header */
-/*.modal-header{
-    background-color:  #cdd2db;
+.modal-header{
+    background-color:  #8D99AE;
     color: #2B2D42;
-}*/
+}
+.modal-title{
+    font-size: x-large !important;
+}
+.modal-footer{
+    background-color:  #8D99AE;
+    color: #2B2D42;
+}
+
 
 /* BOTON MODAL */
 .btn-outline-info{

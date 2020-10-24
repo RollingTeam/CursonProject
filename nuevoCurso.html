@@ -1,152 +1,184 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Curson</title>
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.0/css/all.css" integrity="sha384-OLYO0LymqQ+uHXELyx93kblK5YIS3B2ZfLGBmsJaUyor7CpMTBsahDHByqSuWW+q" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.0/css/all.css" integrity="sha384-OLYO0LymqQ+uHXELyx93kblK5YIS3B2ZfLGBmsJaUyor7CpMTBsahDHByqSuWW+q" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.0/css/all.css"
+        integrity="sha384-OLYO0LymqQ+uHXELyx93kblK5YIS3B2ZfLGBmsJaUyor7CpMTBsahDHByqSuWW+q" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.0/css/all.css"
+        integrity="sha384-OLYO0LymqQ+uHXELyx93kblK5YIS3B2ZfLGBmsJaUyor7CpMTBsahDHByqSuWW+q" crossorigin="anonymous">
 </head>
+
 <body>
     <nav class="navbar navbar-expand-xl bg-blanco bd-oscuro">
         <a class="navbar p-s-logo" href="#"><span class="color-rosa">Curs</span><span class="color-gris">On</span></a>
-        <button class="navbar-toggler nav-menuHamb" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler nav-menuHamb" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
             <span class="nav-menuHamb"><i class="fas fa-bars"></i></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle color-oscuro item-nav-r mx-lg-4" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Usuarios</a>
-                <div class="dropdown-menu">
-                    <a class="dropdown-item color-oscuro" href="#!">Crear Nuevo Usuario</a>
-                    <a class="dropdown-item color-oscuro" href="verUsers.html">Ver Usuarios</a>
-                </div>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle color-rosa item-nav-r mx-lg-4" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Cursos</a>
-                <div class="dropdown-menu">
-                    <a class="dropdown-item color-oscuro" href="#!">Crear Nuevo Curso</a>
-                    <a class="dropdown-item color-oscuro" href="verCursos.html">Ver Cursos</a>
-                </div>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle color-oscuro item-nav-r mx-lg-4" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Categorias</a>
-                <div class="dropdown-menu">
-                    <a class="dropdown-item color-oscuro" href="#!">Crear Categoria</a>
-                    <a class="dropdown-item color-oscuro" href="#!">Ver Categorias</a>
-                </div>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle color-rosa item-nav-r mx-lg-4" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Solicitudes</a>
-                <div class="dropdown-menu">
-                    <a class="dropdown-item color-oscuro" href="#!">Ver Solicitudes</a>
-                </div>
-            </li>
-            <li class="nav-item dropdown admin-login">
-                <button class="nav-link icon-login item-nav-r ml-lg-5 mx-lg-4" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user fa-xl"></i></button>
-                <div class="dropdown-menu">
-                    <a class="dropdown-item color-oscuro" data-toggle="modal" data-target="#exampleModal" href="#!">Mi Perfil</a>
-                    <a class="dropdown-item color-oscuro" href="#!">Cerrar Sesión</a>
-                </div>
-            </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle color-oscuro item-nav-r mx-lg-4" data-toggle="dropdown" href="#"
+                        role="button" aria-haspopup="true" aria-expanded="false">Usuarios</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item color-oscuro" href="#!">Crear Nuevo Usuario</a>
+                        <a class="dropdown-item color-oscuro" href="#!">Ver Usuarios</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle color-rosa item-nav-r mx-lg-4" data-toggle="dropdown" href="#"
+                        role="button" aria-haspopup="true" aria-expanded="false">Cursos</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item color-oscuro" href="#!">Crear Nuevo Curso</a>
+                        <a class="dropdown-item color-oscuro" href="#!">Ver Cursos</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle color-oscuro item-nav-r mx-lg-4" data-toggle="dropdown" href="#"
+                        role="button" aria-haspopup="true" aria-expanded="false">Categorias</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item color-oscuro" href="#!">Crear Categoria</a>
+                        <a class="dropdown-item color-oscuro" href="#!">Ver Categorias</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle color-rosa item-nav-r mx-lg-4" data-toggle="dropdown" href="#"
+                        role="button" aria-haspopup="true" aria-expanded="false">Solicitudes</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item color-oscuro" href="#!">Ver Solicitudes</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown admin-login">
+                    <button class="nav-link icon-login item-nav-r ml-lg-5 mx-lg-4" data-toggle="dropdown" href="#"
+                        role="button" aria-haspopup="true" aria-expanded="false"><i
+                            class="fas fa-user fa-xl"></i></button>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item color-oscuro" data-toggle="modal" data-target="#exampleModal"
+                            href="#!">Mi Perfil</a>
+                        <a class="dropdown-item color-oscuro" href="#!">Cerrar Sesión</a>
+                    </div>
+                </li>
             </ul>
         </div>
     </nav>
-<!-- Modal LOGIN-->
-    <div class="modal" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <!-- Modal LOGIN-->
+    <div class="modal" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
         <div class="modal-dialog modal-sm" role="document">
-          <div class="modal-content modal-sm">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel"><span class="color-rosa">Curs</span><span class="color-gris">On</span></h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
+            <div class="modal-content modal-sm">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel"><span class="color-rosa">Curs</span><span
+                            class="color-gris">On</span></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="exampleDropdownFormEmail1">User Name</label>
+                        <input type="email" class="form-control" id="inputUser"
+                            placeholder="Ingresa tu nombre de Usuario">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleDropdownFormPassword1">Password</label>
+                        <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+                    </div>
+                </div>
+                <div class="modal-footer display-flex justify-content-center ">
+                    <button type="button" class="btn btn-dark" data-dismiss="modal"
+                        onclick="validarAcceso()">LogIn</button>
+                    <button type="button" class="btn btn-dark">Cancelar</button>
+                </div>
             </div>
-            <div class="modal-body">
-                <div class="form-group">
-                    <label for="exampleDropdownFormEmail1">User Name</label>
-                    <input type="email" class="form-control" id="inputUser" placeholder="Ingresa tu nombre de Usuario">
-                  </div>
-                  <div class="form-group">
-                    <label for="exampleDropdownFormPassword1">Password</label>
-                    <input type="password" class="form-control" id="inputPassword" placeholder="Password">
-                  </div>
-            </div>
-            <div class="modal-footer display-flex justify-content-center ">
-              <button type="button" class="btn btn-dark" data-dismiss="modal" onclick="validarAcceso()">LogIn</button>
-              <button type="button" class="btn btn-dark">Cancelar</button>
-            </div>
-          </div>
         </div>
-      </div>
-      
-      <form autocomplete="off">
+    </div>
+
+    <form autocomplete="off" id="formulario">
         <div class="container mt-4">
             <label class="color-rosa size-review mb-4">Nuevo Curso</label>
             <div class="row">
                 <div class="col">
-                        <div class="row">
-                            <div class="form-group col">
-                                <label class="color-rosa">Nombre del Curso</label>
-                                <input type="text" class="form-control" id="nombreCursoInput" placeholder="¿Nombre del curso?">
-                            </div>
+                    <div class="row">
+                        <div class="form-group col">
+                            <label class="color-rosa">Nombre del Curso</label>
+                            <input type="text" class="form-control" id="nombreCursoInput"
+                                placeholder="¿Nombre del curso?">
                         </div>
-                        <div class="row">
-                            <div class="form-group col">
-                                <label class="color-rosa">Descripcion</label>
-                                <textarea id="contenidoCursoInput" class="form-control" rows="3" placeholder="¿De que se tratan el curso?"></textarea>
-                            </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col">
+                            <label class="color-rosa">Descripcion</label>
+                            <textarea id="contenidoCursoInput" class="form-control" rows="3"
+                                placeholder="¿De que se tratan el curso?"></textarea>
                         </div>
-                        <div class="row">
-                            <div class="form-group col-12 col-sm-12 col-md-6 col-md-4">
-                                <label class="color-rosa">Duracion</label>
-                                <input type="number" class="form-control" id="duracionCursoInput" placeholder="Duración (horas)">
-                            </div>
-                            <div class="form-group col-12 col-sm-12 col-md-6 col-md-4">
-                                <label class="color-rosa">Lugares Disponibles</label>
-                                <input type="number" class="form-control" id="cuposCursoInput" placeholder="Cupo máximo">
-                            </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-12 col-sm-12 col-md-6 col-md-4">
+                            <label class="color-rosa">Duracion</label>
+                            <input type="number" class="form-control" id="duracionCursoInput"
+                                placeholder="Duración (horas)">
                         </div>
-                        <div class="row">
-                            <div class="form-group col-12 col-sm-12 col-md-6 col-md-6">
-                                <label class="color-rosa">Categoría</label>
-                                <select class="form-control" id="categoriaCursoInput">
-                                    <option>Tecnología</option>
-                                    <option>Hogar</option>
-                                    <option>Arte</option>
-                                    <option>Salud</option>
-                                    <option>Marketing</option>
-                                </select>
-                            </div>
-                            <div class="form-group col-12 col-sm-12 col-md-6 col-md-6">
-                                <label class="color-rosa">Nivel</label>
-                                <select class="form-control" id="dificultadCursoInput">
-                                    <option>Principiante</option>
-                                    <option>Intermedio</option>
-                                    <option>Avanzado</option>
-                                </select>
-                            </div>
+                        <div class="form-group col-12 col-sm-12 col-md-6 col-md-4">
+                            <label class="color-rosa">Lugares Disponibles</label>
+                            <input type="number" class="form-control" id="cuposCursoInput" placeholder="Cupo máximo">
                         </div>
-                        <div class="row">
-                            <div class="form-group col">
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-12 col-sm-12 col-md-6 col-md-6">
+                            <label class="color-rosa">Categoría</label>
+                            <select class="form-control" id="categoriaCursoInput">
+                                <option>Tecnología</option>
+                                <option>Hogar</option>
+                                <option>Arte</option>
+                                <option>Salud</option>
+                                <option>Marketing</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-12 col-sm-12 col-md-6 col-md-6">
+                            <label class="color-rosa">Nivel</label>
+                            <select class="form-control" id="dificultadCursoInput">
+                                <option>Principiante</option>
+                                <option>Intermedio</option>
+                                <option>Avanzado</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col">
+                            <div id="divInputLoad">
                                 <label class="color-rosa">Imagen de Portada del Curso</label>
-                                <input type="file" class="form-control-file" id="imagenCursoInput">
-                            </div>
-                        </div>
+                                <div id="divFileUpload">
+                                    <input type="file" id="imagenCursoInput" accept="image/*">
+                                </div>
                         </div>
                     </div>
                 </div>
-                <div class="form-group d-flex justify-content-center mt-4">
-                    <button type="button" class="btn btn-secondary mr-3">Cancelar</button>
-                    <button type="button" class="btn cursonBtn ml-3" onclick="agregarCurso()">Agregar Curso</button>
-                </div>
-            </form>
-    
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-<script src="js/Modulos/Funciones/gestionarCursos.js"></script>
+            </div>
+        </div>
+        <div class="form-group d-flex justify-content-center mt-4">
+            <button type="button" class="btn btn-secondary mr-3">Cancelar</button>
+            <button type="button" class="btn cursonBtn ml-3" onclick="agregarCurso()">Agregar Curso</button>
+
+        </div>
+    </form>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+    <script src="js/Modulos/Funciones/gestionarCursos.js"></script>
 </body>
+
 </html>

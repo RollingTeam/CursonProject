@@ -270,8 +270,97 @@
             <div class="container">
                 <hr class="bg-gris">
                 <h3 class="size-review color-rosa mb-4">Todos los Cursos</h3>
-                <div id="cursosContainer" class="row">
-                <!-- TODO ESTA COMENTADO PORQUE AHORA TOMAMOS LA ESTRUCTURA Y LO HACEMOS DINAMICO-->
+                <div id="cursosContainer" class="row card-deck">
+                    <!-- TODO ESTA COMENTADO PORQUE AHORA TOMAMOS LA ESTRUCTURA Y LO HACEMOS DINAMICO-->
+                    <!--<div class="col-12 col-md-6 col-lg-4">
+                        <div class="card">
+                            <img src="https://picsum.photos/id/1/400/300" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title"><strong> Aprende Carpintería Online</strong></h5>
+                                <span class="badge badge-success">Principiante</span>
+                                <p class="card-text">En este curso aprenderás los conocimientos básicos de carpintería.</p>
+                                <button type="button" class="btn btn-primary float-right" data-toggle="modal"
+                                    data-target="#modalVerMas">
+                                    Ver Más
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="card">
+                            <img src="https://picsum.photos/id/1/400/300" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Curso de Fullstack</h5>
+                                <span class="badge badge-success">Principiante</span>
+                                <p class="card-text">Aprenderás de cero los elementos básicos de htlm, css y javascript.
+                                </p>
+                                <button type="button" class="btn btn-primary float-right" data-toggle="modal"
+                                    data-target="#modalVerMas">
+                                    Ver Más
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="card">
+                            <img src="https://picsum.photos/id/1/400/300" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Curso de Marketing Digital</h5>
+                                <span class="badge badge-secondary">Avanzado</span>
+                                <p class="card-text">Perfeccioná tu marca e imágen dentro del mercado laboral online.</p>
+                                <button type="button" class="btn btn-primary float-right" data-toggle="modal"
+                                    data-target="#modalVerMas">
+                                    Ver Más
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="card">
+                            <img src="https://picsum.photos/id/1/400/300" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Curso de Ingles</h5>
+                                <span class="badge badge-warning">Intermedio</span>
+                                <p class="card-text">Nuestro programa ofrece una forma rápida y eficaz para mejorar tus
+                                    conocimientos del idioma</p>
+                                <button type="button" class="btn btn-primary float-right" data-toggle="modal"
+                                    data-target="#modalVerMas">
+                                    Ver Más
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="card">
+                            <img src="https://picsum.photos/id/1/400/300" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Curso de E-comerce</h5>
+                                <span class="badge badge-warning">Intermedio</span>
+                                <p class="card-text">Aprendé a gestionar de manera integral una tienda online, con las
+                                    mejores estrategias orientadas a venta online.</p>
+                                <button type="button" class="btn btn-primary float-right" data-toggle="modal"
+                                    data-target="#modalVerMas">
+                                    Ver Más
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="card">
+                            <img src="https://picsum.photos/id/1/400/300" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Curso de Programación</h5>
+                                <span class="badge badge-secondary">Avanzado</span>
+                                <p class="card-text">Perfeccioná y domina los lenguajes de código, herramientas,
+                                    arquitectura, bases de datos y más.</p>
+                                <button type="button" class="btn btn-primary float-right" data-toggle="modal"
+                                    data-target="#modalVerMas">
+                                    Ver Más
+                                </button>
+                            </div>
+                        </div>
+                    </div>-->
+                </div>
                 <!-- PAGINACION -->
                 <div class="row">
                     <div class="col">
@@ -301,7 +390,32 @@
         <div class="modal fade left" id="modalVerMas" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-notify modal-info modal-side modal-top-left" role="document">
                 <div class="modal-content" id="modal-form-content">
-                   <!-- COMENTADO PORQUE AHORA SE HACE DINAMICO-->
+                <!-- COMENTADO PORQUE AHORA SE HACE DINAMICO
+                    <div class="modal-header">
+                        <div class="nombreCurso">
+                            <p class="heading lead">Nombre del Curso</p>
+                        </div>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true" class="white-text">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <img src="https://picsum.photos/id/1/500/200" id="imagenModal" alt="" class="img-fluid">
+                            <span class="badge badge-warning categorias">categoria</span>
+                            <span class="badge badge-primary fecha">Inicia 15/10/20</span>
+                            <span class="badge badge-pill badge-info cupos">Quedan 3 cupos</span>
+                        <div class="text-center">
+                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Debitis incidunt delectus non atque
+                                quaerat enim hic aperiam sit sint adipisci dolores molestias minus soluta, accusamus
+                                explicabo, consequuntur id et dolorum vitae facere aut placeat rerum, nobis culpa.
+                                Perferendis magnam eos rem, dolor odit corporis voluptatibus alias, iusto sunt
+                                exercitationem repellat?</p>
+                        </div>
+                    </div>
+                    <div class="modal-footer justify-content-center">
+                        <a href="" type="button" class="btn btn-primary-curso">Inscribirse <i class="far fa-user ml-1 white-text"></i></a>
+                        <a type="button" class="btn btn-outline-info waves-effect" data-dismiss="modal">Cancelar</a>
+                    </div>-->
                 </div>
             </div>
         </div>
@@ -348,7 +462,7 @@
                     </div>
                 </div>
             </div>
-             <div class="col-12 col-sm-12 col-md-6 col-lg-3">
+            <div class="col-12 col-sm-12 col-md-6 col-lg-3">
                 <div class="pasos">
                     <img class="img-fluid" src="https://cdn.pixabay.com/photo/2015/06/08/15/11/typewriter-801921_960_720.jpg" alt="">
                     <div class="overlay">
@@ -372,7 +486,7 @@
             <hr class="bg-gris">
             <label class="color-rosa size-review">Reviews</label>
             <div id="reviewContainer" class="row">
-               <!--Aqui cargamos mediante Js 6 reviews para mostrar en el LandingPage-->
+            <!--Aqui cargamos mediante Js 6 reviews para mostrar en el LandingPage-->
             </div>
         </div>
     </section>
@@ -413,12 +527,12 @@
     <!-- Inicio Modal Publica tu curso -->
     <div class="modal" tabindex="-1" id="exampleSolicitud" aria-hidden="true">
         <div class="modal-dialog">
-          <div class="modal-content" style="background-color: #EDF2F4;">
+        <div class="modal-content" style="background-color: #EDF2F4;">
             <div class="modal-header text text-center">
-              <h5 class="modal-title">Formulario de solicitud</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <h5 class="modal-title">Formulario de solicitud</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
-              </button>
+            </button>
             </div>
             <form>
             <div class="modal-body">
@@ -451,7 +565,7 @@
                                         <option>Arte</option>
                                         <option>Salud</option>
                                         <option>Marketing</option>
-                                      </select>
+                                    </select>
                                 </div>
                                 <div class="form-group col-12 col-sm-12 col-md-6 col-md-6">
                                     <label>Nivel del Curso</label>
@@ -459,14 +573,14 @@
                                         <option>Principiante</option>
                                         <option>Intermedio</option>
                                         <option>Avanzado</option>
-                                      </select>
+                                    </select>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="form-group col">
                                     <label>Imagen de portada del curso:</label>
                                     <input type="file" class="form-control-file" id="imagenCursoInput">
-                                  </div>
+                                </div>
                             </div>
                             </div>
                         </div>
@@ -474,9 +588,9 @@
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
                         <button type="submit" class="btn cursonBtn">Enviar solicitud</button>
-                      </div>
+                    </div>
                 </form>
-          </div>
+        </div>
         </div>
     </div>
 <!-- FOOTER -->
