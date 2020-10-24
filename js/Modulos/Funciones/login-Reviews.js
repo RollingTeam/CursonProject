@@ -1,5 +1,5 @@
 class Usuario{
-    constructor(userName,userPassword,userFirstName,userLastName,userRole,userStatus,userEmail){
+    constructor(userName,userPassword,userFirstName,userLastName,userRole,userStatus,userEmail,userCursos=[],userFavoritos=[]){
     this.userName= userName
     this.userPassword=userPassword
     this.userFirstName=userFirstName
@@ -7,6 +7,8 @@ class Usuario{
     this.userRole=userRole
     this.userStatus=userStatus
     this.userEmail=userEmail
+    this.userCursos= userCursos
+    this.userFavoritos= userFavoritos
     }
 }
 
@@ -25,162 +27,52 @@ let EstadosUser=[
 ]
 
 //Creacion de Usuarios para guardar en LocalStorage
-
-let users=[];
-let adminUserB = new Usuario("belenadmin","12345","Belen","Neme","1","1","belen@gmail.com");
-//adminUserB.userRole=Roles[0]
-
+/*let adminUserB = new Usuario("belenadmin","12345","Belen","Neme","1","1","belen@gmail.com");
 let regularUserB = new Usuario("BelenUser","654321","Belen","Neme","2","1","b@gmail.com");
-//regularUserB.userRole=Roles[1]
+let users=[]
 users.push(adminUserB,regularUserB);
+localStorage.setItem("users",JSON.stringify(users));*/
+let users = (localStorage.getItem("users")) || [];
 
-//Manejo del LocalStorage
-//localStorage.clear();
-localStorage.setItem("users",JSON.stringify(users));
+let userLogueados = localStorage.getItem("usuariosLogueados")||[];
+inicioLanding();
+function inicioLanding(){
+    if(userLogueados.length!=0){
+        menuUserOn()
+        publicarCursoOn()
+        agregarReviewOn()
+    }
+}
 
-//Validar Acceso de los Usuarios
+function logOut(){
+    if(userLogueados.length!=0){
+        userLogueados= []
+        localStorage.setItem("usuariosLogueados",userLogueados)
+        console.log(userLogueados.length)
+        window.location="index.html"
+        inicioLanding()
+    }
+}
 
 function validarAcceso(){
-
     let us= document.getElementById("inputUser").value
-    console.log(us)
     let pass= document.getElementById("inputPassword").value
-
-    //Traigo del LocalStorage el Array de Usuarios
     let usuarios= localStorage.getItem("users",users);
     usuarios = JSON.parse(usuarios);
-
     let u = usuarios.find(function(i){
         return i.userName===us
     })
-    //console.log(u);
-    let userLogueados=[];
     if(u){
         if(u.userPassword===pass){
             userLogueados.push(u);
             localStorage.setItem("usuariosLogueados",JSON.stringify(userLogueados))
             if(u.userRole==="1"){
                 //MOSTRAR PAGINA DE ADMINISTRADOR
-                window.location.assign("file:///C:/Users/belen/OneDrive/Documentos/RollingCode/3I/CursonProject/adminHome.html")
-                //alert("ERES UN ADMINISTRADOR")
+                window.location="adminHome.html"
             }else{
-                //alert("NO ERES UN ADMINISTRADOR")
-                //BORRAR BOTON LOGUIN y MOSTRAR BOTON DE PUBLiCAR CURSO
-                let publicarLogIn = document.getElementById('publicarLogIn')
-                botonesPublicar.removeChild(publicarLogIn)
-
-               //Haciendo visible el Boton para Publicar Curso
-                document.getElementById('enviarSolicitud').style = 'display:inline-block'
-                
-                // MOSTRAR BOTON PARA CARGAR REVIEWS Y ACTUALIZAR LO Q SERIA EL PERFIL
-                let btnAddReviews= document.createElement("button")
-                btnAddReviews.innerText="Nueva Review"
-                btnAddReviews.className="btn-review"
-                mainRevContainer.appendChild(btnAddReviews)
-                btnAddReviews.addEventListener("click",function(e){
-                    let numOpenForm= document.getElementsByClassName("form-review")
-                    
-                    if(numOpenForm.length>=1){
-                        return "";
-                    }else{
-                    let fecReview= getFecha();
-                    let userLog= getUserLogueado();
-                    console.log(userLog)
-                    console.log(fecReview)
-                    let formReview= document.createElement("div");
-                    formReview.className="form-review"
-                    let formRevContent= 
-                    `<form autocomplete="off">
-                    <div class="row mt-3">
-                        <div class="col-md-5">
-                            <div class="form-group d-flex justify-content-center">
-                                <label class="color-rosa">Nombre:</label>
-                            </div>
-                            <div class="form-group d-flex justify-content-center">
-                                <input type="text" id="reviewUser"  class="input-review" value="${userLog}">
-                            </div>
-                        </div>
-                        <div class="col-md-5">
-                            <div class="form-group d-flex justify-content-center">
-                                <label class="color-rosa">Fecha:</label>
-                            </div>
-                            <div class="form-group d-flex justify-content-center">
-                                <input type="date" id="reviewDate" placeholder="Fecha" class="input-review" value="${fecReview}" readonly>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-5">
-                            <div class="form-group d-flex justify-content-center">
-                                <label class="color-rosa">Nombre del Curso:</label>
-                            </div>
-                            <div class="form-group d-flex justify-content-center">
-                                <input type="text" id="reviewCurso" placeholder="Curso" class="input-review">
-                            </div>
-                        </div>
-                        <div class="col-md-5">
-                            <div class="form-group d-flex justify-content-center">
-                                <label class="color-rosa">Comentario:</label>
-                            </div>
-                            <div class="form-group d-flex justify-content-center">
-                                <textarea id="reviewComentario" placeholder="Ingresa aqui tu comentario" class="form-control"></textarea>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                       <div class="col-md-5">
-                            <div class="form-group d-flex justify-content-center">
-                                <label class="color-rosa">Calificacion:</label>
-                            </div>
-                            <div class="form-check-inline d-flex justify-content-center">
-                                <input class="form-check-input" type="radio" name="calificacion" id="calificacion" value="5" checked>
-                                <label class="form-check-label" for="exampleRadios1">
-                                5
-                                </label>
-                            </div>
-                            <div class="form-check-inline d-flex justify-content-center">
-                                <input class="form-check-input" type="radio" name="calificacion" id="calificacion" value="4">
-                                <label class="form-check-label" for="exampleRadios1">
-                                4
-                                </label>
-                            </div>
-                            <div class="form-check-inline d-flex justify-content-center">
-                                <input class="form-check-input" type="radio" name="calificacion" id="calificacion" value="3">
-                                <label class="form-check-label" for="exampleRadios1">
-                                3
-                                </label>
-                            </div>
-                            <div class="form-check-inline d-flex justify-content-center">
-                                <input class="form-check-input" type="radio" name="calificacion" id="calificacion" value="2">
-                                <label class="form-check-label" for="exampleRadios1">
-                                2
-                                </label>
-                            </div>
-                            <div class="form-check-inline d-flex justify-content-center">
-                                <input class="form-check-input" type="radio" name="calificacion" id="calificacion" value="1">
-                                <label class="form-check-label" for="exampleRadios1">
-                                1
-                                </label>
-                            </div>
-                        </div>
-                    </div> 
-                    <div class="mt-2 mb-3 d-flex justify-content-around">
-                        <button type="button" class="btn-review-form" onclick="ocultarReview()">Cancelar</button>
-                        <button type="button" class="btn-review-form" onclick="validarReview()">Enviar</button>
-                        <button type="button" class="btn-review-form" onclick="limpiarFormReview()">Resetear</button>
-                    </div>
-                    </form>`
-                    formReview.innerHTML=formRevContent;
-                    mainRevContainer.appendChild(formReview);
-                    }
-                })
-                //CAMBIANDO EL NAV CON EL DROPDOWN DE OPCIONES PARA EL USER LOGUEADO
-                /**************ELIMINO LOS DOS BOTONES DE LOGIN Y SINGUP DEL NAV************/
-                let btnLogin= document.getElementById("LogInOpcion");
-                let btnSingUp= document.getElementById("SignUpOpcion")
-                ulNav.removeChild(btnLogin)
-                ulNav.removeChild(btnSingUp)
-                document.getElementById('menuUser').style = 'display:inline-block'
+                publicarCursoOn()
+                agregarReviewOn()
+                menuUserOn()
             }
         }else{
             alert("Usuario o contraseña invalido")
@@ -189,6 +81,125 @@ function validarAcceso(){
         alert("No te encuentras registrado en CursOn")
     }
 
+}
+
+function publicarCursoOn(){
+    //BORRAR BOTON LOGIN y MOSTRAR BOTON DE PUBLiCAR CURSO
+    let publicarLogIn = document.getElementById('publicarLogIn')
+    botonesPublicar.removeChild(publicarLogIn)
+   //Haciendo visible el Boton para Publicar Curso
+    document.getElementById('enviarSolicitud').style = 'display:inline-block'
+}
+function agregarReviewOn(){
+    // MOSTRAR BOTON PARA CARGAR REVIEWS 
+    let btnAddReviews= document.createElement("button")
+    btnAddReviews.innerText="Nueva Review"
+    btnAddReviews.className="btn-review"
+    mainRevContainer.appendChild(btnAddReviews)
+    btnAddReviews.addEventListener("click",function(e){
+        let numOpenForm= document.getElementsByClassName("form-review")
+        if(numOpenForm.length>=1){
+            return "";
+        }else{
+        let fecReview= getFecha();
+        let userLog= getUserLogueado();
+        console.log(userLog)
+        console.log(fecReview)
+        let formReview= document.createElement("div");
+        formReview.className="form-review"
+        let formRevContent= 
+        `<form autocomplete="off">
+        <div class="row mt-3">
+            <div class="col-md-5">
+                <div class="form-group d-flex justify-content-center">
+                    <label class="color-rosa">Nombre:</label>
+                </div>
+                <div class="form-group d-flex justify-content-center">
+                    <input type="text" id="reviewUser"  class="input-review" value="${userLog}">
+                </div>
+            </div>
+            <div class="col-md-5">
+                <div class="form-group d-flex justify-content-center">
+                    <label class="color-rosa">Fecha:</label>
+                </div>
+                <div class="form-group d-flex justify-content-center">
+                    <input type="date" id="reviewDate" placeholder="Fecha" class="input-review" value="${fecReview}" readonly>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-5">
+                <div class="form-group d-flex justify-content-center">
+                    <label class="color-rosa">Nombre del Curso:</label>
+                </div>
+                <div class="form-group d-flex justify-content-center">
+                    <input type="text" id="reviewCurso" placeholder="Curso" class="input-review">
+                </div>
+            </div>
+            <div class="col-md-5">
+                <div class="form-group d-flex justify-content-center">
+                    <label class="color-rosa">Comentario:</label>
+                </div>
+                <div class="form-group d-flex justify-content-center">
+                    <textarea id="reviewComentario" placeholder="Ingresa aqui tu comentario" class="form-control"></textarea>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+           <div class="col-md-5">
+                <div class="form-group d-flex justify-content-center">
+                    <label class="color-rosa">Calificacion:</label>
+                </div>
+                <div class="form-check-inline d-flex justify-content-center">
+                    <input class="form-check-input" type="radio" name="calificacion" id="calificacion" value="5" checked>
+                    <label class="form-check-label" for="exampleRadios1">
+                    5
+                    </label>
+                </div>
+                <div class="form-check-inline d-flex justify-content-center">
+                    <input class="form-check-input" type="radio" name="calificacion" id="calificacion" value="4">
+                    <label class="form-check-label" for="exampleRadios1">
+                    4
+                    </label>
+                </div>
+                <div class="form-check-inline d-flex justify-content-center">
+                    <input class="form-check-input" type="radio" name="calificacion" id="calificacion" value="3">
+                    <label class="form-check-label" for="exampleRadios1">
+                    3
+                    </label>
+                </div>
+                <div class="form-check-inline d-flex justify-content-center">
+                    <input class="form-check-input" type="radio" name="calificacion" id="calificacion" value="2">
+                    <label class="form-check-label" for="exampleRadios1">
+                    2
+                    </label>
+                </div>
+                <div class="form-check-inline d-flex justify-content-center">
+                    <input class="form-check-input" type="radio" name="calificacion" id="calificacion" value="1">
+                    <label class="form-check-label" for="exampleRadios1">
+                    1
+                    </label>
+                </div>
+            </div>
+        </div> 
+        <div class="mt-2 mb-3 d-flex justify-content-around">
+            <button type="button" class="btn-review-form" onclick="ocultarReview()">Cancelar</button>
+            <button type="button" class="btn-review-form" onclick="validarReview()">Enviar</button>
+            <button type="button" class="btn-review-form" onclick="limpiarFormReview()">Resetear</button>
+        </div>
+        </form>`
+        formReview.innerHTML=formRevContent;
+        mainRevContainer.appendChild(formReview);
+        }
+    })
+}
+
+function menuUserOn(){
+    let btnLogin= document.getElementById("LogInOpcion");
+    let btnSingUp= document.getElementById("SignUpOpcion")
+    ulNav.removeChild(btnLogin)
+    ulNav.removeChild(btnSingUp)
+    document.getElementById('menuUser').style = 'display:inline-block'
 }
 
 function validarReview(){
@@ -218,19 +229,16 @@ function validarReview(){
         rCurso.value == "" ||
         rComentario.value == "" ||
         rUser.value == ""
-        //rCalificacion.value==""
-    ) {
+    ){
         return;
     }
-    
-     //GUARDAR LA REVIEW EN EL ARRAY DE REVIEWS DEL LOCALSTORAGE
      let rDB= JSON.parse(localStorage.getItem("reviews"))
      let newReview = new Reviews(rCurso.value,rUser.value,rComentario.value,rFecha.value,rCalificacion.value);
      rDB.push(newReview);
      localStorage.setItem("reviews",JSON.stringify(rDB))
      limpiarFormReview();
      alert("La review fue guardada en el Local Storage");
-     //LLAMAR A LA FUNCION PARA ACTUALIZAR EL ARRAYS DE REVIEWS
+     ocultarReview()
      cargarReviews();
 }
 
@@ -286,24 +294,17 @@ class Reviews{
 }
 
 //Cargar array de Reviews en LocalStorage
-let rev1= new Reviews("PHP Avanzado","Florencia","Me parecio un curso super interesante","2020-10-06",5);
-let rev2= new Reviews("Diseño de Interior","Florencia","Me parecio un curso super interesante","2020-10-06",1);
-let rev3= new Reviews("Diseño de Moda","Florencia","Me parecio un curso super interesante","2020-08-05",2);
-let rev4= new Reviews("PHP Avanzado","Florencia","Me parecio un curso super interesante","2020-11-06",3);
-let rev5= new Reviews("Diseño de Interior","Florencia","Me parecio un curso super interesante","2020-10-06",4);
-let rev6= new Reviews("Diseño de Moda","Florencia","Me parecio un curso super interesante","2020-08-06",5);
-let rev7= new Reviews("Diseño de Moda","Florencia","Me parecio un curso super interesante","2020-10-09",3);
+/*let rev1= new Reviews("PHP Avanzado","Florencia","Me parecio un curso super interesante","2020-10-06",5);
+let rev2= new Reviews("Diseño de Interior","Gabriel","Me parecio un curso super interesante","2020-10-06",1);
+let rev3= new Reviews("Diseño de Moda","Sofia","Me parecio un curso super interesante","2020-08-05",2);
 
 let reviews=[];
-reviews.push(rev1,rev2,rev3,rev4,rev5,rev6,rev7)
-localStorage.setItem("reviews",JSON.stringify(reviews))
-
-//Cargar Reviews en la LandingPage
+reviews.push(rev1,rev2,rev3)
+localStorage.setItem("reviews",JSON.stringify(reviews))*/
+let reviews = localStorage.getItem("reviews") || []
 
 cargarReviews();
-//myFunction()
 function cargarReviews(){
-    //Buscar en el localStorage el conjunto de Reviews almacenadas
     ordenarReviews();
     let reviewsLS = localStorage.getItem("reviews",reviews)
     let reviewsDB = JSON.parse(reviewsLS)

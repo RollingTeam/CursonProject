@@ -52,9 +52,9 @@
                     <button class="nav-link icon-login item-nav-r ml-lg-5" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user fa-xl"></i></button>
                     <div class="dropdown-menu">
                         <a class="dropdown-item color-oscuro" href="#!">Mi Perfil</a>
-                        <a class="dropdown-item color-oscuro" href="#!">Mis Cursos</a>
-                        <a class="dropdown-item color-oscuro" href="#!">Mis Favoritos</a>
-                        <a class="dropdown-item color-oscuro" href="#!">Log Out</a>
+                        <a class="dropdown-item color-oscuro" href="misCursos.html">Mis Cursos</a>
+                        <a class="dropdown-item color-oscuro" href="misFavoritos.html">Mis Favoritos</a>
+                        <a class="dropdown-item color-oscuro" onclick="logOut()">Log Out</a>
                     </div>
                 </li>
             </ul>
@@ -76,19 +76,13 @@
                 <div class="col-12 col-sm-12 col-md-6 pt-4 pb-4">
                     <h2>¡Bienvenidos a CoursOn!</h2>
                     <br>
-                    <p class="pt-4 mt-1">Lorem ipsum dolor sit amet consectetur adipisicing elit. In ex molestias
-                        tempore soluta pariatur sit, quisquam cum quas totam assumenda beatae. Dicta sed totam,
-                        asperiores veritatis aliquid, maiores quae, eos ratione delectus corrupti mollitia. Nostrum
-                        laboriosam temporibus, sint odio totam perspiciatis magnam nam blanditiis!</p>
-                    <p>Dolorem reprehenderit
-                        pariatur quia quas cum. Nobis ipsam deserunt laboriosam veritatis cupiditate asperiores debitis
-                        autem distinctio fuga soluta quae totam, dolorum praesentium dolores laudantium, incidunt, minus
-                        amet explicabo omnis esse adipisci.</p>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tenetur ipsum facere in enim vel unde
-                        modi blanditiis aliquid minima suscipit.</p>
+                    <p class="pt-4 mt-1">Somos una plataforma online con el propósito de proporcionar un espacio dedicado a estudiantes y mentores</p>
+                    <p>Si eres estudiantes, podrás encontrar gran variedad de cursos de diversas categorías, desde arte y música hasta ciencia y programación</p>
+                    <p>Si sos profesor te brindamos la posibilidad de publicar tu curso en nuestra web y convertirte en mentor.</p>
+                    <p><strong><i>Curson, time to learn!</i></strong></p>
                 </div>
                 <!-- CAROUSEL -->
-                <div class="col-12 col-sm-12 col-md-6">
+                <div class="col-12 col-sm-12 col-md-6 mt-1">
                     <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
                         <ol class="carousel-indicators">
                             <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
@@ -97,27 +91,27 @@
                         </ol>
                         <div class="carousel-inner">
                             <div class="carousel-item active">
-                                <img src="http://lorempixel.com/output/cats-q-g-866-565-5.jpg"
+                                <img src="img/codigo.jpg"
                                     class="d-block w-100 img-fluid" alt="...">
                                 <div class="carousel-caption d-none d-md-block">
-                                    <h5>First slide label</h5>
-                                    <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                                    <h5>Programación</h5>
+                                    <p>HTML5, CSS3, JavaScript, Phyton y más.</p>
                                 </div>
                             </div>
                             <div class="carousel-item">
-                                <img src="http://lorempixel.com/output/nature-q-g-866-565-5.jpg"
+                                <img src="img/compu.jpg"
                                     class="d-block w-100 img-fluid" alt="...">
                                 <div class="carousel-caption d-none d-md-block">
-                                    <h5>Second slide label</h5>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                    <h5 class="text-dark">Productividad Personal</h5>
+                                    <p class="text-dark">¿Cómo ser productivo? Aquí podrás encontrar cursos para mejorar tu productividad personal.</p>
                                 </div>
                             </div>
                             <div class="carousel-item">
-                                <img src="http://lorempixel.com/output/city-q-g-866-565-5.jpg"
+                                <img src="img/lettering.jpg"
                                     class="d-block w-100 img-fluid" alt="...">
                                 <div class="carousel-caption d-none d-md-block">
-                                    <h5>Third slide label</h5>
-                                    <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+                                    <h5>Lettering</h5>
+                                    <p>Aprendé el arte del hand lettering con Bego Viñuela.</p>
                                 </div>
                             </div>
                         </div>
@@ -142,7 +136,7 @@
                         <h3 class="p-2">Más Destacados</h3>
                         <div class="card-deck">
                             <div class="card">
-                                <img class="card-img-top" src="https://picsum.photos/200/200/?blur"
+                                <img class="card-img-top img-fluid" src="https://picsum.photos/200/200/?blur"
                                     alt="Card image cap">
                                 <div class="card-body">
                                     <h5 class="card-title">Card title</h5>
@@ -155,7 +149,7 @@
                                 </div>
                             </div>
                             <div class="card">
-                                <img class="card-img-top" src="https://picsum.photos/200/200/?blur"
+                                <img class="card-img-top img-fluid" src="https://picsum.photos/200/200/?blur"
                                     alt="Card image cap">
                                 <div class="card-body">
                                     <h5 class="card-title">Card title</h5>
@@ -168,7 +162,7 @@
                                 </div>
                             </div>
                             <div class="card">
-                                <img class="card-img-top" src="https://picsum.photos/200/200/?blur"
+                                <img class="card-img-top img-fluid" src="https://picsum.photos/200/200/?blur"
                                     alt="Card image cap">
                                 <div class="card-body">
                                     <h5 class="card-title">Card title</h5>
@@ -269,102 +263,12 @@
         <!-- FÍN DE CURSOS POR CATEGORÍAS -->
     
         <!-- COMIENZO DE TODOS LOS CURSOS -->
-        
         <section id="cursos">
             <div class="container">
                 <hr class="bg-gris">
                 <h3 class="size-review color-rosa mb-4">Todos los Cursos</h3>
                 <div id="cursosContainer" class="row">
-                    <!-- TODO ESTA COMENTADO PORQUE AHORA TOMAMOS LA ESTRUCTURA Y LO HACEMOS DINAMICO-->
-                    <!--<div class="col-12 col-md-6 col-lg-4">
-                        <div class="card">
-                            <img src="https://picsum.photos/id/1/400/300" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title"><strong> Aprende Carpintería Online</strong></h5>
-                                <span class="badge badge-success">Principiante</span>
-                                <p class="card-text">En este curso aprenderás los conocimientos básicos de carpintería.</p>
-                                <button type="button" class="btn btn-primary float-right" data-toggle="modal"
-                                    data-target="#modalVerMas">
-                                    Ver Más
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-6 col-lg-4">
-                        <div class="card">
-                            <img src="https://picsum.photos/id/1/400/300" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">Curso de Fullstack</h5>
-                                <span class="badge badge-success">Principiante</span>
-                                <p class="card-text">Aprenderás de cero los elementos básicos de htlm, css y javascript.
-                                </p>
-                                <button type="button" class="btn btn-primary float-right" data-toggle="modal"
-                                    data-target="#modalVerMas">
-                                    Ver Más
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-6 col-lg-4">
-                        <div class="card">
-                            <img src="https://picsum.photos/id/1/400/300" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">Curso de Marketing Digital</h5>
-                                <span class="badge badge-secondary">Avanzado</span>
-                                <p class="card-text">Perfeccioná tu marca e imágen dentro del mercado laboral online.</p>
-                                <button type="button" class="btn btn-primary float-right" data-toggle="modal"
-                                    data-target="#modalVerMas">
-                                    Ver Más
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-6 col-lg-4">
-                        <div class="card">
-                            <img src="https://picsum.photos/id/1/400/300" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">Curso de Ingles</h5>
-                                <span class="badge badge-warning">Intermedio</span>
-                                <p class="card-text">Nuestro programa ofrece una forma rápida y eficaz para mejorar tus
-                                    conocimientos del idioma</p>
-                                <button type="button" class="btn btn-primary float-right" data-toggle="modal"
-                                    data-target="#modalVerMas">
-                                    Ver Más
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-6 col-lg-4">
-                        <div class="card">
-                            <img src="https://picsum.photos/id/1/400/300" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">Curso de E-comerce</h5>
-                                <span class="badge badge-warning">Intermedio</span>
-                                <p class="card-text">Aprendé a gestionar de manera integral una tienda online, con las
-                                    mejores estrategias orientadas a venta online.</p>
-                                <button type="button" class="btn btn-primary float-right" data-toggle="modal"
-                                    data-target="#modalVerMas">
-                                    Ver Más
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-6 col-lg-4">
-                        <div class="card">
-                            <img src="https://picsum.photos/id/1/400/300" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">Curso de Programación</h5>
-                                <span class="badge badge-secondary">Avanzado</span>
-                                <p class="card-text">Perfeccioná y domina los lenguajes de código, herramientas,
-                                    arquitectura, bases de datos y más.</p>
-                                <button type="button" class="btn btn-primary float-right" data-toggle="modal"
-                                    data-target="#modalVerMas">
-                                    Ver Más
-                                </button>
-                            </div>
-                        </div>
-                    </div>-->
-                </div>
+                <!-- TODO ESTA COMENTADO PORQUE AHORA TOMAMOS LA ESTRUCTURA Y LO HACEMOS DINAMICO-->
                 <!-- PAGINACION -->
                 <div class="row">
                     <div class="col">
@@ -391,37 +295,10 @@
             </div>
         </section>
         <!-- MODAL DE LOS BOTONES "VER MÁS" -->
-        <div class="modal fade left" id="modalVerMas" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-            aria-hidden="true">
+        <div class="modal fade left" id="modalVerMas" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-notify modal-info modal-side modal-top-left" role="document">
-                <!--Content-->
                 <div class="modal-content" id="modal-form-content">
-                   <!-- COMENTADO PORQUE AHORA SE HACE DINAMICO
-                    <div class="modal-header">
-                        <div class="nombreCurso">
-                            <p class="heading lead">Nombre del Curso</p>
-                        </div>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true" class="white-text">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <img src="https://picsum.photos/id/1/500/200" id="imagenModal" alt="" class="img-fluid">
-                            <span class="badge badge-warning categorias">categoria</span>
-                            <span class="badge badge-primary fecha">Inicia 15/10/20</span>
-                            <span class="badge badge-pill badge-info cupos">Quedan 3 cupos</span>
-                        <div class="text-center">
-                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Debitis incidunt delectus non atque
-                                quaerat enim hic aperiam sit sint adipisci dolores molestias minus soluta, accusamus
-                                explicabo, consequuntur id et dolorum vitae facere aut placeat rerum, nobis culpa.
-                                Perferendis magnam eos rem, dolor odit corporis voluptatibus alias, iusto sunt
-                                exercitationem repellat?</p>
-                        </div>
-                    </div>
-                    <div class="modal-footer justify-content-center">
-                        <a href="" type="button" class="btn btn-primary-curso">Inscribirse <i class="far fa-user ml-1 white-text"></i></a>
-                        <a type="button" class="btn btn-outline-info waves-effect" data-dismiss="modal">Cancelar</a>
-                    </div>-->
+                   <!-- COMENTADO PORQUE AHORA SE HACE DINAMICO-->
                 </div>
             </div>
         </div>
@@ -599,41 +476,41 @@
           </div>
         </div>
     </div>
-    <!-- FOOTER -->
-    <footer>
-        <div class="container-fluid bgdark text-white mt-5">
-            <div class="row">
-                <div class="col-12 col-sm-6 text-center p-3">
-                    <ul class="p-0">
-                        <li><a href="#">Inicio</a></li>
-                        <li><a href="#">Cursos Destacados</a></li>
-                        <li><a href="#">Categorías</a></li>
-                        <li><a href="#">Cursos</a></li>
-                        <li><a href="#">Ofrecer Cursos</a></li>
-                        <li><a href="#">Reviews</a></li>
-                    </ul>
-                </div>
-                <div class="col-12 col-sm-6 text-center pt-4">
-                    <a data-toggle="modal" data-target="#exampleModal" href="#!"><button type="button"
-                            class="btn btn-danger btn-lg">LogIn / SignUp</button></a>
-                    <br>
-                    <a href="#"><i class="fab fa-discord botones"></i></a>
-                    <a href="#"><i class="fab fa-twitter botones"></i></a>
-                    <a href="#"><i class="fab fa-facebook botones"></i></a>
-                    <a href="#"><i class="fab fa-instagram botones"></i></a>
-                </div>
+<!-- FOOTER -->
+<footer>
+    <div class="container-fluid bgdark text-white mt-5">
+        <div class="row">
+            <div class="col-12 col-sm-6 text-center p-3">
+                <ul class="p-0">
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="#">Cursos Destacados</a></li>
+                    <li><a href="#">Categorías</a></li>
+                    <li><a href="#">Cursos</a></li>
+                    <li><a href="#">Ofrecer Cursos</a></li>
+                    <li><a href="#">Reviews</a></li>
+                </ul>
             </div>
-            <div class="row text-center m-0 p-2">
-                <p class="mx-auto">2020 &copy; Diseñado y desarrolado por estudiantes de Rolling Code School</p>
+            <div class="col-12 col-sm-6 text-center pt-4">
+                <a data-toggle="modal" data-target="#exampleModal" href="#!"><button type="button"
+                        class="btn btn-danger btn-lg">LogIn / SignUp</button></a>
+                <br>
+                <a href="#"><i class="fab fa-discord botones"></i></a>
+                <a href="#"><i class="fab fa-twitter botones"></i></a>
+                <a href="#"><i class="fab fa-facebook botones"></i></a>
+                <a href="#"><i class="fab fa-instagram botones"></i></a>
             </div>
         </div>
-    </footer>
+        <div class="row text-center m-0 p-2">
+            <p class="mx-auto">2020 &copy; Diseñado y desarrolado por estudiantes de Rolling Code School</p>
+        </div>
+    </div>
+</footer>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 <script src="js/Modulos/Funciones/login-Reviews.js"></script>
 <script src="js/Modulos/Funciones/gestionarCursos.js"></script>
-    
+
 </body>
 
 </html>

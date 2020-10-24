@@ -17,14 +17,6 @@ class Cursos{
 // 2 == Pendiente de Aprobacion
 // 3 == Inactivo
 
-//NIVEL DEL CURSO
-// 1 = Principiante
-// 2 = Intermedio
-// 3 = Avanzado
-/*let curso1= new Cursos("PHP","Curso de Programacion","Programacion","Principiante",15,1,"",1);
-let curso2= new Cursos("JS","Curso de Programacion","Programacion","Intermedio",20,1,"",1);
-let curso3= new Cursos("PHP","Curso de Programacion","Programacion","Principiante",15,1,"",1);*/
-
 let cursos = localStorage.getItem("cursos") || [];
 
 let identificadorCurso;
@@ -153,9 +145,61 @@ function mostrarModalCurso (idCurs){
         </div>
     </div>
     <div class="modal-footer justify-content-center">
-        <a href="" type="button" class="btn btn-primary-curso">Inscribirse<i class="far fa-user ml-1 white-text"></i></a>
-        <a type="button" class="btn btn-primary-curso">Agregar a mis Favoritos<i class="far fa-heart ml-1 white-text"></i></a>
+        <button class="btn btn-primary-curso" onclick="validarAddCurso(${cursoDB.idCurso})">Inscribirse<i class="far fa-user ml-1 white-text"></i></button>
+        <button class="btn btn-primary-curso" onclick="validarAddFav(${cursoDB.idCurso})">Agregar a mis Favoritos<i class="far fa-heart ml-1 white-text"></i></button>
     </div> `
     modalForm.innerHTML= contentModalForm;
 }
 
+function validarAddCurso(idCurso){
+    let userLog = JSON.parse(localStorage.getItem("usuariosLogueados"))||[]
+    if(userLog.length<1){
+        alert("Debes iniciar sesion")
+        //PERMITIR QUE HAGA EL LOGUEO (O MOSTRAMOS EL LOGIN O MOSTRAMOS ALERT DE QUE NECESITA INICIAR SESION)
+    }else{
+        cursos= JSON.parse(localStorage.getItem("cursos"))
+        let curso = cursos.find(function(cur){
+            return cur.idCurso===idCurso
+        })
+        let users = JSON.parse(localStorage.getItem("users"))
+        let us= users.find(function(u){
+            return userLog[0].userName == u.userName
+        })
+        let existCurso= us.userCursos.find(function(cur){
+            return cur.idCurso===curso.idCurso
+        })
+        if(!existCurso){
+        us.userCursos.push(curso)
+        localStorage.setItem("users",JSON.stringify(users))
+        }else{
+            alert("El curso ya fue agregado a Mis Cursos")
+        }
+    }
+}
+
+function validarAddFav(idCurso){
+    let userLog = JSON.parse(localStorage.getItem("usuariosLogueados"))||[]
+    console.log(userLog.length)
+    if(userLog==[]){
+        alert("Debes iniciar sesion")
+        //PERMITIR QUE HAGA EL LOGUEO (O MOSTRAMOS EL LOGIN O MOSTRAMOS ALERT DE QUE NECESITA INICIAR SESION)
+    }else{
+        cursos= JSON.parse(localStorage.getItem("cursos"))
+        let curso = cursos.find(function(cur){
+            return cur.idCurso===idCurso
+        })
+        let users = JSON.parse(localStorage.getItem("users"))
+        let us= users.find(function(u){
+            return userLog[0].userName == u.userName
+        })
+        let existCurso= us.userFavoritos.find(function(fav){
+            return fav.idCurso===curso.idCurso
+        })
+        if(!existCurso){
+        us.userFavoritos.push(curso)
+        localStorage.setItem("users",JSON.stringify(users))
+        }else{
+            alert("El curso ya fue agregado a Favoritos")
+        }
+    }
+}
