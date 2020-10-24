@@ -253,7 +253,7 @@ ul li a:hover{
 
 .statisticsData{
     position: relative;
-    color: black;
+    color: #212529;
     font-family: sans-serif;
     font-size: 5rem;
 }
@@ -313,3 +313,11 @@ ul li a:hover{
     outline: none;
 }
 /*******Fin Section Gabriel********/
+
+/* Ajuste de tablas admin*/
+@media screen and (max-width: 380px) {
+    table {
+      display: block;
+      overflow-x: auto;
+    }
+}
