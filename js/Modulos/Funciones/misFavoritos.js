@@ -79,16 +79,13 @@ function mostrarModalCurso (idCurs){
 }
 
 function validarRemoveFav(idCurs){
-    console.log("Entre a la funcion de remover Fav")
-    console.log(user)
-    console.log(user.userFavoritos)
-    let index = user.userFavoritos.findIndex(function (curs) {
-        return curs.idCurso ===idCurs;
-    });
-    if (index != -1) {
-        user.userFavoritos.splice(index, 1);
-    } else {
-        console.warn("No se encuentra en Favoritos");
-    }
+    let newFav= user.userFavoritos.filter(function(c){
+        return c.idCurso!=idCurs
+    })
+    let indexUser = usuarios.findIndex(function(u){
+        return u.userName== user.userName
+    })
+    usuarios[indexUser].userFavoritos = newFav
+    localStorage.setItem("users",JSON.stringify(usuarios))
     mostrarMisFav()
 }

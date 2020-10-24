@@ -17,14 +17,6 @@ class Cursos{
 // 2 == Pendiente de Aprobacion
 // 3 == Inactivo
 
-//NIVEL DEL CURSO
-// 1 = Principiante
-// 2 = Intermedio
-// 3 = Avanzado
-/*let curso1= new Cursos("PHP","Curso de Programacion","Programacion","Principiante",15,1,"",1);
-let curso2= new Cursos("JS","Curso de Programacion","Programacion","Intermedio",20,1,"",1);
-let curso3= new Cursos("PHP","Curso de Programacion","Programacion","Principiante",15,1,"",1);*/
-
 let cursos = localStorage.getItem("cursos") || [];
 
 let identificadorCurso;
@@ -188,7 +180,7 @@ function validarAddCurso(idCurso){
 function validarAddFav(idCurso){
     let userLog = JSON.parse(localStorage.getItem("usuariosLogueados"))||[]
     console.log(userLog.length)
-    if(userLog.length<1){
+    if(userLog==[]){
         alert("Debes iniciar sesion")
         //PERMITIR QUE HAGA EL LOGUEO (O MOSTRAMOS EL LOGIN O MOSTRAMOS ALERT DE QUE NECESITA INICIAR SESION)
     }else{
