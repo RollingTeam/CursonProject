@@ -182,9 +182,6 @@ function altaAdmin (name) {
     verNumeroUsuarios()
 }
 
-
-
-
 // Se define la funcion cargar
 function cargarUsuarios () {
     tbody.innerHTML = ""
@@ -229,7 +226,5 @@ function cargarUsuarios () {
     tbody.innerHTML += tablaUsuario
     })
 }
-
-
 cargarUsuarios()
 verNumeroUsuarios()

@@ -101,6 +101,9 @@
 .btn-review:focus{
     outline: none;
 }
+.btn:focus{
+    outline:none
+}
 .form-review{
     margin-top: 12px;
     margin-bottom: 12px;

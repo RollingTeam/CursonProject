@@ -23,7 +23,7 @@ function agregarCurso(){
 
 let nombreCurso= document.getElementById("nombreCursoInput");
 let descripCurso = document.getElementById("contenidoCursoInput");
-let categoriaCruso= document.getElementById("categoriaCursoInput");
+let categoriaCurso= document.getElementById("categoriaCursoInput");
 let nivelCurso= document.getElementById("dificultadCursoInput")
 let cupoCurso= document.getElementById("cuposCursoInput")
 let duracionCurso= document.getElementById("duracionCursoInput");
@@ -34,7 +34,7 @@ let imagenCurso= document.getElementById("imagenCursoInput");
 if (
     nombreCurso.value == "" ||
     descripCurso.value == "" ||
-    categoriaCruso.value == ""||
+    categoriaCurso.value == ""||
     nivelCurso.value==""||
     cupoCurso.value==""||
     duracionCurso.value==""||
@@ -52,7 +52,7 @@ if (
     identificadorCurso= ultimoCurso.idCurso +1 
  }
 
- let newCurso = new Cursos(identificadorCurso,nombreCurso.value,descripCurso.value,categoriaCruso.value,nivelCurso.value,cupoCurso.value,duracionCurso.value,imagenCurso.value)
+ let newCurso = new Cursos(identificadorCurso,nombreCurso.value,descripCurso.value,categoriaCurso.value,nivelCurso.value,cupoCurso.value,duracionCurso.value,imagenCurso.value)
  cursos.push(newCurso);
  localStorage.setItem("cursos",JSON.stringify(cursos))
  limpiarFormCurso();
@@ -63,7 +63,7 @@ cargarCursos();
 function limpiarFormCurso(){
     let nombreCurso= document.getElementById("nombreCursoInput");
     let descripCurso = document.getElementById("contenidoCursoInput");
-    let categoriaCruso= document.getElementById("categoriaCursoInput");
+    let categoriaCurso= document.getElementById("categoriaCursoInput");
     let nivelCurso= document.getElementById("dificultadCursoInput")
     let cupoCurso= document.getElementById("cuposCursoInput")
     let duracionCurso= document.getElementById("duracionCursoInput");
@@ -71,7 +71,7 @@ function limpiarFormCurso(){
 
     nombreCurso.value = "";
     descripCurso.value = "";
-    categoriaCruso.value = "";
+    categoriaCurso.value = "";
     nivelCurso.value="";
     cupoCurso.value="";
     duracionCurso.value="";
@@ -83,7 +83,7 @@ function cargarCursos(){
      cursos = localStorage.getItem("cursos")
      let cursosDB = JSON.parse(cursos)
      cursosContainer.innerHTML=""
-     for(let i=0 ; i< cursosDB.length ; i++){
+    for(let i=0 ; i< cursosDB.length ; i++){
         if(cursosDB[i].estadoCurso==1){
             while(i<6){
                 let badgeColor
@@ -112,7 +112,54 @@ function cargarCursos(){
                 i+=1
             }
         }
-     }
+    }
+}
+
+function verPrincipales(){
+    cargarCursos()
+    let btnMenos= document.getElementById("verMenos")
+    btnMenos.style = 'display:none'
+    let btnMas = document.getElementById("verTodosCursos")
+    btnMas.style = 'display:inline-block'
+}
+
+function mostrarTodo(){
+    console.log("Vine por mostrarTodo")
+    cursos = localStorage.getItem("cursos")
+    let cursosDB = JSON.parse(cursos)
+    cursosContainer.innerHTML=""
+   for(let i=0 ; i< cursosDB.length ; i++){
+       if(cursosDB[i].estadoCurso==1){
+            let badgeColor
+            if(cursosDB[i].nivelCurso=="Principiante"){
+                badgeColor= `<span class="badge badge-success" id="badgeNivel">${cursosDB[i].nivelCurso}</span>`
+            }else if(cursosDB[i].nivelCurso=="Intermedio"){
+                badgeColor= `<span class="badge badge-warning" id="badgeNivel">${cursosDB[i].nivelCurso}</span>`
+            }else{
+                badgeColor= `<span class="badge badge-secondary" id="badgeNivel">${cursosDB[i].nivelCurso}</span>`
+            }
+
+            let cursoContenido= `<div class="col-12 col-md-6 col-lg-4">
+            <div class="card card-curso m-2">
+                <img src="https://picsum.photos/id/1/400/300" class="card-img-top img-fluid" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title"><strong>${cursosDB[i].nombreCurso}</strong></h5>
+                    ${badgeColor}
+                    <p class="card-text">${cursosDB[i].descripcionCurso}</p>
+                    <button onclick="mostrarModalCurso(${cursosDB[i].idCurso})" class="btn btn-primary-curso float-right" data-toggle="modal" data-target="#modalVerMas">
+                    Ver Más
+                    </button>
+                </div>
+            </div>
+            </div>`
+            cursosContainer.innerHTML+=cursoContenido
+       }
+   }
+   let btnMas = document.getElementById("verTodosCursos")
+   btnMas.style = 'display:none'
+  let btnMenos= document.getElementById("verMenos")
+  btnMenos.style = 'display:inline-block'
+  btnMenos.className="btn btn-primary-curso"
 }
 
 function mostrarModalCurso (idCurs){
