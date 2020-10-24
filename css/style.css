@@ -277,7 +277,6 @@ ul li a:hover{
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
-
 }
 .card-img-top{
     width: 100%;
@@ -331,4 +330,10 @@ ul li a:hover{
       display: block;
       overflow-x: auto;
     }
+}
+
+/* Ajustar tamaño de las cards en el Landing */
+.card-curso {
+min-height: 450px !important;
+max-height:450px !important
 }

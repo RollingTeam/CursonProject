@@ -8,7 +8,7 @@ function agregarDestacados() {
         while (i < 3) {
             console.log("entramos al while")
             let cuerpoCard = `<div class="col-md-4 mt-3"
-            <div class="card ">
+            <div class="card card-curso">
             <img class="card-img-top img-fluid" src="https://picsum.photos/200/200/?blur"
                 alt="Card image cap">
             <div class="card-body">
