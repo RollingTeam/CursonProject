@@ -1,17 +1,19 @@
-let datos = localStorage.getItem("cursos") || []
-let cursos = JSON.parse(datos)
+let datos = JSON.parse(localStorage.getItem("cursos")) || []
+//let cursos = JSON.parse(datos)
 
 function verNumeroCursos(){
+    console.log("Entre a la function de verNumeroCursos")
+    datos = JSON.parse(localStorage.getItem("cursos"))
     //NUMERO TOTAL DE CURSOS
     numberCursos.innerHTML = "";
-    let numeroTotal = cursos.length
+    let numeroTotal = datos.length
     let total = `<span class = "statisticsData">${numeroTotal}</span>`
     numberCursos.innerHTML = total
 
     //NUMERO DE CURSOS ACTIVOS
     activeCursos.innerHTML = "";
     let totalActivos = 0;
-    cursos.map(function (curso){
+    datos.map(function (curso){
         if (curso.estadoCurso === 1){
             totalActivos += 1
         }else{
@@ -25,7 +27,7 @@ function verNumeroCursos(){
     //NUMERO DE CURSOS INACTIVOS
     inactiveCursos.innerHTML = "";
     let totalInactivos=0;
-    cursos.map(function (curso){
+    datos.map(function (curso){
         if (curso.estadoCurso === 3){
             totalInactivos += 1
             console.log(curso.estadoCurso)
@@ -37,7 +39,7 @@ function verNumeroCursos(){
     // NUMERO DE CURSOS PENDIENTES
     pendientesCursos.innerHTML = "";
     let totalPendientes = 0;
-    cursos.map(function(curso){
+    datos.map(function(curso){
         if (curso.estadoCurso === 2){
             totalPendientes += 1
             console.log(curso.estadoCurso)
@@ -64,6 +66,7 @@ function eliminarCurso(idCurso){
     if(valor){
         localStorage.setItem("cursos", JSON.stringify(newArray));
         cargarTablaCursos();
+        verNumeroCursos();
     }
 }
 
