@@ -49,7 +49,8 @@
                         class="btn btn-outline-dark btn-sm">Log In</button>
                 </li>
                 <li class="nav-item pl-2 pr-2 pt-1" id="SignUpOpcion">
-                    <button data-toggle="modal" data-target="#exampleModal2" type="button" class="btn btn-outline-danger btn-sm">Sign Up</button>
+                    <button data-toggle="modal" data-target="#exampleModal2" type="button"
+                        class="btn btn-outline-danger btn-sm">Sign Up</button>
                 </li>
                 <li class="nav-item dropdown ocultarUser" id="menuUser">
                     <button class="nav-link icon-login item-nav-r ml-lg-5" data-toggle="dropdown" href="#" role="button"
@@ -371,7 +372,7 @@
     </section>
 
     <!-- Modal LOGIN-->
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    <div class="modal fade" id="exampleModal" tabindex="5" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
         <div class="modal-dialog modal-sm" role="document">
             <div class="modal-content modal-sm">
@@ -394,7 +395,7 @@
                 </div>
                 <div class="text-center">
                     <h6>Aún no tenés cuenta?<button data-toggle="modal" data-target="#exampleModal2" type="button"
-                        class="btn btn-outline-dark btn-sm ml-1">Registrate</button></h6>
+                            class="btn btn-outline-dark btn-sm ml-1">Registrate</button></h6>
                 </div>
                 <div class="modal-footer display-flex justify-content-center ">
                     <button type="button" class="btn btn-danger" data-dismiss="modal"
@@ -428,17 +429,16 @@
                     </div>
                     <div class="form-group">
                         <label for="exampleDropdownFormEmail1">Email</label>
-                        <input type="email" class="form-control" id="inputUser"
-                            placeholder="Ingresa tu email" required>
+                        <input type="email" class="form-control" id="inputUser" placeholder="Ingresa tu email" required>
                     </div>
                     <div class="form-group">
                         <label for="exampleDropdownFormPassword1">Password</label>
                         <input type="password" class="form-control" id="inputPassword" placeholder="Password" required>
                     </div>
                 </div>
-                <div class="text-center">
-                    <h6>¿Ya tenés cuenta?<button data-toggle="modal" data-target="#exampleModal" type="button"
-                        class="btn btn-outline-dark btn-sm ml-1">Iniciar Sesión</h6>
+                <div class="form-group form-check text-center">
+                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                    <label class="form-check-label" for="exampleCheck1">Acepto las bases y condiciones.</label>
                 </div>
                 <div class="modal-footer display-flex justify-content-center ">
                     <button type="button" class="btn btn-danger" data-dismiss="modal">Sign Up</button>
@@ -449,7 +449,7 @@
     </div>
     <!-- Inicio Modal Publica tu curso -->
     <div class="modal" tabindex="-1" id="exampleSolicitud" aria-hidden="true">
-        <div class="modal-dialog">
+        <div class="modal-dialog modal-dialog-scrollable">
             <div class="modal-content" style="background-color: #EDF2F4;">
                 <div class="modal-header text text-center">
                     <h5 class="modal-title">Formulario de solicitud</h5>
@@ -559,4 +559,5 @@
     <script src="js/Modulos/Funciones/gestionarCursos.js"></script>
     <script src="js/Modulos/Funciones/destacados.js"></script>
 </body>
+
 </html>
