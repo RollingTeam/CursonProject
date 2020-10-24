@@ -31,7 +31,7 @@ let EstadosUser=[
 let regularUserB = new Usuario("BelenUser","654321","Belen","Neme","2","1","b@gmail.com");
 let users=[]
 users.push(adminUserB,regularUserB);
-localStorage.setItem("users",JSON.stringify(users));*/
+localStorage.setItem("users",JSON.stringify(users))*/
 let users = (localStorage.getItem("users")) || [];
 
 let userLogueados = localStorage.getItem("usuariosLogueados")||[];
