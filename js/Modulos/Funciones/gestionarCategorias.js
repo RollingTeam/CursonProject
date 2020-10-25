@@ -27,14 +27,21 @@ function crearCategoria(){
     console.log("Entre a la funcion crearCategoria")
     obtenerIdCategoria();
     console.log(identificadorCat)
-    let nombreCat= document.getElementById("inputCategoria").value
-    let estadoCat = document.getElementById("inputState").value
-    let categoria= new Categoria(identificadorCat,nombreCat,estadoCat)
+    let nombreCat= document.getElementById("inputCategoria")
+    let estadoCat = document.getElementById("inputState")
+    let categoria= new Categoria(identificadorCat,nombreCat.value,estadoCat.value)
     categorias.push(categoria)
     localStorage.setItem("categorias",JSON.stringify(categorias))
-    nombreCat = "";
-    estadoCat = "";
+    limpiarFormCategoria()
+    nombreCat.value = "";
+    estadoCat.value = "";
 }
+function limpiarFormCategoria(){
+    let nombreCat= document.getElementById("nputCategoria");
+    let estadoCat = document.getElementById("inputState");
+    nombreCat.value = "";
+    estadoCat.value = "";
+};
 function eliminarCategoria(idCategoria){
     let catSearch = categorias.find(function(c){
         return c.idCategoria === idCategoria
@@ -74,7 +81,9 @@ function activarCategoria(idCategoria){
     }
 }
 
-cargarCategorias()
+if (location.pathname ==="/CursonProject/crearCatAdmin.html"){
+    cargarCategorias()
+}
 function cargarCategorias(){
     categorias = JSON.parse(localStorage.getItem("categorias"))
     let tablaBody = document.getElementById("cuerpoTabla");

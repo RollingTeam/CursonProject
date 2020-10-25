@@ -1,5 +1,11 @@
 let datos = JSON.parse(localStorage.getItem("cursos")) || []
-
+let categoriasArray = localStorage.getItem("categorias") || []
+let categorias;
+if(categoriasArray.length >0){
+    categorias = JSON.parse(categoriasArray)
+}else{
+    categorias=[]
+}
 function verNumeroCursos(){
     console.log("Entre a la function de verNumeroCursos")
     datos = JSON.parse(localStorage.getItem("cursos"))
@@ -50,12 +56,21 @@ function verNumeroCursos(){
     let totalPending = `<span class = "statisticsData">${totalPendientes}</span>`
     pendientesCursos.innerHTML = totalPending
 }
+mostrarCategorias();
+function mostrarCategorias(){
+    let opcionCategorias = document.getElementById("listaCategorias")
+    opcionCategorias.innerHTML=""
+    for(let i=0; i< categorias.length;i++){
+        let opcionCat= `<option id="${categorias[i].idCategoria}" value="${categorias[i].nombreCategoria}">${categorias[i].nombreCategoria}</option>`
+        opcionCategorias.innerHTML+= opcionCat
+    }
+}
 
 // FUNCION DE FILTROS
 filtrarDatos = () => {
     cursos = JSON.parse(localStorage.getItem("cursos"));
     let estado = document.getElementById("estado");
-    let categoria = document.getElementById("categoria");
+    let categoria = document.getElementById("listaCategorias");
     console.log(typeof categoria.value)
     if (estado.value > 0 && categoria.value !="") {
       let busquedaEstado = cursos.filter(function (curso) {
