@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curson</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/png" href="./img/icon.png">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.0/css/all.css"
+        integrity="sha384-OLYO0LymqQ+uHXELyx93kblK5YIS3B2ZfLGBmsJaUyor7CpMTBsahDHByqSuWW+q" crossorigin="anonymous">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-blanco p-2">
+        <button class="navbar-toggler nav-menuHamb" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03"
+            aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand" href="#"><img src="./img/logo-rect.png" class="img-fluid ml-2 logo" alt="logo"></a>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+            <ul class="navbar-nav ml-auto mt-2 mt-lg-0" id="ulNav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#"><strong class="color-oscuro item-nav-d">Inicio</strong><span
+                            class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle item-nav-d mx-lg-4" data-toggle="dropdown" href="#" role="button"
+                        aria-haspopup="true" aria-expanded="false"><strong class="color-rosa">Cursos</strong></a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item color-oscuro" href="#!">Mas Destacados</a>
+                        <a class="dropdown-item color-oscuro" href="#!">Cursos por Categorías</a>
+                        <a class="dropdown-item color-oscuro" href="#!">Ver todos</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><strong class="color-oscuro item-nav-r">Publicá tu Curso</strong></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#reviews"><strong class="color-rosa item-nav-d">Reviews</strong></a>
+                </li>
+                <li class="nav-item pl-2 pr-2 pt-1" id="LogInOpcion">
+                    <button data-toggle="modal" data-target="#exampleModal" type="button"
+                        class="btn btn-outline-dark btn-sm">Log In</button>
+                </li>
+                <li class="nav-item pl-2 pr-2 pt-1" id="SignUpOpcion">
+                    <button type="button" class="btn btn-outline-danger btn-sm">Sign Up</button>
+                </li>
+                <li class="nav-item dropdown ocultarUser" id="menuUser">
+                    <button class="nav-link icon-login item-nav-r ml-lg-5" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user fa-xl"></i></button>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item color-oscuro" href="#!">Mi Perfil</a>
+                        <a class="dropdown-item color-oscuro" href="misCursos.html">Mis Cursos</a>
+                        <a class="dropdown-item color-oscuro" href="misFavoritos.html">Mis Favoritos</a>
+                        <a class="dropdown-item color-oscuro" onclick="logOut()">Log Out</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="fixed-top">
+            <div class="collapse" id="navbarToggleExternalContent">
+                <div class="bg-dark p-4">
+                    <h5 class="text-white h4">Collapsed content</h5>
+                    <span class="text-muted">Toggleable via the navbar brand.</span>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- FIN DEL NAV -->
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container-fluid bgdark text-white mt-5">
+            <div class="row">
+                <div class="col-12 col-sm-6 text-center p-3">
+                    <ul class="p-0">
+                        <li><a href="#">Inicio</a></li>
+                        <li><a href="#">Cursos Destacados</a></li>
+                        <li><a href="#">Categorías</a></li>
+                        <li><a href="#">Cursos</a></li>
+                        <li><a href="#">Ofrecer Cursos</a></li>
+                        <li><a href="#">Reviews</a></li>
+                    </ul>
+                </div>
+                <div class="col-12 col-sm-6 text-center pt-4">
+                    <a data-toggle="modal" data-target="#exampleModal" href="#!"><button type="button"
+                            class="btn btn-danger btn-lg">LogIn / SignUp</button></a>
+                    <br>
+                    <a href="#"><i class="fab fa-discord botones"></i></a>
+                    <a href="#"><i class="fab fa-twitter botones"></i></a>
+                    <a href="#"><i class="fab fa-facebook botones"></i></a>
+                    <a href="#"><i class="fab fa-instagram botones"></i></a>
+                </div>
+            </div>
+            <div class="row text-center m-0 p-2">
+                <p class="mx-auto">2020 &copy; Diseñado y desarrolado por estudiantes de Rolling Code School</p>
+            </div>
+        </div>
+    </footer>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+<script src="js/Modulos/Funciones/login-Reviews.js"></script>
+<script src="js/Modulos/Funciones/gestionarCursos.js"></script>
+    
+</body>
+    
+    </html>
