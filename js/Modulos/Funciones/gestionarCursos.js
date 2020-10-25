@@ -1,5 +1,5 @@
 class Cursos{
-    constructor(idCurso,nombreCurso,descripcionCurso,categoriaCurso,nivelCurso,cupoCurso,duracionCurso,imagenCurso,estadoCurso=1){
+    constructor(idCurso,nombreCurso,descripcionCurso,categoriaCurso,nivelCurso,cupoCurso,duracionCurso,imagenCurso,estadoCurso=1,contactoCurso){
         this.idCurso=idCurso
         this.nombreCurso= nombreCurso
         this.descripcionCurso= descripcionCurso
@@ -9,6 +9,7 @@ class Cursos{
         this.duracionCurso=duracionCurso
         this.imagenCurso=imagenCurso
         this.estadoCurso=estadoCurso
+        this.contactoCurso=contactoCurso
     }
 }
 
@@ -30,6 +31,7 @@ let nivelCurso= document.getElementById("dificultadCursoInput")
 let cupoCurso= document.getElementById("cuposCursoInput")
 let duracionCurso= document.getElementById("duracionCursoInput");
 let imagenCurso= document.getElementById("imagenCursoInput");
+let contactoCurso = document.getElementById("contactoCursoInput")
 
 //DEBERIAMOS AGREGAR AQUI LA VALIDACION PARA CADA CAMPO DEL FORM
 
@@ -40,7 +42,8 @@ if (
     nivelCurso.value==""||
     cupoCurso.value==""||
     duracionCurso.value==""||
-    imagenCurso.value==""
+    imagenCurso.value==""||
+    contactoCurso.value==""
 ) {
     return ""
 }
@@ -54,7 +57,7 @@ if (
     identificadorCurso= ultimoCurso.idCurso +1 
  }
 
- let newCurso = new Cursos(identificadorCurso,nombreCurso.value,descripCurso.value,categoriaCurso.value,nivelCurso.value,cupoCurso.value,duracionCurso.value,imagenCurso.value)
+ let newCurso = new Cursos(identificadorCurso,nombreCurso.value,descripCurso.value,categoriaCurso.value,nivelCurso.value,cupoCurso.value,duracionCurso.value,imagenCurso.value,1,contactoCurso.value)
  cursos.push(newCurso);
  localStorage.setItem("cursos",JSON.stringify(cursos))
  limpiarFormCurso();
@@ -70,6 +73,7 @@ function limpiarFormCurso(){
     let cupoCurso= document.getElementById("cuposCursoInput")
     let duracionCurso= document.getElementById("duracionCursoInput");
     let imagenCurso= document.getElementById("imagenCursoInput");
+    let contactoCurso = document.getElementById("contactoCursoInpt")
 
     nombreCurso.value = "";
     descripCurso.value = "";
@@ -78,6 +82,7 @@ function limpiarFormCurso(){
     cupoCurso.value="";
     duracionCurso.value="";
     imagenCurso.value="";
+    contactoCurso.value="";
 };
 
 cargarCursos();
@@ -187,11 +192,11 @@ function mostrarModalCurso (idCurs){
     <div class="modal-body">
     <img src=${cursoDB.imagenCurso} class="card-img-top img-fluid" alt="...">
         <span class="badge badge-warning categorias">${cursoDB.categoriaCurso}</span>
-        <span class="badge badge-primary fecha">Inicia 15/10/20</span>
         <span class="badge badge-pill badge-info cupos">${cursoDB.cupoCurso} Lugares Disponibles</span>
         <div class="text-center">
             <p>${cursoDB.descripcionCurso}</p>
         </div>
+        <div class="text-center">Contacto: ${cursoDB.contactoCurso}</div>
     </div>
     <div class="modal-footer justify-content-center">
         <button class="btn btn-primary-curso" onclick="validarAddCurso(${cursoDB.idCurso})">Inscribirse<i class="far fa-user ml-1 white-text"></i></button>

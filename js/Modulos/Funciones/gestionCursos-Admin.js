@@ -240,6 +240,12 @@ function editarCurso(idCurso){
                             <input type="url" class="form-control-fie" id="imagenCursoInput" value=${cursoSearch.imagenCurso}>
                         </div>
                     </div>
+                    <div class="row">
+                        <div class="form-group col">
+                            <label class="color-rosa">Contacto:</label>
+                            <input type="url" class="form-control-fie" id="contactoCursoInput" value=${cursoSearch.contactoCurso}>
+                        </div>
+                    </div>
                     </div>
                 </div>
             </div>
@@ -261,6 +267,7 @@ const updateCurso = (idCurso) => {
     let cupoCurso= document.getElementById("cuposCursoInput").value;
     let duracionCurso= document.getElementById("duracionCursoInput").value;
     let imagenCurso= document.getElementById("imagenCursoInput").value;
+    let contactoCurso= document.getElementById("contactoCursoInput").value;
 
     datos.map(function (curso) {
       if (curso.idCurso === idCurso) {
@@ -271,6 +278,7 @@ const updateCurso = (idCurso) => {
         curso.cupoCurso=cupoCurso
         curso.duracionCurso=duracionCurso
         curso.imagenCurso=imagenCurso
+        curso.contactoCurso=contactoCurso
       }
     });
     localStorage.setItem("cursos", JSON.stringify(datos));
