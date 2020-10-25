@@ -23,7 +23,9 @@ function agregarCurso(){
 
 let nombreCurso= document.getElementById("nombreCursoInput");
 let descripCurso = document.getElementById("contenidoCursoInput");
-let categoriaCurso= document.getElementById("categoriaCursoInput");
+let categoriaCurso= document.getElementById("listaCategorias");
+console.log(categoriaCurso)
+console.log(categoriaCurso.value)
 let nivelCurso= document.getElementById("dificultadCursoInput")
 let cupoCurso= document.getElementById("cuposCursoInput")
 let duracionCurso= document.getElementById("duracionCursoInput");
@@ -178,7 +180,7 @@ function mostrarModalCurso (idCurs){
         </button>
     </div>
     <div class="modal-body">
-    <img src=${destacados[i].imagenCurso} class="card-img-top img-fluid" alt="...">
+    <img src=${cursoDB.imagenCurso} class="card-img-top img-fluid" alt="...">
         <span class="badge badge-warning categorias">${cursoDB.categoriaCurso}</span>
         <span class="badge badge-primary fecha">Inicia 15/10/20</span>
         <span class="badge badge-pill badge-info cupos">${cursoDB.cupoCurso} Lugares Disponibles</span>
