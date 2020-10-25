@@ -21,20 +21,20 @@
             aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <a class="navbar-brand m-0" href="#"><img src="./img/logo-navbar.png" class="img-fluid logo"
+        <a class="navbar-brand m-0" href="index.html"><img src="./img/logo-navbar.png" class="img-fluid logo"
                 alt="logo curson navbar"></a>
         <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
             <ul class="navbar-nav mx-auto mt-2 mt-lg-0">
                 <li class="nav-item active">
-                    <a class="nav-link" href="index.html"><strong class="color-oscuro item-nav-d">Usuarios</strong><span
+                    <a class="nav-link" href="verUsers.html"><strong class="color-oscuro item-nav-d">Usuarios</strong><span
                             class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle item-nav-d mx-lg-4" data-toggle="dropdown" href="#" role="button"
                         aria-haspopup="true" aria-expanded="false"><strong class="color-rosa">Cursos</strong></a>
                     <div class="dropdown-menu">
-                        <a class="dropdown-item color-oscuro" href="#!">Nuevo Curso</a>
-                        <a class="dropdown-item color-oscuro" href="#!">Ver Cursos</a>
+                        <a class="dropdown-item color-oscuro" href="nuevoCurso.html">Nuevo Curso</a>
+                        <a class="dropdown-item color-oscuro" href="verCursos.html">Ver Cursos</a>
                     </div>
                 </li>
                 <li class="nav-item dropdown">
@@ -50,9 +50,13 @@
                 </li>
             </ul>
             <ul class="navbar-nav float-right mt-2 mt-lg-0">
-                <li class="nav-item pl-2 pr-2 pt-1">
+                <li class="nav-item pl-2 pr-2 pt-1" id="LogOutOpcion">
+                    <button type="button" class="btn btn-outline-dark btn-sm" onclick="logOut()">Log Out</button>
+                </li>
+                <li class="nav-item float-right pl-2 pr-2 pt-1">
                     <i class="fas fa-user-astronaut astronaut"></i>
                 </li>
+            </ul>
         </div>
         <div class="fixed-top">
             <div class="collapse" id="navbarToggleExternalContent">

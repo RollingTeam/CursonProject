@@ -81,7 +81,7 @@
             <div class="container-fluid hmin" id="inicio">
                 <div class="row">
                     <div class="col-12 col-sm-12 col-md-6 pt-4 pb-4">
-                        <h2>¡Bienvenidos a CoursOn!</h2>
+                        <h2>¡Bienvenidos a CursOn!</h2>
                         <br>
                         <p class="pt-4 mt-1">Somos una plataforma online con el propósito de proporcionar un espacio
                             dedicado a estudiantes y mentores</p>
@@ -153,53 +153,34 @@
             </div>
         </div>
     </main>
-        <!-- CURSOS POR CATEGORÍAS -->
-        <section id="cursosCategoria">
-            <div class="container mb-4"><br>
-                <div class="row pt-2 pb-2 pl-0 pr-0">
-                    <h3 class="size-review color-rosa mb-4">Cursos por Categoría</h3>
+    <!-- CURSOS POR CATEGORÍAS -->
+    <section id="cursosCategoria">
+        <div class="container mb-4"><br>
+            <div class="row pt-2 pb-2 pl-0 pr-0">
+                <h3 class="size-review color-rosa mb-4">Cursos por Categoría</h3>
+            </div>
+            <div class="row">
+                <div class="col-lg-2">
+                    <label class="color-rosa">Categorias</label>
+                    <select class="" id="listaCategorias" onchange="filtrarCursosPorCategoria()">
+                    </select>
                 </div>
-                <div class="row">
-                    <div class="col-lg-2">
-                        <label class="color-rosa">Categorias</label>
-                        <select class="" id="listaCategorias" onchange="filtrarCursosPorCategoria()">
-                        </select>
+                <!-- TARJETAS DE CATEGORIAS -->
+                <div class="col-10 col-md-10">
+                    <div class="row" id="containerCursCat"></div>
+                    <div class="row text-center mb-4 display-flex justify-content-center">
+                        <button class="btn btn-primary-curso" id="verTodosLosCursos" onclick="mostrarTodosLosCursos()">Ver Todos</button>
+                        <button class="ocultarUser" id="verMenosCursos" onclick="verPrincipalesCursos()">Ver Menos</button>
                     </div>
-                    <!-- TARJETAS DE CATEGORIAS -->
-                    <div class="col-10 col-md-10">
-                        <div class="row" id="containerCursCat"></div>
-                        <div class="row text-center mb-4 display-flex justify-content-center">
-                            <button class="btn btn-primary-curso" id="verTodosLosCursos" onclick="mostrarTodosLosCursos()">Ver Todos</button>
-                            <button class="ocultarUser" id="verMenosCursos" onclick="verPrincipalesCursos()">Ver Menos</button>
-                        </div>
-                    </div>
-                    <!-- PAGINACION -->
-                    <nav aria-label="Page navigation example">
-                        <ul class="pagination justify-content-center pagination-lg">
-                            <li class="page-item disabled">
-                                <a class="page-link btn btn-primary boton mt-2" href="#" aria-label="Previous">
-                                    <span aria-hidden="true">&laquo;</span>
-                                </a>
-                            </li>
-                            <li class="page-item">
-                                <a class="page-link btn btn-primary boton mt-2" href="#" aria-label="Next">
-                                    <span aria-hidden="true">&raquo;</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </nav>
-                    <!-- FíN DE PAGINACIÓN -->
                 </div>
             </div>
         </div>
     </section>
-    <!-- FÍN DE CURSOS POR CATEGORÍAS -->
-
-    <!-- COMIENZO DE TODOS LOS CURSOS -->
+    <!-- TODOS LOS CURSOS -->
     <section id="cursos">
         <div class="container">
             <hr class="bg-gris">
-            <h3 class="size-review mb-4">Todos los Cursos</h3>
+            <h3 class="size-review color-rosa mb-4">Todos los Cursos</h3>
             <div id="cursosContainer" class="row">
             </div>
             <div class="row text-center mb-4 display-flex justify-content-center">
@@ -226,11 +207,11 @@
         <div class="row text-center mb-3">
             <div class="col">
                 <p>En CursOn ofrecemos la posibilidad de crear un espacio educativo, en donde podras brindar tus propios
-                    cursos
-                    sobre esos temas que tanto te apasionan! <br>
-                    En este sentido, CursOn actua como nexo entre los mentores y una comunidad de potenciales alumnos.
-                    <br>
-                    ¿Interesado? Estos son los pasos a seguir para publicar tu curso: </p>
+                cursos
+                sobre esos temas que tanto te apasionan! <br>
+                En este sentido, CursOn actua como nexo entre los mentores y una comunidad de potenciales alumnos.
+                <br>
+                ¿Interesado? Estos son los pasos a seguir para publicar tu curso: </p>
             </div>
         </div>
         <!-- Inicio Paso a paso -->
@@ -238,10 +219,10 @@
             <div class="col-12 col-sm-12 col-md-6 col-lg-3">
                 <div class="pasos">
                     <img class="img-fluid"
-                        src="https://cdn.pixabay.com/photo/2014/05/02/21/49/home-office-336373_960_720.jpg" alt="paso1">
+                    src="https://cdn.pixabay.com/photo/2014/05/02/21/49/home-office-336373_960_720.jpg" alt="paso1">
                     <div class="overlay">
                         <div class="text-center mt-4 paso"><strong>1. Registro</strong> <br> Debes registarte como
-                            usuario en CursOn. Si ya tienes un usuario, basta con iniciar sesión.</div>
+                        usuario en CursOn. Si ya tienes un usuario, basta con iniciar sesión.</div>
                     </div>
                 </div>
             </div>
@@ -287,7 +268,6 @@
     </div>
     <!-- Fin Seccion Publica tu curso -->
     <!-- Reviews Section-->
-    <a name="review"></a>
     <section id="sectionReview">
         <div class="container" id="mainRevContainer">
             <hr class="bg-gris">
@@ -313,24 +293,26 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <div class="form-group">
-                        <label for="exampleDropdownFormEmail1">User Name</label>
-                        <input type="email" class="form-control" id="inputUser"
-                            placeholder="Ingresa tu nombre de Usuario">
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleDropdownFormPassword1">Password</label>
-                        <input type="password" class="form-control" id="inputPassword" placeholder="Password">
-                    </div>
+                    <form autocomplete="off">
+                        <div class="form-group">
+                            <label for="exampleDropdownFormEmail1">User Name</label>
+                            <input type="email" class="form-control" id="inputUser"
+                                placeholder="Ingresa tu nombre de Usuario">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleDropdownFormPassword1">Password</label>
+                            <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+                        </div>
+                        <div class="modal-footer display-flex justify-content-center ">
+                            <button type="button" class="btn btn-danger" data-dismiss="modal"
+                                onclick="validarAcceso()">LogIn</button>
+                            <button type="button" class="btn btn-light">Cancelar</button>
+                        </div>
+                    </form>
                 </div>
                 <div class="text-center">
                     <h6>Aún no tenés cuenta?<button data-toggle="modal" data-target="#exampleModal2" type="button"
                             class="btn btn-outline-dark btn-sm ml-1">Registrate</button></h6>
-                </div>
-                <div class="modal-footer display-flex justify-content-center ">
-                    <button type="button" class="btn btn-danger" data-dismiss="modal"
-                        onclick="validarAcceso()">LogIn</button>
-                    <button type="button" class="btn btn-light">Cancelar</button>
                 </div>
             </div>
         </div>
@@ -346,34 +328,37 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
+                <form autocomplete="off">
                 <div class="modal-body">
                     <div class="form-group">
-                        <label for="exampleDropdownFormEmail1">Nombre y Apellido</label>
-                        <input type="text" class="form-control" id="inputUser"
-                            placeholder="Ingresa tu nombre de nombre completo" required>
+                        <label for="exampleDropdownFormEmail1">Nombre</label>
+                        <input type="text" class="form-control" id="inputNewNombre"
+                            placeholder="Ingresa tu nombre" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleDropdownFormEmail1">Apellido</label>
+                        <input type="text" class="form-control" id="inputNewApellido"
+                            placeholder="Ingresa tu apellido" required>
                     </div>
                     <div class="form-group">
                         <label for="exampleDropdownFormEmail1">User Name</label>
-                        <input type="text" class="form-control" id="inputUser"
+                        <input type="text" class="form-control" id="inputNewUser"
                             placeholder="Ingresa tu nombre de Usuario" required>
                     </div>
                     <div class="form-group">
                         <label for="exampleDropdownFormEmail1">Email</label>
-                        <input type="email" class="form-control" id="inputUser" placeholder="Ingresa tu email" required>
+                        <input type="email" class="form-control" id="inputNewEmail" placeholder="Ingresa tu email" required>
                     </div>
                     <div class="form-group">
                         <label for="exampleDropdownFormPassword1">Password</label>
-                        <input type="password" class="form-control" id="inputPassword" placeholder="Password" required>
+                        <input type="password" class="form-control" id="inputNewPassword" placeholder="Password" required>
                     </div>
                 </div>
-                <div class="form-group form-check text-center">
-                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                    <label class="form-check-label" for="exampleCheck1">Acepto las bases y condiciones.</label>
-                </div>
                 <div class="modal-footer display-flex justify-content-center ">
-                    <button type="button" class="btn btn-danger" data-dismiss="modal">Sign Up</button>
-                    <button type="button" class="btn btn-light">Cancelar</button>
+                    <button type="button" class="btn btn-danger" onclick="validarLogUp()">Sign Up</button>
+                    <button type="button" data-dismiss="modal" class="btn btn-light">Cancelar</button>
                 </div>
+                </form>
             </div>
         </div>
     </div>
@@ -475,15 +460,15 @@
                 <p class="mx-auto">2020 &copy; Diseñado y desarrolado por estudiantes de Rolling Code School</p>
             </div>
         </div>
-    </div>
-</footer>
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-<script src="js/Modulos/Funciones/login-Reviews.js"></script>
-<script src="js/Modulos/Funciones/gestionarCursos.js"></script>
-<script src="js/Modulos/Funciones/destacados.js"></script>
-<script src="js/Modulos/Funciones/cursosPorCategoria.js"></script>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script src="js/Modulos/Funciones/login-Reviews.js"></script>
+    <script src="js/Modulos/Funciones/gestionarCursos.js"></script>
+    <script src="js/Modulos/Funciones/destacados.js"></script>
+    <script src="js/Modulos/Funciones/cursosPorCategoria.js"></script>
+    <script src="js/Modulos/Funciones/scroll-top.js"></script>
+    <script src="js/Modulos/Funciones/gestionarUser.js"></script>
 </body>
-
 </html>

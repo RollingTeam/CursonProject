@@ -82,9 +82,14 @@ function limpiarFormCurso(){
 
 cargarCursos();
 function cargarCursos(){
-     cursos = localStorage.getItem("cursos")
-     let cursosDB = JSON.parse(cursos)
-     cursosContainer.innerHTML=""
+    cursos = localStorage.getItem("cursos") || []
+    let cursosDB;
+    if(cursos.length >0){
+        cursosDB = JSON.parse(cursos)
+    }else{
+        cursosDB=[]
+    }
+    cursosContainer.innerHTML=""
     for(let i=0 ; i< cursosDB.length ; i++){
         if(cursosDB[i].estadoCurso==1){
             while(i<6){
