@@ -81,7 +81,7 @@ function activarCategoria(idCategoria){
     }
 }
 
-if (location.href ==="https://rollingteam.github.io/CursonProject/crearCatAdmin.html"){
+if (location.pathname ==="/CursonProject/verCatAdmin.html"){
     cargarCategorias()
 }
 function cargarCategorias(){
