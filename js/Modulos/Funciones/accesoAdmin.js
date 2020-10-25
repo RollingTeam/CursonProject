@@ -1,20 +1,18 @@
-let userLogueados = (localStorage.getItem("usuariosLogueados")) || [];
+userLogueados= (localStorage.getItem("usuariosLogueados"));
 let usuarioLogueado;
-if(userLogueados.lenght>0){
+if(userLogueados!=""){
     usuarioLogueado= JSON.parse(userLogueados);
-}else{
-    usuarioLogueado=[]
 }
 validacionAdminPage();
 
 function validacionAdminPage(){
     let pagina = location.pathname;
-    if (pagina ==="/CursonProject/adminHome.html"){
-        if(usuarioLogueado==[]){
-            location = "/CursonProject/index.html";
+    if (pagina ==="/C:/Users/belen/OneDrive/Documentos/RollingCode/3I/CursonProject/adminHome.html"){
+        if(userLogueados===""){
+            location = "/C:/Users/belen/OneDrive/Documentos/RollingCode/3I/CursonProject/index.html"
         }else if (usuarioLogueado[0].userRole != "1") {
             console.log("No eres Administrador")
-            location = "/CursonProject/index.html";
+            location = "/C:/Users/belen/OneDrive/Documentos/RollingCode/3I/CursonProject/index.html";
         }
     }
 };
