@@ -31,6 +31,9 @@ if(userArray.length>0){
 }
 
 let userLogueados = localStorage.getItem("usuariosLogueados")||[];
+/*if(userLogueados==""){
+    userLogueados=[]
+}*/
 inicioLanding();
 function inicioLanding(){
     if(userLogueados.length!=0){
