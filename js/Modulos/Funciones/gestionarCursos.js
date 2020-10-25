@@ -239,6 +239,7 @@ function validarAddFav(idCurso){
 
 function crearSolicitud (event) {
   event.preventDefault()
+  let identificadorSolicitud;
   if (solicitudes.length < 1) {
     identificadorSolicitud = 1;
     console.log("El array estaba vacio, pase por aqui");
