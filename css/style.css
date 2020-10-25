@@ -1,3 +1,12 @@
+/*Efecto scroll*/
+html {
+    scroll-behavior: smooth !important;
+}
+h3, p
+a, div {
+    font-family: 'Nanum Gothic', sans-serif;
+    scroll-behavior: smooth !important;
+}
 * a{
     text-decoration: none;
 }
