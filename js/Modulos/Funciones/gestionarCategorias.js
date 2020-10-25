@@ -81,9 +81,7 @@ function activarCategoria(idCategoria){
     }
 }
 
-if (location.pathname ==="/CursonProject/verCatAdmin.html"){
-    cargarCategorias()
-}
+cargarCategorias();
 function cargarCategorias(){
     categorias = JSON.parse(localStorage.getItem("categorias"))
     let tablaBody = document.getElementById("cuerpoTabla");
