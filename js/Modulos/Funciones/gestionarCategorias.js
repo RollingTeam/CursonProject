@@ -24,7 +24,6 @@ function obtenerIdCategoria(){
 }
 
 function crearCategoria(){
-   
     console.log("Entre a la funcion crearCategoria")
     obtenerIdCategoria();
     console.log(identificadorCat)
