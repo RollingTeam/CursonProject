@@ -42,8 +42,6 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#reviews"><strong class="color-rosa item-nav-d">Reviews</strong></a>
                 </li>
-            </ul>
-            <ul class="navbar-nav float-right mt-2 mt-lg-0">
                 <li class="nav-item pl-2 pr-2 pt-1">
                 <li class="nav-item pl-2 pr-2 pt-1" id="LogInOpcion">
                     <button data-toggle="modal" data-target="#exampleModal" type="button"
@@ -52,7 +50,7 @@
                 <li class="nav-item pl-2 pr-2 pt-1" id="SignUpOpcion">
                     <button type="button" class="btn btn-outline-danger btn-sm">Sign Up</button>
                 </li>
-                <!-- <li class="nav-item dropdown ocultarUser" id="menuUser">
+                <li class="nav-item dropdown ocultarUser" id="menuUser">
                     <button class="nav-link icon-login item-nav-r ml-lg-5" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user fa-xl"></i></button>
                     <div class="dropdown-menu">
                         <a class="dropdown-item color-oscuro" href="#!">Mi Perfil</a>
@@ -60,7 +58,7 @@
                         <a class="dropdown-item color-oscuro" href="misFavoritos.html">Mis Favoritos</a>
                         <a class="dropdown-item color-oscuro" onclick="logOut()">Log Out</a>
                     </div>
-                </li> -->
+                </li>
             </ul>
         </div>
         <div class="fixed-top">
@@ -534,31 +532,31 @@
                 <span aria-hidden="true">&times;</span>
             </button>
             </div>
-            <form>
+            <form onsubmit="crearSolicitud(event)">
             <div class="modal-body">
                 <div class="row">
                     <div class="col">
                             <div class="row">
                                 <div class="form-group col">
-                                    <input type="text" class="form-control" id="autorCursoInput" placeholder="Nombre y apellido de autor>
+                                    <input type="text" class="form-control" id="autorCursoInput" placeholder="Nombre y apellido de autor" required>
                              </div>
                             </div>
                             <div class="row">
                                 <div class="form-group col">
-                                        <input type="text" class="form-control" id="nombreCursoInput" placeholder="¿Nombre del curso?">
+                                        <input type="text" class="form-control" id="nombreCursoInput" placeholder="¿Nombre del curso?" required>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="form-group col">
-                                        <textarea id="contenidoCursoInput" class="form-control" rows="3" placeholder="¿De que se tratan el curso?"></textarea>
+                                        <textarea id="contenidoCursoInput" class="form-control" rows="3" placeholder="¿De que se tratan el curso?" required></textarea>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="form-group col-12 col-sm-12 col-md-6 col-md-6">
-                                        <input type="number" class="form-control" id="duracionCursoInput" placeholder="Duración (horas)">
+                                        <input type="number" class="form-control" id="duracionCursoInput" placeholder="Duración (horas)" required>
                                 </div>
                                 <div class="form-group col-12 col-sm-12 col-md-6 col-md-6">
-                                        <input type="number" class="form-control" id="cuposCursoInput" placeholder="Cupo máximo">
+                                        <input type="number" class="form-control" id="cuposCursoInput" placeholder="Cupo máximo" required>
                                 </div>
                             </div>
                             <div class="row">
@@ -633,7 +631,7 @@
 <script src="js/Modulos/Funciones/login-Reviews.js"></script>
 <script src="js/Modulos/Funciones/gestionarCursos.js"></script>
 <script src="js/Modulos/Funciones/destacados.js"></script>
-<script src="js/Modulos/Funciones/solicitudesPublicacion.js"></script>
+<!-- <script src="js/Modulos/Funciones/solicitudesPublicacion.js"></script> -->
 </body>
 
 </html>

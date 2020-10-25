@@ -22,6 +22,19 @@ class Cursos {
   }
 }
 
+let solicitudes = JSON.parse(localStorage.getItem('Solicitudes')) || [];
+const cuerpoTabla = document.getElementById('cuerpoTabla')
+
+class Solicitud{
+    constructor (idSolicitud,autor, estado = 'Pendiente', descripcionCurso){
+        this.idSolicitud = idSolicitud
+        this.autor = autor
+        this.estado = estado
+        this.descripcionCurso = descripcionCurso
+    }
+};
+
+
 // ESTADO DEL CURSO
 // 1 == Activo
 // 2 == Pendiente de Aprobacion
@@ -98,7 +111,7 @@ function limpiarFormCurso() {
   duracionCurso.value = "";
   imagenCurso.value = "";
 }
-
+cargarSolicitudes()
 cargarCursos();
 function cargarCursos() {
   cursos = localStorage.getItem("cursos");
@@ -221,4 +234,57 @@ function validarAddFav(idCurso){
 }
 
 
+
+//PUBLICAR CURSOS
+
+function crearSolicitud (event) {
+  event.preventDefault()
+  if (solicitudes.length < 1) {
+    identificadorSolicitud = 1;
+    console.log("El array estaba vacio, pase por aqui");
+  } else {
+    let ultimaSolicitud = solicitudes[solicitudes.length - 1];
+    console.log(ultimaSolicitud);
+    identificadorSolicitud = ultimaSolicitud.idSolicitud + 1;
+  }
+  let nombreSolicitante = document.getElementById('autorCursoInput')
+  let contenidoCurso = new Cursos()
+  contenidoCurso.nombreCurso = document.getElementById('nombreCursoInput').value;
+  contenidoCurso.descripcionCurso = document.getElementById('contenidoCursoInput').value;
+  contenidoCurso.categoriaCurso = document.getElementById('categoriaCursoInput').value;
+  contenidoCurso.nivelCurso = document.getElementById('dificultadCursoInput').value;
+  contenidoCurso.cupoCurso = document.getElementById('cuposCursoInput').value;
+  contenidoCurso.duracionCurso = document.getElementById('duracionCursoInput').value;
+  let nuevaSolicitud = new Solicitud (nombreSolicitante.value, this.estado, contenidoCurso)
+    // console.log(nuevaSolicitud)
+    alert('Tu solicitud fue enviada al administrador.')
+    solicitudes = JSON.parse(localStorage.getItem('Solicitudes'))
+    solicitudes.push(nuevaSolicitud)
+    // console.log(solicitudes)
+    localStorage.setItem('Solicitudes', JSON.stringify(solicitudes))
+  }
+
+function aprobarSolicitud(){
+  
+}  
+
+
+function cargarSolicitudes(){
+  console.log('hola')
+  // solicitudes = JSON.parse(localStorage.getItem('Solicitudes'))
+  cuerpoTabla.innerHTML = ""
+  let btnAprobar = `<button type = 'button' title = 'Aprobar solicitud' class='btn btn-success' onclick = "aprobarSolicitud()"><i class="fas fa-check"></i></button>`;
+  let btnRechazar = `<button type = 'button' title = 'Rechazar solicitud' class='btn btn-danger' onclick = "rechazarSolicitud()"><i class="fas fa-times"></i></button>`;
+
+  solicitudes.map(function(sol){
+    let tablaSolicitud = `<tr class="text-center">
+    <th scope="row">${sol.autor}</th>
+        <td>${sol.estado}</td>
+        <td><button class = 'btn btn success'>Descripción</td>
+        <td>${btnAprobar}  ${btnRechazar}</td>
+        </tr>`
+
+        cuerpoTabla.innerHTML += tablaSolicitud;
+  })
+}
 

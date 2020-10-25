@@ -368,7 +368,7 @@ function ordenarReviews(){
     reviewsDB.sort(function(a,b){
         return new Date(b.fecha) - new Date (a.fecha)
     });
-    console.log(reviewsDB)
+    // console.log(reviewsDB)
     let rev= JSON.stringify(reviewsDB)
     localStorage.setItem("reviews",rev)
 }
