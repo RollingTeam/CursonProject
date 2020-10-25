@@ -1,7 +1,9 @@
-userLogueados= (localStorage.getItem("usuariosLogueados"));
+let userLogueados = (localStorage.getItem("usuariosLogueados"));
 let usuarioLogueado;
-if(userLogueados!=""){
+if(userLogueados.lenght>0){
     usuarioLogueado= JSON.parse(userLogueados);
+}else{
+    usuarioLogueado=[]
 }
 validacionAdminPage();
 
