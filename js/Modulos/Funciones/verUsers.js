@@ -24,7 +24,7 @@ class Usuario{
 //     {estadoId:"2", estadoName:"Inactivo"},
 // ]
 
-let usuarios = localStorage.getItem('usuarios') || []
+let usuarios = localStorage.getItem('users') || []
 
 // let adminUserB = new Usuario("belenadmin","12345","Belen","Neme","1","1","belen@gmail.com");
 // //adminUserB.userRole=Roles[0]
@@ -96,7 +96,7 @@ function verNumeroUsuarios(){
 
 // FUNCIONES DE FILTROS
 filtrarDatos = () => {
-    let storage = JSON.parse(localStorage.getItem("usuarios"));
+    let storage = JSON.parse(localStorage.getItem("users"));
     let estado = document.getElementById("estado");
     let role = document.getElementById("role");
     if (estado.value > 0 && role.value > 0) {
@@ -128,7 +128,7 @@ filtrarDatos = () => {
 //FUNCIONES DE USUARIO
 function suspenderUsuario (name) {
     
-    datos = JSON.parse(localStorage.getItem('usuarios')) || [];
+    datos = JSON.parse(localStorage.getItem('users')) || [];
 
     //buscar el usuario
     let persona = datos.find(function(user){
@@ -140,14 +140,14 @@ function suspenderUsuario (name) {
         }
     })
     
-    localStorage.setItem('usuarios', JSON.stringify(datos))
+    localStorage.setItem('users', JSON.stringify(datos))
     cargarUsuarios()
     verNumeroUsuarios()
 }
 
 function habilitarUsuario (name) {
     
-    datos = JSON.parse(localStorage.getItem('usuarios')) || []
+    datos = JSON.parse(localStorage.getItem('users')) || []
 
     //buscar el usuario
     let persona = datos.find(function(user){
@@ -159,14 +159,14 @@ function habilitarUsuario (name) {
         }
     })
     
-    localStorage.setItem('usuarios', JSON.stringify(datos))
+    localStorage.setItem('users', JSON.stringify(datos))
     cargarUsuarios()
     verNumeroUsuarios()
 }
 
 function altaAdmin (name) {
 
-    datos = JSON.parse(localStorage.getItem('usuarios')) || []
+    datos = JSON.parse(localStorage.getItem('users')) || []
 
     let persona = datos.find(function(user){
         if(user.userName === name && user.userRole != '1') {
@@ -177,13 +177,10 @@ function altaAdmin (name) {
         }
     })
     
-    localStorage.setItem('usuarios', JSON.stringify(datos))
+    localStorage.setItem('users', JSON.stringify(datos))
     cargarUsuarios()
     verNumeroUsuarios()
 }
-
-
-
 
 // Se define la funcion cargar
 function cargarUsuarios () {
@@ -229,7 +226,5 @@ function cargarUsuarios () {
     tbody.innerHTML += tablaUsuario
     })
 }
-
-
 cargarUsuarios()
 verNumeroUsuarios()

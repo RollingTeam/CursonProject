@@ -21,11 +21,11 @@
             aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <a class="navbar-brand m-0" href="#"><img src="./img/logo-navbar.png" class="img-fluid logo" alt="logo curson navbar"></a>
+        <a class="navbar-brand m-0" href="index.html"><img src="./img/logo-navbar.png" class="img-fluid logo" alt="logo curson navbar"></a>
         <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
             <ul class="navbar-nav mx-auto mt-2 mt-lg-0">
                 <li class="nav-item active">
-                    <a class="nav-link" href="index.html"><strong class="color-oscuro item-nav-d">Usuarios</strong><span
+                    <a class="nav-link" href="verUsers.html"><strong class="color-oscuro item-nav-d">Usuarios</strong><span
                             class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item dropdown">
@@ -38,16 +38,20 @@
                     </div>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#"><strong class="color-oscuro item-nav-r">Categorías</strong></a>
+                    <a class="nav-link" href="crearCatAdmin.html"><strong class="color-oscuro item-nav-r">Categorías</strong></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#"><strong class="color-rosa item-nav-d">Solicitudes</strong></a>
                 </li>
             </ul>
             <ul class="navbar-nav float-right mt-2 mt-lg-0">
-                <li class="nav-item pl-2 pr-2 pt-1">
+                <li class="nav-item pl-2 pr-2 pt-1" id="LogOutOpcion">
+                    <button type="button" class="btn btn-outline-dark btn-sm" onclick="logOut()">Log Out</button>
+                </li>
+                <li class="nav-item float-right pl-2 pr-2 pt-1">
                     <i class="fas fa-user-astronaut astronaut"></i>
                 </li>
+            </ul>
         </div>
         <div class="fixed-top">
             <div class="collapse" id="navbarToggleExternalContent">
@@ -58,11 +62,11 @@
             </div>
         </div>
       </div>
+    </nav>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 <script src="js/Modulos/Funciones/login-Reviews.js"></script>
 <script src="js/Modulos/Funciones/accesoAdmin.js"></script>
 </body>
-
 </html>

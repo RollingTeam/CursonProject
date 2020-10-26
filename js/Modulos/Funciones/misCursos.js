@@ -30,8 +30,8 @@ function mostrarMisCursos(){
 
             let cursoContenido= `<div class="col-12 col-md-6 col-lg-4">
             <div class="card card-curso m-2">
-                <img src="https://picsum.photos/id/1/400/300" class="card-img-top img-fluid" alt="...">
-                <div class="card-body">
+            <img src=${miCurso.imagenCurso} class="card-img-top img-fluid" alt="...">                
+            <div class="card-body">
                     <h5 class="card-title"><strong>${miCurso.nombreCurso}</strong></h5>
                     ${badgeColor}
                     <p class="card-text">${miCurso.descripcionCurso}</p>
@@ -63,13 +63,13 @@ function mostrarModalCurso (idCurs){
         </button>
     </div>
     <div class="modal-body">
-        <img src="https://picsum.photos/id/1/500/200" id="imagenModal" alt="" class="img-fluid">
+    <img src=${cursoDB.imagenCurso} class="card-img-top img-fluid" alt="...">
         <span class="badge badge-warning categorias">${cursoDB.categoriaCurso}</span>
-        <span class="badge badge-primary fecha">Inicia 15/10/20</span>
         <span class="badge badge-pill badge-info cupos">${cursoDB.cupoCurso} Lugares Disponibles</span>
         <div class="text-center">
             <p>${cursoDB.descripcionCurso}</p>
         </div>
+        <div class="text-center">Contacto: ${cursoDB.contactoCurso}</div>
     </div>
     <div class="modal-footer justify-content-center">
         <button class="btn btn-primary-curso" onclick="validarRemoveCurso(${cursoDB.idCurso})">Eliminar de Mis Cursos<i class="far fa-user ml-1 white-text"></i></button>

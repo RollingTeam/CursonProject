@@ -19,20 +19,16 @@ let Roles=[
     {RoleID:"3", RoleName:"Profesor"}
 ]
 
-// Definicion de Array de Estados Posibles para los Usuarios
-
-let EstadosUser=[
-    {estadoId:"1", estadoName: "Activo"},
-    {estadoId:"2", estadoName:"Inactivo"},
-]
-
-//Creacion de Usuarios para guardar en LocalStorage
-/*let adminUserB = new Usuario("belenadmin","12345","Belen","Neme","1","1","belen@gmail.com");
-let regularUserB = new Usuario("BelenUser","654321","Belen","Neme","2","1","b@gmail.com");
-let users=[]
-users.push(adminUserB,regularUserB);
-localStorage.setItem("users",JSON.stringify(users));*/
-let users = (localStorage.getItem("users")) || [];
+let userArray = (localStorage.getItem("users")) || [];
+if(userArray.length>0){
+    users = JSON.parse(userArray)
+}else{
+    users = []
+    let adminUserB = new Usuario("belenadmin","12345","Belen","Neme","1","1","belen@gmail.com");
+    let regularUserB = new Usuario("BelenUser","654321","Belen","Neme","2","1","b@gmail.com");
+    users.push(adminUserB,regularUserB)
+    localStorage.setItem("users",JSON.stringify(users))
+}
 
 let userLogueados = localStorage.getItem("usuariosLogueados")||[];
 inicioLanding();
@@ -68,8 +64,7 @@ function validarAcceso(){
             localStorage.setItem("usuariosLogueados",JSON.stringify(userLogueados))
             if(u.userRole==="1"){
                 //MOSTRAR PAGINA DE ADMINISTRADOR
-                window.location.assign("adminHome.html")
-                //alert("ERES UN ADMINISTRADOR")
+                window.location="adminHome.html"
             }else{
                 publicarCursoOn()
                 agregarReviewOn()
@@ -364,11 +359,11 @@ function cargarReviews(){
 }
 
 function ordenarReviews(){
-    let reviewsDB= JSON.parse(localStorage.getItem("reviews"));
+    let reviewsDB= JSON.parse(localStorage.getItem("reviews")) || []
     reviewsDB.sort(function(a,b){
         return new Date(b.fecha) - new Date (a.fecha)
     });
-    // console.log(reviewsDB)
+    //console.log(reviewsDB)
     let rev= JSON.stringify(reviewsDB)
     localStorage.setItem("reviews",rev)
 }

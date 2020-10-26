@@ -1,3 +1,12 @@
+/*Efecto scroll*/
+html {
+    scroll-behavior: smooth !important;
+}
+h3, p
+a, div {
+    font-family: 'Nanum Gothic', sans-serif;
+    scroll-behavior: smooth !important;
+}
 * a{
     text-decoration: none;
 }
@@ -99,6 +108,9 @@
 }
 .btn-review:focus{
     outline: none;
+}
+.btn:focus{
+    outline:none
 }
 .form-review{
     margin-top: 12px;
@@ -335,4 +347,14 @@ ul li a:hover{
       display: block;
       overflow-x: auto;
     }
+}
+
+/* Ajustar tamaño de las cards en el Landing */
+.card-curso {
+min-height: 450px !important;
+max-height:450px !important
+}
+.card-img-top{
+    min-height: 200px !important;
+    max-height: 200px !important;
 }
