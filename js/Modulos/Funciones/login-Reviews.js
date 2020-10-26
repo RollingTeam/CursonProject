@@ -19,20 +19,16 @@ let Roles=[
     {RoleID:"3", RoleName:"Profesor"}
 ]
 
-// Definicion de Array de Estados Posibles para los Usuarios
-
-let EstadosUser=[
-    {estadoId:"1", estadoName: "Activo"},
-    {estadoId:"2", estadoName:"Inactivo"},
-]
-
-//Creacion de Usuarios para guardar en LocalStorage
-/*let adminUserB = new Usuario("belenadmin","12345","Belen","Neme","1","1","belen@gmail.com");
-let regularUserB = new Usuario("BelenUser","654321","Belen","Neme","2","1","b@gmail.com");
-let users=[]
-users.push(adminUserB,regularUserB);
-localStorage.setItem("users",JSON.stringify(users))*/
-let users = (localStorage.getItem("users")) || [];
+let userArray = (localStorage.getItem("users")) || [];
+if(userArray.length>0){
+    users = JSON.parse(userArray)
+}else{
+    users = []
+    let adminUser = new Usuario("admintest","12345","Admin","Test","1","1","adminTest@gmail.com");
+    let regularUser = new Usuario("usertest","12345","User","Test","2","1","userTest@gmail.com");
+    users.push(adminUser,regularUser)
+    localStorage.setItem("users",JSON.stringify(users))
+}
 
 let userLogueados = localStorage.getItem("usuariosLogueados")||[];
 inicioLanding();
@@ -55,7 +51,7 @@ function logOut(){
 }
 
 function validarAcceso(){
-    let us= document.getElementById("inputUser").value
+    let us= document.getElementById("inputUser").value.toLowerCase()
     let pass= document.getElementById("inputPassword").value
     let usuarios= localStorage.getItem("users",users);
     usuarios = JSON.parse(usuarios);
@@ -80,7 +76,6 @@ function validarAcceso(){
     }else{
         alert("No te encuentras registrado en CursOn")
     }
-
 }
 
 function publicarCursoOn(){
@@ -133,7 +128,7 @@ function agregarReviewOn(){
                     <label class="color-rosa">Nombre del Curso:</label>
                 </div>
                 <div class="form-group d-flex justify-content-center">
-                    <input type="text" id="reviewCurso" placeholder="Curso" class="input-review">
+                    <input type="text" id="reviewCurso" maxlength="40" placeholder="Curso" class="input-review">
                 </div>
             </div>
             <div class="col-md-5">
@@ -141,7 +136,7 @@ function agregarReviewOn(){
                     <label class="color-rosa">Comentario:</label>
                 </div>
                 <div class="form-group d-flex justify-content-center">
-                    <textarea id="reviewComentario" placeholder="Ingresa aqui tu comentario" class="form-control"></textarea>
+                    <textarea id="reviewComentario" maxlength="80" placeholder="Ingresa aqui tu comentario" class="form-control"></textarea>
                 </div>
             </div>
         </div>
@@ -294,15 +289,17 @@ class Reviews{
 }
 
 //Cargar array de Reviews en LocalStorage
-/*let rev1= new Reviews("PHP Avanzado","Florencia","Me parecio un curso super interesante","2020-10-06",5);
-let rev2= new Reviews("Diseño de Interior","Gabriel","Me parecio un curso super interesante","2020-10-06",1);
-let rev3= new Reviews("Diseño de Moda","Sofia","Me parecio un curso super interesante","2020-08-05",2);
-
-let reviews=[];
-reviews.push(rev1,rev2,rev3)
-localStorage.setItem("reviews",JSON.stringify(reviews))*/
-let reviews = localStorage.getItem("reviews") || []
-
+let reviewsArreglo = localStorage.getItem("reviews") || []
+if(reviewsArreglo.length>0){
+    reviews = JSON.parse(reviewsArreglo)
+}else{
+    reviews = []
+    let rev1= new Reviews("Introducción al diseño UX","Florencia Pistan","Es un curso completo con informacion util para proyectos","2020-10-06",5);
+    let rev2= new Reviews("Caligrafía inglesa de la A a la Z","Gabriel Moreira","Me parecio un curso super interesante y con informacion muy completa","2020-09-06",4);
+    let rev3= new Reviews("Desarrollo Web Responsive HTML y CSS","Rodrigo","Estuvo muy bueno y el material para cada tema esta muy completo","2020-08-05",3);
+    reviews.push(rev1,rev2,rev3)
+    localStorage.setItem("reviews",JSON.stringify(reviews))
+}
 cargarReviews();
 function cargarReviews(){
     ordenarReviews();
@@ -363,11 +360,11 @@ function cargarReviews(){
 }
 
 function ordenarReviews(){
-    let reviewsDB= JSON.parse(localStorage.getItem("reviews"));
+    let reviewsDB= JSON.parse(localStorage.getItem("reviews")) || []
     reviewsDB.sort(function(a,b){
         return new Date(b.fecha) - new Date (a.fecha)
     });
-    console.log(reviewsDB)
+    //console.log(reviewsDB)
     let rev= JSON.stringify(reviewsDB)
     localStorage.setItem("reviews",rev)
 }

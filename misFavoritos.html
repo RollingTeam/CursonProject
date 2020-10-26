@@ -10,6 +10,7 @@
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.0/css/all.css"
         integrity="sha384-OLYO0LymqQ+uHXELyx93kblK5YIS3B2ZfLGBmsJaUyor7CpMTBsahDHByqSuWW+q" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-blanco p-2">
@@ -17,7 +18,7 @@
             aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <a class="navbar-brand" href="#"><img src="./img/logo-rect.png" class="img-fluid ml-2 logo" alt="logo"></a>
+        <a class="navbar-brand" href="#"><img src="./img/logo-navbar.png" class="img-fluid ml-2 logo" alt="logo"></a>
         <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
             <ul class="navbar-nav ml-auto mt-2 mt-lg-0" id="ulNav">
                 <li class="nav-item active">
@@ -28,16 +29,16 @@
                     <a class="nav-link dropdown-toggle item-nav-d mx-lg-4" data-toggle="dropdown" href="#" role="button"
                         aria-haspopup="true" aria-expanded="false"><strong class="color-rosa">Cursos</strong></a>
                     <div class="dropdown-menu">
-                        <a class="dropdown-item color-oscuro" href="#!">Mas Destacados</a>
-                        <a class="dropdown-item color-oscuro" href="#!">Cursos por Categorías</a>
-                        <a class="dropdown-item color-oscuro" href="#!">Ver todos</a>
+                        <a class="dropdown-item color-oscuro" href="index.html">Mas Destacados</a>
+                        <a class="dropdown-item color-oscuro" href="index.html">Cursos por Categorías</a>
+                        <a class="dropdown-item color-oscuro" href="index.html">Ver todos</a>
                     </div>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#"><strong class="color-oscuro item-nav-r">Publicá tu Curso</strong></a>
+                    <a class="nav-link" href="index.html"><strong class="color-oscuro item-nav-r">Publicá tu Curso</strong></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#reviews"><strong class="color-rosa item-nav-d">Reviews</strong></a>
+                    <a class="nav-link" href="index.html"><strong class="color-rosa item-nav-d">Reviews</strong></a>
                 </li>
                 <li class="nav-item pl-2 pr-2 pt-1" id="LogInOpcion">
                     <button data-toggle="modal" data-target="#exampleModal" type="button"
@@ -49,7 +50,6 @@
                 <li class="nav-item dropdown ocultarUser" id="menuUser">
                     <button class="nav-link icon-login item-nav-r ml-lg-5" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user fa-xl"></i></button>
                     <div class="dropdown-menu">
-                        <a class="dropdown-item color-oscuro" href="#!">Mi Perfil</a>
                         <a class="dropdown-item color-oscuro" href="misCursos.html">Mis Cursos</a>
                         <a class="dropdown-item color-oscuro" href="misFavoritos.html">Mis Favoritos</a>
                         <a class="dropdown-item color-oscuro" onclick="logOut()">Log Out</a>
@@ -68,7 +68,7 @@
     </nav>
 
     <div class="container">
-        <h3 class="size-review color-rosa mb-4">Mis Favoritos</h3>
+        <h3 class="size-review color-rosa mb-4 mt-3">Mis Favoritos</h3>
         <div id="favCursos" class="row"> 
         </div>
     </div>
@@ -94,10 +94,7 @@
                         <li><a href="#">Reviews</a></li>
                     </ul>
                 </div>
-                <div class="col-12 col-sm-6 text-center pt-4">
-                    <a data-toggle="modal" data-target="#exampleModal" href="#!"><button type="button"
-                            class="btn btn-danger btn-lg">LogIn / SignUp</button></a>
-                    <br>
+                <div class="col-12 col-sm-6 text-center mt-5">
                     <a href="#"><i class="fab fa-discord botones"></i></a>
                     <a href="#"><i class="fab fa-twitter botones"></i></a>
                     <a href="#"><i class="fab fa-facebook botones"></i></a>

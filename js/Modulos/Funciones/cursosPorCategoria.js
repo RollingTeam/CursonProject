@@ -1,4 +1,10 @@
-let categorias = JSON.parse (localStorage.getItem("categorias") || [])
+let categoriasArray = localStorage.getItem("categorias") || []
+let categorias;
+if(categoriasArray.length >0){
+    categorias = JSON.parse(categoriasArray)
+}else{
+    categorias=[]
+}
 cursos = JSON.parse(localStorage.getItem("cursos"))
 mostrarCategorias();
 filtrarCursosPorCategoria();
@@ -13,13 +19,18 @@ function mostrarCategorias(){
 
 
 function filtrarCursosPorCategoria(){
-    console.log("Entre a la funcion de filtrar por categoria")
+   // console.log("Entre a la funcion de filtrar por categoria")
     let opcion = document.getElementById("listaCategorias").value
-    cursos = JSON.parse(localStorage.getItem("cursos")) 
+    cursosArray = localStorage.getItem("cursos") || []
+    if(cursosArray.length>0){
+        cursos= JSON.parse(cursosArray)
+    }else{
+        cursos=[]
+    }
     let busquedaCursos = cursos.filter(function (cur) {
         return cur.categoriaCurso === opcion
     });
-    console.log(busquedaCursos)
+    //console.log(busquedaCursos)
     let containerCursos = document.getElementById("containerCursCat")
     containerCursos.innerHTML=""
     for(let i=0; i<busquedaCursos.length;i++){
@@ -32,8 +43,8 @@ function filtrarCursosPorCategoria(){
             }else{
                 badgeColor= `<span class="badge badge-secondary" id="badgeNivel">${busquedaCursos[i].nivelCurso}</span>`
             }
-            let contenCurso= `<div class="col-md-4">
-            <div class="card card-curso">
+            let contenCurso= `<div class="col-md-4 my-1">
+            <div class="card card-curso my-2">
                 <img src=${busquedaCursos[i].imagenCurso} class="card-img-top" alt="...">
                 <div class="card-body">
                     <h5 class="card-title"><strong>${busquedaCursos[i].nombreCurso}</strong></h5>
@@ -77,7 +88,7 @@ function mostrarTodosLosCursos(){
             badgeColor= `<span class="badge badge-secondary" id="badgeNivel">${busquedaCursos[i].nivelCurso}</span>`
         }
         let contenCurso= `<div class="col-md-4">
-        <div class="card card-curso">
+        <div class="card card-curso my-2">
             <img src=${busquedaCursos[i].imagenCurso} class="card-img-top" alt="...">
             <div class="card-body">
                 <h5 class="card-title"><strong>${busquedaCursos[i].nombreCurso}</strong></h5>

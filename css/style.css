@@ -1,3 +1,12 @@
+/*Efecto scroll*/
+html {
+    scroll-behavior: smooth !important;
+}
+h3, p
+a, div {
+    font-family: 'Nanum Gothic', sans-serif;
+    scroll-behavior: smooth !important;
+}
 * a{
     text-decoration: none;
 }
@@ -201,7 +210,7 @@ ul li a:hover{
     left: 0;
     right: 0;
     height: 100%;
-    width: 100%;
+    width: 95%;
     opacity: 0;
     transition: .5s ease;
     background-color: black;
@@ -278,6 +287,13 @@ ul li a:hover{
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
 }
+.card-title{
+    overflow: hidden;
+    text-overflow:ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
 .card-img-top{
     width: 100%;
     height: 15rem;
@@ -343,5 +359,9 @@ ul li a:hover{
 /* Ajustar tamaño de las cards en el Landing */
 .card-curso {
 min-height: 450px !important;
-max-height:450px !important
+max-height:450px !important;
+}
+.card-img-top{
+    min-height: 200px !important;
+    max-height: 200px !important;
 }
