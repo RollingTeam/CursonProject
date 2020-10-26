@@ -27,11 +27,11 @@ let EstadosUser=[
 ]
 
 //Creacion de Usuarios para guardar en LocalStorage
-//let adminUserB = new Usuario("belenadmin","12345","Belen","Neme","1","1","belen@gmail.com");
-//let regularUserB = new Usuario("BelenUser","654321","Belen","Neme","2","1","b@gmail.com");
-//let users=[]
-//users.push(adminUserB,regularUserB);
-//localStorage.setItem("users",JSON.stringify(users));
+/*let adminUserB = new Usuario("belenadmin","12345","Belen","Neme","1","1","belen@gmail.com");
+let regularUserB = new Usuario("BelenUser","654321","Belen","Neme","2","1","b@gmail.com");
+let users=[]
+users.push(adminUserB,regularUserB);
+localStorage.setItem("users",JSON.stringify(users))*/
 let users = (localStorage.getItem("users")) || [];
 
 let userLogueados = localStorage.getItem("usuariosLogueados")||[];
@@ -146,7 +146,7 @@ function agregarReviewOn(){
             </div>
         </div>
         <div class="row">
-           <div class="col-md-5">
+        <div class="col-md-5">
                 <div class="form-group d-flex justify-content-center">
                     <label class="color-rosa">Calificacion:</label>
                 </div>
@@ -252,7 +252,7 @@ const limpiarFormReview = () => {
     rComentario.value = "";
     rCurso.value = "";
     rCalificacion.value="";
-  
+
     rCurso.className = "input-review";
     rUser.className = "input-review";
     rComentario.className = "input-review";

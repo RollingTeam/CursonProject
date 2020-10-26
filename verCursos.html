@@ -62,19 +62,19 @@
                 </div>
             </div>
             <div class="row mt-4">
-                <div class="col-12 col-sm-12 col-md-3 col-lg-3 statisticsCol">
+                <div class="col-6 col-sm-6 col-md-3 col-lg-3 statisticsCol">
                     <div id='numberCursos' class="statisticsCampus"></div>
                     <span><strong>Totales</strong></span>
                 </div>
-                <div class="col-12 col-sm-12 col-md-3 col-lg-3 statisticsCol">
+                <div class="col-6 col-sm-6 col-md-3 col-lg-3 statisticsCol">
                     <div id='activeCursos' class="statisticsCampus"></div>
                     <span><strong>Activos</strong></span>
                 </div>
-                <div class="col-12 col-sm-12 col-md-3 col-lg-3 statisticsCol">
+                <div class="col-6 col-sm-6 col-md-3 col-lg-3 statisticsCol">
                     <div id='inactiveCursos' class="statisticsCampus"></div>
                     <span><strong>Inactivos</strong></span>
                 </div>
-                <div class="col-12 col-sm-12 col-md-3 col-lg-3 statisticsCol">
+                <div class="col-6 col-sm-6 col-md-3 col-lg-3 statisticsCol">
                     <div id='pendientesCursos' class="statisticsCampus"></div>
                     <span><strong>Pendientes</strong></span>
                 </div>
@@ -89,12 +89,28 @@
                     <table class="table">
                         <thead class="thead-dark">
                             <tr>
+                                <th scope="col">ID Curso</th>
                                 <th scope="col">Curso</th>
-                                <th scope="col">Categoria</th>
+                                <th scope="col">Categoria:
+                                    <select name="categoria" id="categoria" onchange="filtrarDatos()">
+                                        <option value="Todas">Todas</option>
+                                        <option value="Tecnología">Tecnología</option>
+                                        <option value="Hogar">Hogar</option>
+                                        <option value="Arte">Arte</option>
+                                        <option value="Salud">Salud</option>
+                                        <option value="Marketing">Marketing</option>
+                                    </select>
+                                </th>
                                 <th scope="col">Cupo</th>
-                                <th scope="col">Estado</th>
+                                <th scope="col">Estado: 
+                                    <select name="estado" id="estado" onchange="filtrarDatos()">
+                                        <option value=0>Todos</option>
+                                        <option value=1>Activo</option>
+                                        <option value=2>Pendiente</option>
+                                        <option value=3>Inactivo</option>
+                                    </select>
+                                </th>
                                 <th scope="col">Acciones</th>
-                              <th></th>
                             </tr>
                         </thead>
                         <tbody id="cuerpoTablaCursos"></tbody>
@@ -103,6 +119,20 @@
             </div>
         </div>
     </main>
+    <!-- Modal Update Curso-->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title color-rosa size-review mb-2" id="exampleModalLabel">Detalle Curso</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div id="modalBody" class="modal-body"></div>
+            </div>
+        </div>
+    </div>
 <!-- Modal LOGIN-->
     <div class="modal" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-sm" role="document">

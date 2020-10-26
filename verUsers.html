@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.0/css/all.css" integrity="sha384-OLYO0LymqQ+uHXELyx93kblK5YIS3B2ZfLGBmsJaUyor7CpMTBsahDHByqSuWW+q" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.0/css/all.css" integrity="sha384-OLYO0LymqQ+uHXELyx93kblK5YIS3B2ZfLGBmsJaUyor7CpMTBsahDHByqSuWW+q" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/1560ddb3d9.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <nav class="navbar navbar-expand-xl bg-blanco bd-oscuro">
@@ -62,19 +63,19 @@
                 </div>
             </div>
             <div class="row mt-4">
-                <div class="col-12 col-sm-12 col-md-3 col-lg-3 statisticsCol">
+                <div class="col-6 col-sm-6 col-md-3 col-lg-3 statisticsCol">
                     <div id='numberUsers' class="statisticsCampus"></div>
                     <span><strong>Totales</strong></span>
                 </div>
-                <div class="col-12 col-sm-12 col-md-3 col-lg-3 statisticsCol">
+                <div class="col-6 col-sm-6 col-md-3 col-lg-3 statisticsCol">
                     <div id='activeUsers' class="statisticsCampus"></div>
                     <span><strong>Activos</strong></span>
                 </div>
-                <div class="col-12 col-sm-12 col-md-3 col-lg-3 statisticsCol">
+                <div class="col-6 col-sm-6 col-md-3 col-lg-3 statisticsCol">
                     <div id='inactiveUsers' class="statisticsCampus"></div>
                     <span><strong>Inactivos</strong></span>
                 </div>
-                <div class="col-12 col-sm-12 col-md-3 col-lg-3 statisticsCol">
+                <div class="col-6 col-sm-6 col-md-3 col-lg-3 statisticsCol">
                     <div id='mentorUsers' class="statisticsCampus"></div>
                     <span><strong>Mentores</strong></span>
                 </div>
@@ -92,17 +93,30 @@
                             <tr>
                                 <th scope="col">Nombre</th>
                                 <th scope="col">Usuario</th>
-                                <th scope="col">Estado</th>
-                                <th scope="col">Role</th>
+                                <th scope="col">Estado: 
+                                    <!-- <select name="estado" id="estado" onchange="filtrarEstado()"> -->
+                                    <select name="role" id="estado" onchange="filtrarDatos()">
+                                        <option value="0">Todos</option>
+                                        <option value="1">Activo</option>
+                                        <option value="2">Inactivo</option>
+                                    </select>
+                                </th>
+                                <th scope="col">Rol: 
+                                    <!-- <select name="role" id="role" onchange="filtrarRole()"> -->
+                                    <select name="role" id="role" onchange="filtrarDatos()">
+                                        <option value="0">Todos</option>
+                                        <option value="1">Admin</option>
+                                        <option value="2">Estudiante</option>
+                                        <option value="3">Profesor</option>
+                                    </select>
+                                </th>
                                 <th scope="col">Acciones</th>
-                              <th></th>
                             </tr>
                           </thead>
                           <tbody id="cuerpoTabla"></tbody>
                     </table>
                 </div>
             </div>
-        </div>
     </main>
 <!-- Modal LOGIN-->
     <div class="modal" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">

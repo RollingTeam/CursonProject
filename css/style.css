@@ -1,4 +1,3 @@
-
 * a{
     text-decoration: none;
 }
@@ -101,6 +100,9 @@
 .btn-review:focus{
     outline: none;
 }
+.btn:focus{
+    outline:none
+}
 .form-review{
     margin-top: 12px;
     margin-bottom: 12px;
@@ -179,9 +181,18 @@ ul li a:hover{
 }
 /* LOGO NAVBAR */
 .logo{
-    width: 60%;
-    height: 60%;
+    width: 45%;
+    height: 45%;
 }
+/* AVATAR SECCION ADMIN */
+.astronaut {
+    font-size: 25px;
+}
+/* FORMULARIO CREAR CATEGORIAS */
+#altacategoria{
+    width: 50%;
+}
+
 /* Publica tu Curso Section */
 .overlay {
     position: absolute;
@@ -194,7 +205,7 @@ ul li a:hover{
     opacity: 0;
     transition: .5s ease;
     background-color: black;
-  }
+}
 
 
 .pasos:hover .overlay{
@@ -253,7 +264,7 @@ ul li a:hover{
 
 .statisticsData{
     position: relative;
-    color: black;
+    color: #212529;
     font-family: sans-serif;
     font-size: 5rem;
 }
@@ -320,3 +331,17 @@ ul li a:hover{
     outline: none;
 }
 /*******Fin Section Gabriel********/
+
+/* Ajuste de tablas admin*/
+@media screen and (max-width: 380px) {
+    table {
+      display: block;
+      overflow-x: auto;
+    }
+}
+
+/* Ajustar tamaño de las cards en el Landing */
+.card-curso {
+min-height: 450px !important;
+max-height:450px !important
+}

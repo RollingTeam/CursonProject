@@ -27,52 +27,44 @@ class Cursos {
 // 2 == Pendiente de Aprobacion
 // 3 == Inactivo
 
-//NIVEL DEL CURSO
-// 1 = Principiante
-// 2 = Intermedio
-// 3 = Avanzado
-/*let curso1= new Cursos("PHP","Curso de Programacion","Programacion","Principiante",15,1,"",1);
-let curso2= new Cursos("JS","Curso de Programacion","Programacion","Intermedio",20,1,"",1);
-let curso3= new Cursos("PHP","Curso de Programacion","Programacion","Principiante",15,1,"",1);*/
-
 let cursos = localStorage.getItem("cursos") || [];
-
 let identificadorCurso;
-function agregarCurso() {
-  let nombreCurso = document.getElementById("nombreCursoInput");
-  let descripCurso = document.getElementById("contenidoCursoInput");
-  let categoriaCruso = document.getElementById("categoriaCursoInput");
-  let nivelCurso = document.getElementById("dificultadCursoInput");
-  let cupoCurso = document.getElementById("cuposCursoInput");
-  let duracionCurso = document.getElementById("duracionCursoInput");
-  let imagenCurso = document.getElementById("imagenCursoInput");
+function agregarCurso(){
 
-  //DEBERIAMOS AGREGAR AQUI LA VALIDACION PARA CADA CAMPO DEL FORM
+let nombreCurso= document.getElementById("nombreCursoInput");
+let descripCurso = document.getElementById("contenidoCursoInput");
+let categoriaCurso= document.getElementById("listaCategorias");
+console.log(categoriaCurso)
+console.log(categoriaCurso.value)
+let nivelCurso= document.getElementById("dificultadCursoInput")
+let cupoCurso= document.getElementById("cuposCursoInput")
+let duracionCurso= document.getElementById("duracionCursoInput");
+let imagenCurso= document.getElementById("imagenCursoInput");
 
-  if (
+//DEBERIAMOS AGREGAR AQUI LA VALIDACION PARA CADA CAMPO DEL FORM
+
+if (
     nombreCurso.value == "" ||
     descripCurso.value == "" ||
-    categoriaCruso.value == "" ||
-    nivelCurso.value == "" ||
-    cupoCurso.value == "" ||
-    duracionCurso.value == "" ||
-    imagenCurso.value == ""
-  ) {
-    return "";
-  }
+    categoriaCurso.value == ""||
+    nivelCurso.value==""||
+    cupoCurso.value==""||
+    duracionCurso.value==""||
+    imagenCurso.value==""
+) {
+    return ""
+}
 
-  cursos = JSON.parse(localStorage.getItem("cursos")) || [];
-  //Manejar de Forma Automática la asignacion del ID
-  if (cursos.length < 1) {
+ cursos = JSON.parse(localStorage.getItem("cursos")) || [] 
+ //Manejar de Forma Automática la asignacion del ID
+ if(cursos.length < 1){
     identificadorCurso = 1;
-    //console.log("El array estaba vacio, pase por aqui")
  }else{
     let ultimoCurso = cursos[cursos.length-1]
-    //console.log(ultimoCurso)
     identificadorCurso= ultimoCurso.idCurso +1 
  }
 
- let newCurso = new Cursos(identificadorCurso,nombreCurso.value,descripCurso.value,categoriaCruso.value,nivelCurso.value,cupoCurso.value,duracionCurso.value,imagenCurso.value)
+ let newCurso = new Cursos(identificadorCurso,nombreCurso.value,descripCurso.value,categoriaCurso.value,nivelCurso.value,cupoCurso.value,duracionCurso.value,imagenCurso.value)
  cursos.push(newCurso);
  localStorage.setItem("cursos",JSON.stringify(cursos))
  limpiarFormCurso();
@@ -80,29 +72,29 @@ function agregarCurso() {
 cargarCursos();
 }
 
-function limpiarFormCurso() {
-  let nombreCurso = document.getElementById("nombreCursoInput");
-  let descripCurso = document.getElementById("contenidoCursoInput");
-  let categoriaCruso = document.getElementById("categoriaCursoInput");
-  let nivelCurso = document.getElementById("dificultadCursoInput");
-  let cupoCurso = document.getElementById("cuposCursoInput");
-  let duracionCurso = document.getElementById("duracionCursoInput");
-  let imagenCurso = document.getElementById("imagenCursoInput");
+function limpiarFormCurso(){
+    let nombreCurso= document.getElementById("nombreCursoInput");
+    let descripCurso = document.getElementById("contenidoCursoInput");
+    let categoriaCurso= document.getElementById("categoriaCursoInput");
+    let nivelCurso= document.getElementById("dificultadCursoInput")
+    let cupoCurso= document.getElementById("cuposCursoInput")
+    let duracionCurso= document.getElementById("duracionCursoInput");
+    let imagenCurso= document.getElementById("imagenCursoInput");
 
-  nombreCurso.value = "";
-  descripCurso.value = "";
-  categoriaCruso.value = "";
-  nivelCurso.value = "";
-  cupoCurso.value = "";
-  duracionCurso.value = "";
-  imagenCurso.value = "";
-}
+    nombreCurso.value = "";
+    descripCurso.value = "";
+    categoriaCurso.value = "";
+    nivelCurso.value="";
+    cupoCurso.value="";
+    duracionCurso.value="";
+    imagenCurso.value="";
+};
 
 cargarCursos();
 function cargarCursos(){
-    cursos = localStorage.getItem("cursos")
-    let cursosDB = JSON.parse(cursos)
-    cursosContainer.innerHTML=""
+     cursos = localStorage.getItem("cursos")
+     let cursosDB = JSON.parse(cursos)
+     cursosContainer.innerHTML=""
     for(let i=0 ; i< cursosDB.length ; i++){
         if(cursosDB[i].estadoCurso==1){
             while(i<6){
@@ -117,7 +109,7 @@ function cargarCursos(){
 
                 let cursoContenido= `<div class="col-12 col-md-6 col-lg-4">
                 <div class="card card-curso m-2">
-                    <img src="https://picsum.photos/id/1/400/300" class="card-img-top img-fluid" alt="...">
+                    <img src=${cursosDB[i].imagenCurso} class="card-img-top img-fluid" alt="...">
                     <div class="card-body">
                         <h5 class="card-title"><strong>${cursosDB[i].nombreCurso}</strong></h5>
                         ${badgeColor}
@@ -128,12 +120,57 @@ function cargarCursos(){
                     </div>
                 </div>
                 </div>`
-                
                 cursosContainer.innerHTML+=cursoContenido
                 i+=1
             }
         }
     }
+}
+
+function verPrincipales(){
+    cargarCursos()
+    let btnMenos= document.getElementById("verMenos")
+    btnMenos.style = 'display:none'
+    let btnMas = document.getElementById("verTodosCursos")
+    btnMas.style = 'display:inline-block'
+}
+
+function mostrarTodo(){
+    console.log("Vine por mostrarTodo")
+    cursos = localStorage.getItem("cursos")
+    let cursosDB = JSON.parse(cursos)
+    cursosContainer.innerHTML=""
+   for(let i=0 ; i< cursosDB.length ; i++){
+       if(cursosDB[i].estadoCurso==1){
+            let badgeColor
+            if(cursosDB[i].nivelCurso=="Principiante"){
+                badgeColor= `<span class="badge badge-success" id="badgeNivel">${cursosDB[i].nivelCurso}</span>`
+            }else if(cursosDB[i].nivelCurso=="Intermedio"){
+                badgeColor= `<span class="badge badge-warning" id="badgeNivel">${cursosDB[i].nivelCurso}</span>`
+            }else{
+                badgeColor= `<span class="badge badge-secondary" id="badgeNivel">${cursosDB[i].nivelCurso}</span>`
+            }
+
+            let cursoContenido= `<div class="col-12 col-md-6 col-lg-4">
+            <div class="card card-curso m-2">
+            <img src=${destacados[i].imagenCurso} class="card-img-top img-fluid" alt="...">                <div class="card-body">
+                    <h5 class="card-title"><strong>${cursosDB[i].nombreCurso}</strong></h5>
+                    ${badgeColor}
+                    <p class="card-text">${cursosDB[i].descripcionCurso}</p>
+                    <button onclick="mostrarModalCurso(${cursosDB[i].idCurso})" class="btn btn-primary-curso float-right" data-toggle="modal" data-target="#modalVerMas">
+                    Ver Más
+                    </button>
+                </div>
+            </div>
+            </div>`
+            cursosContainer.innerHTML+=cursoContenido
+       }
+   }
+   let btnMas = document.getElementById("verTodosCursos")
+   btnMas.style = 'display:none'
+  let btnMenos= document.getElementById("verMenos")
+  btnMenos.style = 'display:inline-block'
+  btnMenos.className="btn btn-primary-curso"
 }
 
 function mostrarModalCurso(idCurs) {
@@ -153,7 +190,7 @@ function mostrarModalCurso(idCurs) {
         </button>
     </div>
     <div class="modal-body">
-        <img src="https://picsum.photos/id/1/500/200" id="imagenModal" alt="" class="img-fluid">
+    <img src=${cursoDB.imagenCurso} class="card-img-top img-fluid" alt="...">
         <span class="badge badge-warning categorias">${cursoDB.categoriaCurso}</span>
         <span class="badge badge-primary fecha">Inicia 15/10/20</span>
         <span class="badge badge-pill badge-info cupos">${cursoDB.cupoCurso} Lugares Disponibles</span>
@@ -197,7 +234,7 @@ function validarAddCurso(idCurso){
 function validarAddFav(idCurso){
     let userLog = JSON.parse(localStorage.getItem("usuariosLogueados"))||[]
     console.log(userLog.length)
-    if(userLog.length<1){
+    if(userLog==[]){
         alert("Debes iniciar sesion")
         //PERMITIR QUE HAGA EL LOGUEO (O MOSTRAMOS EL LOGIN O MOSTRAMOS ALERT DE QUE NECESITA INICIAR SESION)
     }else{

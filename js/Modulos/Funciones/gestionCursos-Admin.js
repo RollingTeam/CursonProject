@@ -1,17 +1,19 @@
-let datos = localStorage.getItem("cursos") || []
-let cursos = JSON.parse(datos)
+let datos = JSON.parse(localStorage.getItem("cursos")) || []
 
 function verNumeroCursos(){
+    console.log("Entre a la function de verNumeroCursos")
+    datos = JSON.parse(localStorage.getItem("cursos"))
+
     //NUMERO TOTAL DE CURSOS
     numberCursos.innerHTML = "";
-    let numeroTotal = cursos.length
+    let numeroTotal = datos.length
     let total = `<span class = "statisticsData">${numeroTotal}</span>`
     numberCursos.innerHTML = total
 
     //NUMERO DE CURSOS ACTIVOS
     activeCursos.innerHTML = "";
     let totalActivos = 0;
-    cursos.map(function (curso){
+    datos.map(function (curso){
         if (curso.estadoCurso === 1){
             totalActivos += 1
         }else{
@@ -25,7 +27,7 @@ function verNumeroCursos(){
     //NUMERO DE CURSOS INACTIVOS
     inactiveCursos.innerHTML = "";
     let totalInactivos=0;
-    cursos.map(function (curso){
+    datos.map(function (curso){
         if (curso.estadoCurso === 3){
             totalInactivos += 1
             console.log(curso.estadoCurso)
@@ -37,7 +39,7 @@ function verNumeroCursos(){
     // NUMERO DE CURSOS PENDIENTES
     pendientesCursos.innerHTML = "";
     let totalPendientes = 0;
-    cursos.map(function(curso){
+    datos.map(function(curso){
         if (curso.estadoCurso === 2){
             totalPendientes += 1
             console.log(curso.estadoCurso)
@@ -47,8 +49,40 @@ function verNumeroCursos(){
     })
     let totalPending = `<span class = "statisticsData">${totalPendientes}</span>`
     pendientesCursos.innerHTML = totalPending
-
 }
+
+// FUNCION DE FILTROS
+filtrarDatos = () => {
+    cursos = JSON.parse(localStorage.getItem("cursos"));
+    let estado = document.getElementById("estado");
+    let categoria = document.getElementById("categoria");
+    console.log(typeof categoria.value)
+    if (estado.value > 0 && categoria.value !="") {
+      let busquedaEstado = cursos.filter(function (curso) {
+        return curso.estadoCurso == estado.value && curso.categoriaCurso === categoria.value;
+      });
+      datos = busquedaEstado;
+    }else {
+      if (estado.value > 0) {
+        let busquedaEstado = cursos.filter(function (curso) {
+            console.log(typeof(curso.estadoCurso))
+          return curso.estadoCurso == estado.value;
+        });
+        datos = busquedaEstado;
+      } else {
+        if (categoria.value !="Todas" ) {
+          let busquedaEstado = cursos.filter(function (curso) {
+              console.log(curso.categoriaCurso)
+            return curso.categoriaCurso === categoria.value;
+          });
+          datos = busquedaEstado;
+        } else {
+          datos = cursos;
+        }
+      }
+    }
+    cargarTablaCursos();
+};
 
 const tbody = document.getElementById('cuerpoTablaCursos')
 
@@ -65,6 +99,7 @@ function eliminarCurso(idCurso){
     if(valor){
         localStorage.setItem("cursos", JSON.stringify(newArray));
         cargarTablaCursos();
+        verNumeroCursos();
     }
 }
 
@@ -98,7 +133,6 @@ function activarCurso(idCurso){
 
 function cargarTablaCursos () {
     tbody.innerHTML = ""
-    datos = JSON.parse(localStorage.getItem('cursos'))
     datos.map((curso) => {
         let estadoCurso = '';
         switch (curso.estadoCurso){
@@ -126,17 +160,119 @@ function cargarTablaCursos () {
         }
 
         let tablaCurso =`<tr class="text-center">
+        <th scope="row">${curso.idCurso}</th>
         <th scope="row">${curso.nombreCurso}</th>
             <td>${curso.categoriaCurso}</td>
             <td>${curso.cupoCurso}</td>
             <td>${estadoCurso}</td>
-            <td><button type="button" class = "btn btn-danger mr-1" onclick= "eliminarCurso(${curso.idCurso});">Eliminar</button>${btnSuspender} ${btnActivar}</td>
+            <td><button type="button" class = "btn btn-dark mx-1" onclick= "editarCurso(${curso.idCurso});"data-toggle="modal" data-target="#exampleModal">Editar</button><button type="button" class = "btn btn-danger mr-1" onclick= "eliminarCurso(${curso.idCurso});">Eliminar</button>${btnSuspender} ${btnActivar}</td>
         </tr>`;
 
     tbody.innerHTML += tablaCurso
     })
 }
 
-
 cargarTablaCursos()
 verNumeroCursos()
+
+let modalCurso= document.getElementById("modalBody")
+function editarCurso(idCurso){
+    console.log("Entre a la funcion de editarCurso")
+    datos = JSON.parse(localStorage.getItem("cursos"))
+    let cursoSearch = datos.find(function(cur){
+        return cur.idCurso === idCurso
+    })
+    console.log(cursoSearch)
+    console.log(cursoSearch.nombreCurso)
+    console.log(cursoSearch.descripcionCurso)
+    let contenido="";
+    contenido =`<form autocomplete="off">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                    <div class="row">
+                        <div class="form-group col">
+                            <label class="color-rosa">Nombre del Curso</label>
+                            <input type="text" class="form-control" id="nombreCursoInput" value=${cursoSearch.nombreCurso}>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col">
+                            <label class="color-rosa">Descripcion</label>
+                            <textarea id="contenidoCursoInput" class="form-control" rows="3">${cursoSearch.descripcionCurso}</textarea>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-12 col-sm-12 col-md-6 col-md-4">
+                            <label class="color-rosa">Duracion</label>
+                            <input type="number" class="form-control" id="duracionCursoInput" value=${cursoSearch.duracionCurso}>
+                        </div>
+                        <div class="form-group col-12 col-sm-12 col-md-6 col-md-4">
+                            <label class="color-rosa">Lugares Disponibles</label>
+                            <input type="number" class="form-control" id="cuposCursoInput" value=${cursoSearch.cupoCurso}>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-12 col-sm-12 col-md-6 col-md-6">
+                            <label class="color-rosa">Categoría</label>
+                            <select class="form-control" id="categoriaCursoInput">
+                                <option value=""selected>${cursoSearch.categoriaCurso}</option>
+                                <option>Tecnología</option>
+                                <option>Hogar</option>
+                                <option>Arte</option>
+                                <option>Salud</option>
+                                <option>Marketing</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-12 col-sm-12 col-md-6 col-md-6">
+                            <label class="color-rosa">Nivel</label>
+                            <select class="form-control" id="dificultadCursoInput">
+                                <option value ="" selected>${cursoSearch.nivelCurso}</option>
+                                <option>Principiante</option>
+                                <option>Intermedio</option>
+                                <option>Avanzado</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col">
+                            <label class="color-rosa">Imagen de Portada del Curso</label>
+                            <input type="url" class="form-control-fie" id="imagenCursoInput" value=${cursoSearch.imagenCurso}>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group d-flex justify-content-center mt-4">
+                <button type="button" class="btn btn-secondary mr-3" data-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn cursonBtn ml-3" data-dismiss="modal" onclick="updateCurso(${idCurso})">Modificar Curso</button>
+            </div>
+        </form>`
+    modalCurso.innerHTML = contenido;
+}
+
+const updateCurso = (idCurso) => {
+    console.log("Entre al updateCurso")
+    // e.preventDefault();
+    let nombreCurso= document.getElementById("nombreCursoInput").value;
+    let descripCurso = document.getElementById("contenidoCursoInput").value;
+    let categoriaCurso= document.getElementById("categoriaCursoInput").value;
+    let nivelCurso= document.getElementById("dificultadCursoInput").value;
+    let cupoCurso= document.getElementById("cuposCursoInput").value;
+    let duracionCurso= document.getElementById("duracionCursoInput").value;
+    let imagenCurso= document.getElementById("imagenCursoInput").value;
+
+    datos.map(function (curso) {
+      if (curso.idCurso === idCurso) {
+        curso.nombreCurso= nombreCurso
+        curso.descripcionCurso= descripCurso
+        curso.categoriaCurso=categoriaCurso
+        curso.nivelCurso=nivelCurso
+        curso.cupoCurso=cupoCurso
+        curso.duracionCurso=duracionCurso
+        curso.imagenCurso=imagenCurso
+      }
+    });
+    localStorage.setItem("cursos", JSON.stringify(datos));
+    cargarTablaCursos()
+};

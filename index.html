@@ -19,7 +19,8 @@
             aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <a class="navbar-brand" href="#"><img src="./img/logo-rect.png" class="img-fluid ml-2 logo" alt="logo"></a>
+        <a class="navbar-brand m-0" href="#"><img src="./img/logo-navbar.png" class="img-fluid logo"
+                alt="logo curson navbar"></a>
         <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
             <ul class="navbar-nav ml-auto mt-2 mt-lg-0" id="ulNav">
                 <li class="nav-item active">
@@ -41,6 +42,7 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#reviews"><strong class="color-rosa item-nav-d">Reviews</strong></a>
                 </li>
+                <li class="nav-item pl-2 pr-2 pt-1">
                 <li class="nav-item pl-2 pr-2 pt-1" id="LogInOpcion">
                     <button data-toggle="modal" data-target="#exampleModal" type="button"
                         class="btn btn-outline-dark btn-sm">Log In</button>
@@ -51,7 +53,7 @@
                 <li class="nav-item dropdown ocultarUser" id="menuUser">
                     <button class="nav-link icon-login item-nav-r ml-lg-5" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user fa-xl"></i></button>
                     <div class="dropdown-menu">
-                        <a class="dropdown-item color-oscuro" href="#!">Mi Perfil</a>
+                        <a class="dropdown-item color-oscuro" href="perfil.html">Mi Perfil</a>
                         <a class="dropdown-item color-oscuro" href="misCursos.html">Mis Cursos</a>
                         <a class="dropdown-item color-oscuro" href="misFavoritos.html">Mis Favoritos</a>
                         <a class="dropdown-item color-oscuro" onclick="logOut()">Log Out</a>
@@ -71,7 +73,7 @@
     <!-- FIN DEL NAV -->
     <!--Main Section-->
     <main>
-        <div class="container-fluid">
+        <div class="container-fluid hmin">
             <div class="row">
                 <div class="col-12 col-sm-12 col-md-6 pt-4 pb-4">
                     <h2>¡Bienvenidos a CoursOn!</h2>
@@ -130,180 +132,61 @@
             </div>
             <hr>
             <!-- CARDS MAS DESTACADOS -->
-            <div class="container">
+            <div class="container" >
+                <h3 class="p-2">Más Destacados</h3>
                 <div class="row">
                     <div class="col">
-                        <h3 class="p-2">Más Destacados</h3>
-                        <div class="card-deck">
-                            <div class="card">
-                                <img class="card-img-top img-fluid" src="https://picsum.photos/200/200/?blur"
-                                    alt="Card image cap">
-                                <div class="card-body">
-                                    <h5 class="card-title">Card title</h5>
-                                    <span class="badge badge-pill badge-warning">Avanzado</span>
-                                    <p class="card-text p-1">This is a wider card with supporting text below as a
-                                        natural
-                                        lead-in to additional content. This card has even longer content than the first
-                                        to show that equal height action.</p>
-                                    <button type="button" class="btn btn-danger">Más Info</button>
-                                </div>
-                            </div>
-                            <div class="card">
-                                <img class="card-img-top img-fluid" src="https://picsum.photos/200/200/?blur"
-                                    alt="Card image cap">
-                                <div class="card-body">
-                                    <h5 class="card-title">Card title</h5>
-                                    <span class="badge badge-pill badge-dark">Básico</span>
-                                    <p class="card-text p-1">This is a wider card with supporting text below as a
-                                        natural
-                                        lead-in to additional content. This card has even longer content than the first
-                                        to show that equal height action.</p>
-                                    <button type="button" class="btn btn-danger">Más Info</button>
-                                </div>
-                            </div>
-                            <div class="card">
-                                <img class="card-img-top img-fluid" src="https://picsum.photos/200/200/?blur"
-                                    alt="Card image cap">
-                                <div class="card-body">
-                                    <h5 class="card-title">Card title</h5>
-                                    <span class="badge badge-pill badge-primary">Intermedio</span>
-                                    <p class="card-text p-1">This is a wider card with supporting text below as a
-                                        natural
-                                        lead-in to additional content. This card has even longer content than the first
-                                        to show that equal height action.</p>
-                                    <button type="button" class="btn btn-danger">Más Info</button>
-                                </div>
-                            </div>
+                        <div class="card-deck" id="tarjetas">
                         </div>
                     </div>
                 </div>
             </div>
-            <hr>
     </main>
-        <!-- COMIENZO DE CURSOS POR CATEGORÍAS -->
+        <!-- CURSOS POR CATEGORÍAS -->
         <section id="cursosCategoria">
             <div class="container mb-4"><br>
                 <div class="row pt-2 pb-2 pl-0 pr-0">
-                    <h3>CURSOS POR CATEGORÍAS</h3>
+                    <h3 class="size-review color-rosa mb-4">Cursos por Categoría</h3>
                 </div>
-                <!-- BOTONES DE CATEGORIAS -->
                 <div class="row">
                     <div class="col-lg-2">
-                        <div class="dropdown">
-                            <button class="btn-primary boton dropdown-toggle" type="button" id="dropdownMenuButton"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Categorías
-                            </button>
-                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <a class="dropdown-item btn-primary boton" id="programacion" href="#">Programación</a>
-                                <a class="dropdown-item btn-primary boton" id="carpinteria" href="#">Carpintería</a>
-                                <a class="dropdown-item btn-primary boton" id="marketing" href="#">Marketing</a>
-                                <a class="dropdown-item btn-primary boton" id="diseño" href="#">Diseño</a>
-                            </div>
-                        </div>
+                        <label class="color-rosa">Categorias</label>
+                        <select class="" id="listaCategorias" onchange="filtrarCursosPorCategoria()">
+                        </select>
                     </div>
                     <!-- TARJETAS DE CATEGORIAS -->
                     <div class="col-10 col-md-10">
-                        <div class="row">
-                            <!-- TARJETA 1 -->
-                            <div class="col">
-                                <div class="card">
-                                    <img src="https://picsum.photos/id/1/400/200" class="card-img-top" alt="...">
-                                    <div class="card-body">
-                                        <h5 class="card-title"><strong> Curso de Office Online</strong></h5>
-                                        <span class="badge badge-warning">Intermedio</span>
-                                        <p class="card-text">En este curso aprenderás conocimientos y técnicas del paquete
-                                            Office.
-                                        </p>
-                                        <button type="button" class="btn btn-primary float-right" data-toggle="modal"
-                                            data-target="#modalVerMas">
-                                            Ver Más
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- TARJETA 2 -->
-                            <div class="col">
-                                <div class="card">
-                                    <img src="https://picsum.photos/id/1/400/200" class="card-img-top" alt="...">
-                                    <div class="card-body">
-                                        <h5 class="card-title"><strong> Curso Básico de Photoshop</strong></h5>
-                                        <span class="badge badge-success">Principiante</span>
-                                        <p class="card-text">Un curso Práctico y didáctico con las mejores técnicas de la
-                                            actualidad.
-                                        </p>
-                                        <button type="button" class="btn btn-primary float-right" data-toggle="modal"
-                                            data-target="#modalVerMas">
-                                            Ver Más
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="row" id="containerCursCat"></div>
+                        <div class="row text-center mb-4 display-flex justify-content-center">
+                            <button class="btn btn-primary-curso" id="verTodosLosCursos" onclick="mostrarTodosLosCursos()">Ver Todos</button>
+                            <button class="ocultarUser" id="verMenosCursos" onclick="verPrincipalesCursos()">Ver Menos</button>
                         </div>
-                        <!-- PAGINACION -->
-                        <nav aria-label="Page navigation example">
-                            <ul class="pagination justify-content-center pagination-lg">
-                                <li class="page-item disabled">
-                                    <a class="page-link btn btn-primary boton mt-2" href="#" aria-label="Previous">
-                                        <span aria-hidden="true">&laquo;</span>
-                                    </a>
-                                </li>
-                                <li class="page-item">
-                                    <a class="page-link btn btn-primary boton mt-2" href="#" aria-label="Next">
-                                        <span aria-hidden="true">&raquo;</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </nav>
-                        <!-- FíN DE PAGINACIÓN -->
                     </div>
                 </div>
             </div>
         </section>
-        <!-- FÍN DE CURSOS POR CATEGORÍAS -->
     
-        <!-- COMIENZO DE TODOS LOS CURSOS -->
-        <section id="cursos">
-            <div class="container">
-                <hr class="bg-gris">
-                <h3 class="size-review color-rosa mb-4">Todos los Cursos</h3>
-                <div id="cursosContainer" class="row">
-                <!-- TODO ESTA COMENTADO PORQUE AHORA TOMAMOS LA ESTRUCTURA Y LO HACEMOS DINAMICO-->
-                <!-- PAGINACION -->
-                <div class="row">
-                    <div class="col">
-                        <nav aria-label="Page navigation example">
-                            <ul class="pagination justify-content-center">
-                                <li class="page-item disabled">
-                                    <a class="page-link btn btn-primary boton mt-2" href="#" aria-label="Previous">
-                                        <span aria-hidden="true">&laquo;</span>
-                                    </a>
-                                </li>
-                                <li class="page-item"><a class="page-link btn btn-primary boton mt-2" href="#">1</a></li>
-                                <li class="page-item"><a class="page-link btn btn-primary boton mt-2" href="#">2</a></li>
-                                <li class="page-item"><a class="page-link btn btn-primary boton mt-2" href="#">3</a></li>
-                                <li class="page-item">
-                                    <a class="page-link btn btn-primary boton mt-2" href="#" aria-label="Next">
-                                        <span aria-hidden="true">&raquo;</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </nav>
-                    </div>
-                </div>
-                <!-- FIN PAGINACION -->
+    <!-- TODOS LOS CURSOS -->
+    <section id="cursos">
+        <div class="container">
+            <hr class="bg-gris">
+            <h3 class="size-review color-rosa mb-4">Todos los Cursos</h3>
+            <div id="cursosContainer" class="row">
             </div>
-        </section>
-        <!-- MODAL DE LOS BOTONES "VER MÁS" -->
-        <div class="modal fade left" id="modalVerMas" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-notify modal-info modal-side modal-top-left" role="document">
-                <div class="modal-content" id="modal-form-content">
-                <!-- COMENTADO PORQUE AHORA SE HACE DINAMICO-->
-                </div>
+            <div class="row text-center mb-4 display-flex justify-content-center">
+                <button class="btn btn-primary-curso" id="verTodosCursos" onclick="mostrarTodo()">Ver Todos</button>
+                <button class="ocultarUser" id="verMenos" onclick="verPrincipales()">Ver Menos</button>
             </div>
         </div>
-        <!-- FIN DEL MODAL -->
-        <!-- TERMINAN LOS CURSOS! -->
+    </section>
+    <!-- MODAL "VER MÁS" -->
+    <div class="modal fade left" id="modalVerMas" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-notify modal-info modal-side modal-top-left" role="document">
+            <div class="modal-content" id="modal-form-content">
+            </div>
+        </div>
+    </div>
+
     <!-- Inicio Seccion Publica tu curso -->
     <div class="container" id="mainPublicarContainer">
         <div class="row text-center mb-4">
@@ -379,7 +262,7 @@
         <div class="modal-dialog modal-sm" role="document">
             <div class="modal-content modal-sm">
                 <div class="modal-header">
-                    <img src="./img/logoModal.png" alt="logo curson" class="img-fluid">
+                    <img src="./img/logo-modal.png" alt="logo curson" class="img-fluid">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -510,8 +393,9 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 <script src="js/Modulos/Funciones/login-Reviews.js"></script>
 <script src="js/Modulos/Funciones/gestionarCursos.js"></script>
-
+<script src="js/Modulos/Funciones/destacados.js"></script>
+<script src="js/Modulos/Funciones/cursosPorCategoria.js"></script>
 </body>
-
 </html>
+
 

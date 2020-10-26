@@ -122,25 +122,31 @@
                             <label class="color-rosa">Lugares Disponibles</label>
                             <input type="number" class="form-control" id="cuposCursoInput" placeholder="Cupo máximo">
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="form-group col-12 col-sm-12 col-md-6 col-md-6">
-                            <label class="color-rosa">Categoría</label>
-                            <select class="form-control" id="categoriaCursoInput">
-                                <option>Tecnología</option>
-                                <option>Hogar</option>
-                                <option>Arte</option>
-                                <option>Salud</option>
-                                <option>Marketing</option>
-                            </select>
+                        <div class="row">
+                            <div class="form-group col-12 col-sm-12 col-md-6 col-md-6">
+                                <label class="color-rosa">Categoría</label>
+                                <select class="form-control" id="listaCategorias">
+                                   <!-- <option>Tecnología</option>
+                                    <option>Hogar</option>
+                                    <option>Arte</option>
+                                    <option>Salud</option>
+                                    <option>Marketing</option>-->
+                                </select>
+                            </div>
+                            <div class="form-group col-12 col-sm-12 col-md-6 col-md-6">
+                                <label class="color-rosa">Nivel</label>
+                                <select class="form-control" id="dificultadCursoInput">
+                                    <option>Principiante</option>
+                                    <option>Intermedio</option>
+                                    <option>Avanzado</option>
+                                </select>
+                            </div>
                         </div>
-                        <div class="form-group col-12 col-sm-12 col-md-6 col-md-6">
-                            <label class="color-rosa">Nivel</label>
-                            <select class="form-control" id="dificultadCursoInput">
-                                <option>Principiante</option>
-                                <option>Intermedio</option>
-                                <option>Avanzado</option>
-                            </select>
+                        <div class="row">
+                            <div class="form-group col">
+                                <label class="color-rosa">Imagen de Portada del Curso</label>
+                                <input type="url" class="form-control-fie" id="imagenCursoInput" placeholder="Ingrese URL de la imagen">
+                            </div>
                         </div>
                     </div>
                     <div class="row">
@@ -153,25 +159,17 @@
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-        <div class="form-group d-flex justify-content-center mt-4">
-            <button type="button" class="btn btn-secondary mr-3">Cancelar</button>
-            <button type="button" class="btn cursonBtn ml-3" onclick="agregarCurso()">Agregar Curso</button>
-
-        </div>
-    </form>
-
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
-        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
-        crossorigin="anonymous"></script>
-    <script src="js/Modulos/Funciones/gestionarCursos.js"></script>
+                <div class="form-group d-flex justify-content-center mt-4">
+                    <button type="button" class="btn btn-secondary mr-3">Cancelar</button>
+                    <button type="button" class="btn cursonBtn ml-3" onclick="agregarCurso()">Agregar Curso</button>
+                </div>
+            </form>
+    
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+<script src="js/Modulos/Funciones/gestionarCursos.js"></script>
+<script src="js/Modulos/Funciones/cursosPorCategoria.js"></script>
 </body>
 
 </html>
