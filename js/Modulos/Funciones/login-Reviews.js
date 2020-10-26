@@ -24,9 +24,9 @@ if(userArray.length>0){
     users = JSON.parse(userArray)
 }else{
     users = []
-    let adminUserB = new Usuario("belenadmin","12345","Belen","Neme","1","1","belen@gmail.com");
-    let regularUserB = new Usuario("BelenUser","654321","Belen","Neme","2","1","b@gmail.com");
-    users.push(adminUserB,regularUserB)
+    let adminUser = new Usuario("admintest","12345","Admin","Test","1","1","adminTest@gmail.com");
+    let regularUser = new Usuario("usertest","12345","User","Test","2","1","userTest@gmail.com");
+    users.push(adminUser,regularUser)
     localStorage.setItem("users",JSON.stringify(users))
 }
 
@@ -51,7 +51,7 @@ function logOut(){
 }
 
 function validarAcceso(){
-    let us= document.getElementById("inputUser").value
+    let us= document.getElementById("inputUser").value.toLowerCase()
     let pass= document.getElementById("inputPassword").value
     let usuarios= localStorage.getItem("users",users);
     usuarios = JSON.parse(usuarios);
@@ -76,7 +76,6 @@ function validarAcceso(){
     }else{
         alert("No te encuentras registrado en CursOn")
     }
-
 }
 
 function publicarCursoOn(){
