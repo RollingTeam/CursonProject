@@ -1,7 +1,6 @@
 let destacados = JSON.parse(localStorage.getItem("cursos")) || [];
 
 function agregarDestacados() {
-    //console.log("entramos a la funcion")
     let cards = document.getElementById("tarjetas");
     for (let i = 0; i < destacados.length; i++) {
         while (i < 3) {

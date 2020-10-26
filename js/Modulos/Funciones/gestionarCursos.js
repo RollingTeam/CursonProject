@@ -18,7 +18,19 @@ class Cursos{
 // 2 == Pendiente de Aprobacion
 // 3 == Inactivo
 
-let cursos = localStorage.getItem("cursos") || [];
+let cursosArray = localStorage.getItem("cursos") || [];
+
+if(cursosArray.length>0){
+    cursos = JSON.parse(cursosArray)
+}else{
+    cursos = []
+    let curso1 = new Cursos(1,"Introducción al diseño UX","Descubrirás la importancia de la investigación UX, y lo que puede salir mal si no lo haces correctamente. Aprenderás a realizar entrevistas, grupos de discusión y encuestas. Conviértete en un experto en resolver problemas, explorando técnicas como el mapeo de afinidad. Luego, aprenderás todo sobre la creación de personajes y cómo crear un mapa de viaje.Aprenderás a medir el UX y a presentar tus hallazgos de forma creativa a un cliente, así como a mostrar la importancia del diseño UX dentro de una empresa. Crearás tu propio caso de estudio desde cero, documentando todo tu proceso de diseño UX y mostrando tu trabajo para tu porfolio, y terminarás el curso con los consejos de Ethan a la hora de hacer entrevistas para puestos de UX.","Tecnologia","Avanzado","30","24","https://cdn.domestika.org/c_fill,dpr_1.0,h_116,t_base_params.format_jpg,w_206/v1593186407/course-covers/000/001/235/1235-original.jpg?1593186407",1,"https://www.domestika.org");
+    let curso2 = new Cursos(2,"Caligrafía inglesa de la A a la Z","Aprende a trabajar la caligrafía Copperplate y recupera el valor de la letra hecha a mano.Cada letra refleja algo en concreto y expresa su propio carácter, esto es lo que Bego Viñuela —calígrafa y fundadora del taller Caligrafía Bilbao— descubrió al adentrarse en el mundo de la caligrafía.En este curso aprenderás a dominar y entender la caligrafía inglesa sin conocimientos previos. Poco a poco aprenderás a utilizar las herramientas y trazarás minúsculas y mayúsculas, hasta completar un alfabeto completo de Copperplate.","Arte","Principiante","20","20","https://cdn.domestika.org/c_fill,dpr_1.0,h_116,t_base_params.format_jpg,w_206/v1559741151/course-covers/000/000/384/384-original.jpg?1559741151",1,"https://www.domestika.org");
+    let curso3 = new Cursos(3,"Introducción al Desarrollo Web Responsive con HTML y CSS","Este curso parte desde un conocimiento cero de HTML y CSS. Incluye las etiquetas fundamentales de HTML y propiedades de CSS tipográficas, herramientas de layout como Floats o Position, fondos, bordes, esquinas redondeadas, sombras, Web Fonts y herramientas fundamentales de Desarrollo Responsive como las Media Queries.","Tecnologia","Intermedio",15,30,"https://cdn.domestika.org/c_fill,dpr_1.0,h_116,t_base_params.format_jpg,w_206/v1439984237/course-covers/000/000/074/74-original.jpg?1439984237",1,"https://www.domestika.org");
+    cursos.push(curso1,curso2,curso3)
+    localStorage.setItem("cursos",JSON.stringify(cursos))
+}
+
 let identificadorCurso;
 function agregarCurso(){
 

@@ -6,7 +6,17 @@ class Categoria{
     }
 }
 
-let categorias = JSON.parse(localStorage.getItem("categorias")) || []
+let categoriasArreglo = localStorage.getItem("categorias")|| []
+
+if(categoriasArreglo.length>0){
+    categorias = JSON.parse(categoriasArreglo)
+}else{
+    categorias = []
+    let cat1 = new Categoria(1,"Arte","1");
+    let cat2 = new Categoria(2,"Tecnologia","1")
+    categorias.push(cat1,cat2)
+    localStorage.setItem("categorias",JSON.stringify(categorias))
+}
 let identificadorCat;
 function obtenerIdCategoria(){
     categorias = JSON.parse(localStorage.getItem("categorias"))
