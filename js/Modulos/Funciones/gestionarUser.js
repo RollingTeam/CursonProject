@@ -45,7 +45,7 @@ function validarLogUp(){
             users = []
         }
         let newUser = new Usuario()
-        newUser.userName = userName.value
+        newUser.userName = userName.value.toLowerCase()
         newUser.userFirstName= userNombre.value
         newUser.userLastName = userApellido.value
         newUser.userEmail = userEmail.value

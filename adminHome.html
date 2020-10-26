@@ -14,19 +14,19 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.0/css/all.css"
         integrity="sha384-OLYO0LymqQ+uHXELyx93kblK5YIS3B2ZfLGBmsJaUyor7CpMTBsahDHByqSuWW+q" crossorigin="anonymous">
 </head>
-
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-blanco p-2">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03"
             aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <a class="navbar-brand m-0" href="index.html"><img src="./img/logo-navbar.png" class="img-fluid logo" alt="logo curson navbar"></a>
+        <a class="navbar-brand m-0" href="index.html"><img src="./img/logo-navbar.png" class="img-fluid logo"
+                alt="logo curson navbar"></a>
         <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
             <ul class="navbar-nav mx-auto mt-2 mt-lg-0">
                 <li class="nav-item active">
-                    <a class="nav-link" href="verUsers.html"><strong class="color-oscuro item-nav-d">Usuarios</strong><span
-                            class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="adminHome.html"><strong
+                            class="color-oscuro item-nav-d">Usuarios</strong><span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle item-nav-d mx-lg-4" data-toggle="dropdown" href="#" role="button"
@@ -38,7 +38,8 @@
                     </div>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="crearCatAdmin.html"><strong class="color-oscuro item-nav-r">Categorías</strong></a>
+                    <a class="nav-link" href="crearCatAdmin.html"><strong
+                            class="color-oscuro item-nav-r">Categorías</strong></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#"><strong class="color-rosa item-nav-d">Solicitudes</strong></a>
@@ -61,12 +62,116 @@
                 </div>
             </div>
         </div>
-      </div>
+        </div>
     </nav>
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-<script src="js/Modulos/Funciones/login-Reviews.js"></script>
-<script src="js/Modulos/Funciones/accesoAdmin.js"></script>
-</body>
+
+    <body>
+        <main>
+            <div class="container">
+                <div class="row mt-4">
+                    <div class="col">
+                        <h3>Estadisticas de usuarios:</h3>
+                    </div>
+                </div>
+                <div class="row mt-4">
+                    <div class="col-6 col-sm-6 col-md-3 col-lg-3 statisticsCol">
+                        <div id='numberUsers' class="statisticsCampus"></div>
+                        <span><strong>Totales</strong></span>
+                    </div>
+                    <div class="col-6 col-sm-6 col-md-3 col-lg-3 statisticsCol">
+                        <div id='activeUsers' class="statisticsCampus"></div>
+                        <span><strong>Activos</strong></span>
+                    </div>
+                    <div class="col-6 col-sm-6 col-md-3 col-lg-3 statisticsCol">
+                        <div id='inactiveUsers' class="statisticsCampus"></div>
+                        <span><strong>Inactivos</strong></span>
+                    </div>
+                    <div class="col-6 col-sm-6 col-md-3 col-lg-3 statisticsCol">
+                        <div id='mentorUsers' class="statisticsCampus"></div>
+                        <span><strong>Mentores</strong></span>
+                    </div>
+                </div>
+                <hr>
+                <div class="row mt-4">
+                    <div class="col">
+                        <h3>Lista de usuarios</h3>
+                    </div>
+                </div>
+                <div class="row mt-4 text-center">
+                    <!-- <div class="col"> -->
+                    <table class="table">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th scope="col">Nombre</th>
+                                <th scope="col">Usuario</th>
+                                <th scope="col">Estado:
+                                    <!-- <select name="estado" id="estado" onchange="filtrarEstado()"> -->
+                                    <select name="role" id="estado" onchange="filtrarDatos()">
+                                        <option value="0">Todos</option>
+                                        <option value="1">Activo</option>
+                                        <option value="2">Inactivo</option>
+                                    </select>
+                                </th>
+                                <th scope="col">Rol:
+                                    <!-- <select name="role" id="role" onchange="filtrarRole()"> -->
+                                    <select name="role" id="role" onchange="filtrarDatos()">
+                                        <option value="0">Todos</option>
+                                        <option value="1">Admin</option>
+                                        <option value="2">Estudiante</option>
+                                        <option value="3">Profesor</option>
+                                    </select>
+                                </th>
+                                <th scope="col">Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody id="cuerpoTabla"></tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+        <!-- Modal LOGIN-->
+        <div class="modal" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-sm" role="document">
+                <div class="modal-content modal-sm">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel"><span class="color-rosa">Curs</span><span
+                                class="color-gris">On</span></h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="exampleDropdownFormEmail1">User Name</label>
+                            <input type="email" class="form-control" id="inputUser"
+                                placeholder="Ingresa tu nombre de Usuario">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleDropdownFormPassword1">Password</label>
+                            <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+                        </div>
+                    </div>
+                    <div class="modal-footer display-flex justify-content-center ">
+                        <button type="button" class="btn btn-dark" data-dismiss="modal"
+                            onclick="validarAcceso()">LogIn</button>
+                        <button type="button" class="btn btn-dark">Cancelar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+            integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+            crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+            integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+            crossorigin="anonymous"></script>
+        <script src="js/Modulos/Funciones/accesoAdmin.js"></script>
+        <script src="js/Modulos/Funciones/verUsers.js"></script>
+        <script src="js/Modulos/Funciones/login-Reviews.js"></script>
+    </body>
+
 </html>
