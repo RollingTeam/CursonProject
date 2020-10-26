@@ -34,7 +34,6 @@
                     <div class="dropdown-menu">
                         <a class="dropdown-item color-oscuro" href="nuevoCurso.html">Nuevo Curso</a>
                         <a class="dropdown-item color-oscuro" href="verCursos.html">Ver Cursos</a>
-                        <!-- <a class="dropdown-item color-oscuro" href="#!">Ver todos</a> -->
                     </div>
                 </li>
                 <li class="nav-item">
@@ -98,14 +97,12 @@
                     </div>
                 </div>
                 <div class="row mt-4 text-center">
-                    <!-- <div class="col"> -->
                     <table class="table">
                         <thead class="thead-dark">
                             <tr>
                                 <th scope="col">Nombre</th>
                                 <th scope="col">Usuario</th>
                                 <th scope="col">Estado:
-                                    <!-- <select name="estado" id="estado" onchange="filtrarEstado()"> -->
                                     <select name="role" id="estado" onchange="filtrarDatos()">
                                         <option value="0">Todos</option>
                                         <option value="1">Activo</option>
@@ -113,7 +110,6 @@
                                     </select>
                                 </th>
                                 <th scope="col">Rol:
-                                    <!-- <select name="role" id="role" onchange="filtrarRole()"> -->
                                     <select name="role" id="role" onchange="filtrarDatos()">
                                         <option value="0">Todos</option>
                                         <option value="1">Admin</option>
