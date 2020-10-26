@@ -43,8 +43,8 @@ function filtrarCursosPorCategoria(){
             }else{
                 badgeColor= `<span class="badge badge-secondary" id="badgeNivel">${busquedaCursos[i].nivelCurso}</span>`
             }
-            let contenCurso= `<div class="col-md-4">
-            <div class="card card-curso">
+            let contenCurso= `<div class="col-md-4 my-1">
+            <div class="card card-curso my-2">
                 <img src=${busquedaCursos[i].imagenCurso} class="card-img-top" alt="...">
                 <div class="card-body">
                     <h5 class="card-title"><strong>${busquedaCursos[i].nombreCurso}</strong></h5>
@@ -88,7 +88,7 @@ function mostrarTodosLosCursos(){
             badgeColor= `<span class="badge badge-secondary" id="badgeNivel">${busquedaCursos[i].nivelCurso}</span>`
         }
         let contenCurso= `<div class="col-md-4">
-        <div class="card card-curso">
+        <div class="card card-curso my-2">
             <img src=${busquedaCursos[i].imagenCurso} class="card-img-top" alt="...">
             <div class="card-body">
                 <h5 class="card-title"><strong>${busquedaCursos[i].nombreCurso}</strong></h5>
