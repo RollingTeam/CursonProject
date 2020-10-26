@@ -55,7 +55,7 @@ if (
     imagenCurso.value==""||
     contactoCurso.value==""
 ) {
-    return ""
+    alert("Debes completar todos los Campos");
 }else{
     cursos = JSON.parse(localStorage.getItem("cursos")) || [] 
     //Manejar de Forma Automática la asignacion del ID
