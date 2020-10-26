@@ -39,19 +39,16 @@ function crearCategoria(){
     console.log(identificadorCat)
     let nombreCat= document.getElementById("inputCategoria")
     let estadoCat = document.getElementById("inputState")
+    
+    if(nombreCat.value==""){
+        nombreCat.className="input-review valida"
+    }else{
     let categoria= new Categoria(identificadorCat,nombreCat.value,estadoCat.value)
     categorias.push(categoria)
     localStorage.setItem("categorias",JSON.stringify(categorias))
-    limpiarFormCategoria()
     nombreCat.value = "";
-    estadoCat.value = "";
+    }
 }
-function limpiarFormCategoria(){
-    let nombreCat= document.getElementById("nputCategoria");
-    let estadoCat = document.getElementById("inputState");
-    nombreCat.value = "";
-    estadoCat.value = "";
-};
 function eliminarCategoria(idCategoria){
     let catSearch = categorias.find(function(c){
         return c.idCategoria === idCategoria
