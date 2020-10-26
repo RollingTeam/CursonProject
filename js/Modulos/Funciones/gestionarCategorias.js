@@ -6,7 +6,17 @@ class Categoria{
     }
 }
 
-let categorias = JSON.parse(localStorage.getItem("categorias")) || []
+let categoriasArreglo = localStorage.getItem("categorias")|| []
+
+if(categoriasArreglo.length>0){
+    categorias = JSON.parse(categoriasArreglo)
+}else{
+    categorias = []
+    let cat1 = new Categoria(1,"Arte","1");
+    let cat2 = new Categoria(2,"Tecnologia","1")
+    categorias.push(cat1,cat2)
+    localStorage.setItem("categorias",JSON.stringify(categorias))
+}
 let identificadorCat;
 function obtenerIdCategoria(){
     categorias = JSON.parse(localStorage.getItem("categorias"))
@@ -27,14 +37,21 @@ function crearCategoria(){
     console.log("Entre a la funcion crearCategoria")
     obtenerIdCategoria();
     console.log(identificadorCat)
-    let nombreCat= document.getElementById("inputCategoria").value
-    let estadoCat = document.getElementById("inputState").value
-    let categoria= new Categoria(identificadorCat,nombreCat,estadoCat)
+    let nombreCat= document.getElementById("inputCategoria")
+    let estadoCat = document.getElementById("inputState")
+    let categoria= new Categoria(identificadorCat,nombreCat.value,estadoCat.value)
     categorias.push(categoria)
     localStorage.setItem("categorias",JSON.stringify(categorias))
-    nombreCat = "";
-    estadoCat = "";
+    limpiarFormCategoria()
+    nombreCat.value = "";
+    estadoCat.value = "";
 }
+function limpiarFormCategoria(){
+    let nombreCat= document.getElementById("nputCategoria");
+    let estadoCat = document.getElementById("inputState");
+    nombreCat.value = "";
+    estadoCat.value = "";
+};
 function eliminarCategoria(idCategoria){
     let catSearch = categorias.find(function(c){
         return c.idCategoria === idCategoria
@@ -74,7 +91,7 @@ function activarCategoria(idCategoria){
     }
 }
 
-cargarCategorias()
+cargarCategorias();
 function cargarCategorias(){
     categorias = JSON.parse(localStorage.getItem("categorias"))
     let tablaBody = document.getElementById("cuerpoTabla");
