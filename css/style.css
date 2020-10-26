@@ -317,13 +317,6 @@ ul li a:hover{
     background-color: #2B2D42 !important;
     color: #4FB99F !important;
 }
-/* MODAL */
-/* header */
-/*.modal-header{
-    background-color:  #cdd2db;
-    color: #2B2D42;
-}*/
-
 /* BOTON MODAL */
 .btn-outline-info{
     background-color: #2B2D42 !important;
@@ -331,7 +324,7 @@ ul li a:hover{
 .close:focus{
     outline: none;
 }
-/*******Fin Section Gabriel********/
+
 
 /* Ajuste de tablas admin*/
 @media screen and (max-width: 380px) {
