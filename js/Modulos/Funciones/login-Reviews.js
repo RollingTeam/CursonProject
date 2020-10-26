@@ -128,7 +128,7 @@ function agregarReviewOn(){
                     <label class="color-rosa">Nombre del Curso:</label>
                 </div>
                 <div class="form-group d-flex justify-content-center">
-                    <input type="text" id="reviewCurso" placeholder="Curso" class="input-review">
+                    <input type="text" id="reviewCurso" maxlength="40" placeholder="Curso" class="input-review">
                 </div>
             </div>
             <div class="col-md-5">
@@ -136,7 +136,7 @@ function agregarReviewOn(){
                     <label class="color-rosa">Comentario:</label>
                 </div>
                 <div class="form-group d-flex justify-content-center">
-                    <textarea id="reviewComentario" placeholder="Ingresa aqui tu comentario" class="form-control"></textarea>
+                    <textarea id="reviewComentario" maxlength="80" placeholder="Ingresa aqui tu comentario" class="form-control"></textarea>
                 </div>
             </div>
         </div>
@@ -289,15 +289,17 @@ class Reviews{
 }
 
 //Cargar array de Reviews en LocalStorage
-/*let rev1= new Reviews("PHP Avanzado","Florencia","Me parecio un curso super interesante","2020-10-06",5);
-let rev2= new Reviews("Diseño de Interior","Gabriel","Me parecio un curso super interesante","2020-10-06",1);
-let rev3= new Reviews("Diseño de Moda","Sofia","Me parecio un curso super interesante","2020-08-05",2);
-
-let reviews=[];
-reviews.push(rev1,rev2,rev3)
-localStorage.setItem("reviews",JSON.stringify(reviews))*/
-let reviews = localStorage.getItem("reviews") || []
-
+let reviewsArreglo = localStorage.getItem("reviews") || []
+if(reviewsArreglo.length>0){
+    reviews = JSON.parse(reviewsArreglo)
+}else{
+    reviews = []
+    let rev1= new Reviews("Introducción al diseño UX","Florencia Pistan","Es un curso completo con informacion util para proyectos","2020-10-06",5);
+    let rev2= new Reviews("Caligrafía inglesa de la A a la Z","Gabriel Moreira","Me parecio un curso super interesante y con informacion muy completa","2020-09-06",4);
+    let rev3= new Reviews("Desarrollo Web Responsive HTML y CSS","Rodrigo","Estuvo muy bueno y el material para cada tema esta muy completo","2020-08-05",3);
+    reviews.push(rev1,rev2,rev3)
+    localStorage.setItem("reviews",JSON.stringify(reviews))
+}
 cargarReviews();
 function cargarReviews(){
     ordenarReviews();
