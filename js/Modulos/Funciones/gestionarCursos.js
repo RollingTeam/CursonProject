@@ -37,8 +37,6 @@ function agregarCurso(){
 let nombreCurso= document.getElementById("nombreCursoInput");
 let descripCurso = document.getElementById("contenidoCursoInput");
 let categoriaCurso= document.getElementById("listaCategorias");
-console.log(categoriaCurso)
-console.log(categoriaCurso.value)
 let nivelCurso= document.getElementById("dificultadCursoInput")
 let cupoCurso= document.getElementById("cuposCursoInput")
 let duracionCurso= document.getElementById("duracionCursoInput");
@@ -58,35 +56,18 @@ if (
     contactoCurso.value==""
 ) {
     return ""
-}
-
- cursos = JSON.parse(localStorage.getItem("cursos")) || [] 
- //Manejar de Forma Automática la asignacion del ID
- if(cursos.length < 1){
-    identificadorCurso = 1;
- }else{
-    let ultimoCurso = cursos[cursos.length-1]
-    identificadorCurso= ultimoCurso.idCurso +1 
- }
-
- let newCurso = new Cursos(identificadorCurso,nombreCurso.value,descripCurso.value,categoriaCurso.value,nivelCurso.value,cupoCurso.value,duracionCurso.value,imagenCurso.value,1,contactoCurso.value)
- cursos.push(newCurso);
- localStorage.setItem("cursos",JSON.stringify(cursos))
- limpiarFormCurso();
- alert("El curso fue guardado en el Local Storage");
-cargarCursos();
-}
-
-function limpiarFormCurso(){
-    let nombreCurso= document.getElementById("nombreCursoInput");
-    let descripCurso = document.getElementById("contenidoCursoInput");
-    let categoriaCurso= document.getElementById("categoriaCursoInput");
-    let nivelCurso= document.getElementById("dificultadCursoInput")
-    let cupoCurso= document.getElementById("cuposCursoInput")
-    let duracionCurso= document.getElementById("duracionCursoInput");
-    let imagenCurso= document.getElementById("imagenCursoInput");
-    let contactoCurso = document.getElementById("contactoCursoInpt")
-
+}else{
+    cursos = JSON.parse(localStorage.getItem("cursos")) || [] 
+    //Manejar de Forma Automática la asignacion del ID
+    if(cursos.length < 1){
+        identificadorCurso = 1;
+    }else{
+        let ultimoCurso = cursos[cursos.length-1]
+        identificadorCurso= ultimoCurso.idCurso +1 
+    }
+    let newCurso = new Cursos(identificadorCurso,nombreCurso.value,descripCurso.value,categoriaCurso.value,nivelCurso.value,cupoCurso.value,duracionCurso.value,imagenCurso.value,1,contactoCurso.value)
+    cursos.push(newCurso);
+    localStorage.setItem("cursos",JSON.stringify(cursos))
     nombreCurso.value = "";
     descripCurso.value = "";
     categoriaCurso.value = "";
@@ -95,7 +76,10 @@ function limpiarFormCurso(){
     duracionCurso.value="";
     imagenCurso.value="";
     contactoCurso.value="";
-};
+    alert("El nuevo curso fue guardado");
+    cargarCursos();
+    }
+}
 
 cargarCursos();
 function cargarCursos(){
