@@ -19,7 +19,6 @@ function mostrarCategorias(){
 
 
 function filtrarCursosPorCategoria(){
-   // console.log("Entre a la funcion de filtrar por categoria")
     let opcion = document.getElementById("listaCategorias").value
     cursosArray = localStorage.getItem("cursos") || []
     if(cursosArray.length>0){
@@ -30,35 +29,34 @@ function filtrarCursosPorCategoria(){
     let busquedaCursos = cursos.filter(function (cur) {
         return cur.categoriaCurso === opcion
     });
-    //console.log(busquedaCursos)
+
     let containerCursos = document.getElementById("containerCursCat")
     containerCursos.innerHTML=""
-    for(let i=0; i<busquedaCursos.length;i++){
-        while(i<3){
-            let badgeColor
-            if(busquedaCursos[i].nivelCurso=="Principiante"){
-                badgeColor= `<span class="badge badge-success" id="badgeNivel">${busquedaCursos[i].nivelCurso}</span>`
-            }else if(busquedaCursos[i].nivelCurso=="Intermedio"){
-                badgeColor= `<span class="badge badge-warning" id="badgeNivel">${busquedaCursos[i].nivelCurso}</span>`
-            }else{
-                badgeColor= `<span class="badge badge-secondary" id="badgeNivel">${busquedaCursos[i].nivelCurso}</span>`
-            }
-            let contenCurso= `<div class="col-md-4 my-1">
-            <div class="card card-curso my-2">
-                <img src=${busquedaCursos[i].imagenCurso} class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title"><strong>${busquedaCursos[i].nombreCurso}</strong></h5>
-                    ${badgeColor}
-                    <p class="card-text">${busquedaCursos[i].descripcionCurso}
-                    </p>
-                    <button onclick="mostrarModalCurso(${busquedaCursos[i].idCurso})" class="btn btn-primary-curso float-right" data-toggle="modal" data-target="#modalVerMas">
-                        Ver Más
-                    </button>
-                </div>
-            </div>`
-           i+=1;
-            containerCursos.innerHTML+= contenCurso
+    for(let i=0; i<3;i++){
+        let badgeColor
+        if(busquedaCursos[i].nivelCurso=="Principiante"){
+            badgeColor= `<span class="badge badge-success" id="badgeNivel">${busquedaCursos[i].nivelCurso}</span>`
+        }else if(busquedaCursos[i].nivelCurso=="Intermedio"){
+            badgeColor= `<span class="badge badge-warning" id="badgeNivel">${busquedaCursos[i].nivelCurso}</span>`
+        }else{
+            badgeColor= `<span class="badge badge-secondary" id="badgeNivel">${busquedaCursos[i].nivelCurso}</span>`
         }
+        let contenCurso= `<div class="col-md-4 my-1">
+        <div class="card card-curso my-2">
+            <img src=${busquedaCursos[i].imagenCurso} class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title"><strong>${busquedaCursos[i].nombreCurso}</strong></h5>
+                ${badgeColor}
+                <p class="card-text">${busquedaCursos[i].descripcionCurso}
+                </p>
+                <button onclick="mostrarModalCurso(${busquedaCursos[i].idCurso})" class="btn btn-primary-curso float-right" data-toggle="modal" data-target="#modalVerMas">
+                    Ver Más
+                </button>
+            </div>
+        </div>`
+        i+=1;
+        containerCursos.innerHTML+= contenCurso
+
     }
 }
 function verPrincipalesCursos(){

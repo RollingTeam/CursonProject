@@ -84,41 +84,42 @@ if (
 cargarCursos();
 function cargarCursos(){
     cursos = localStorage.getItem("cursos") || []
+    console.log("Entre a la funcion de cargarCursos")
     let cursosDB;
     if(cursos.length >0){
         cursosDB = JSON.parse(cursos)
+        console.log(cursosDB)
     }else{
         cursosDB=[]
+        console.log(cursosDB)
     }
     cursosContainer.innerHTML=""
-    for(let i=0 ; i< cursosDB.length ; i++){
+    for(let i=0 ; i< 6 ; i++){
+        console.log("Entre al for de cargarCursos")
         if(cursosDB[i].estadoCurso==1){
-            while(i<6){
-                let badgeColor
-                if(cursosDB[i].nivelCurso=="Principiante"){
-                    badgeColor= `<span class="badge badge-success" id="badgeNivel">${cursosDB[i].nivelCurso}</span>`
-                }else if(cursosDB[i].nivelCurso=="Intermedio"){
-                    badgeColor= `<span class="badge badge-warning" id="badgeNivel">${cursosDB[i].nivelCurso}</span>`
-                }else{
-                    badgeColor= `<span class="badge badge-secondary" id="badgeNivel">${cursosDB[i].nivelCurso}</span>`
-                }
-
-                let cursoContenido= `<div class="col-12 col-md-6 col-lg-4">
-                <div class="card card-curso m-2">
-                    <img src=${cursosDB[i].imagenCurso} class="card-img-top img-fluid" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title"><strong>${cursosDB[i].nombreCurso}</strong></h5>
-                        ${badgeColor}
-                        <p class="card-text">${cursosDB[i].descripcionCurso}</p>
-                        <button onclick="mostrarModalCurso(${cursosDB[i].idCurso})" class="btn btn-primary-curso float-right" data-toggle="modal" data-target="#modalVerMas">
-                        Ver Más
-                        </button>
-                    </div>
-                </div>
-                </div>`
-                cursosContainer.innerHTML+=cursoContenido
-                i+=1
+            let badgeColor
+            if(cursosDB[i].nivelCurso=="Principiante"){
+                badgeColor= `<span class="badge badge-success" id="badgeNivel">${cursosDB[i].nivelCurso}</span>`
+            }else if(cursosDB[i].nivelCurso=="Intermedio"){
+                badgeColor= `<span class="badge badge-warning" id="badgeNivel">${cursosDB[i].nivelCurso}</span>`
+            }else{
+                badgeColor= `<span class="badge badge-secondary" id="badgeNivel">${cursosDB[i].nivelCurso}</span>`
             }
+
+            let cursoContenido= `<div class="col-12 col-md-6 col-lg-4">
+            <div class="card card-curso m-2">
+                <img src=${cursosDB[i].imagenCurso} class="card-img-top img-fluid" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title"><strong>${cursosDB[i].nombreCurso}</strong></h5>
+                    ${badgeColor}
+                    <p class="card-text">${cursosDB[i].descripcionCurso}</p>
+                    <button onclick="mostrarModalCurso(${cursosDB[i].idCurso})" class="btn btn-primary-curso float-right" data-toggle="modal" data-target="#modalVerMas">
+                    Ver Más
+                    </button>
+                </div>
+            </div>
+            </div>`
+            cursosContainer.innerHTML+=cursoContenido
         }
     }
 }

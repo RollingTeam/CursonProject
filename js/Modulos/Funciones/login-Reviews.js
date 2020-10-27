@@ -306,8 +306,7 @@ function cargarReviews(){
     let reviewsLS = localStorage.getItem("reviews",reviews)
     let reviewsDB = JSON.parse(reviewsLS)
     reviewContainer.innerHTML=""
-    for(let i=0 ; i< reviewsDB.length ; i++){
-        while(i<6){
+    for(let i=0 ; i< 6 ; i++){
             let reviewContainer= document.getElementById("reviewContainer")
             let estrellas="";
             if(reviewsDB[i].calificacionCurso==1){

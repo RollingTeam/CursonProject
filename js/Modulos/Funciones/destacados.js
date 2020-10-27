@@ -2,8 +2,7 @@ let destacados = JSON.parse(localStorage.getItem("cursos")) || [];
 
 function agregarDestacados() {
     let cards = document.getElementById("tarjetas");
-    for (let i = 0; i < destacados.length; i++) {
-        while (i < 3) {
+    for (let i = 0; i < 3; i++) {
             let badgeColor
             if(destacados[i].nivelCurso=="Principiante"){
                 badgeColor= `<span class="badge badge-success" id="badgeNivel">${destacados[i].nivelCurso}</span>`
@@ -25,9 +24,7 @@ function agregarDestacados() {
                 </div>
             </div>
         </div>`;
-            i += 1;
-            cards.innerHTML += cuerpoCard;
-        }
+        cards.innerHTML += cuerpoCard;
     }
 }
 agregarDestacados();
