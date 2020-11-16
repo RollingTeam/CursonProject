@@ -307,54 +307,52 @@ function cargarReviews(){
     let reviewsDB = JSON.parse(reviewsLS)
     reviewContainer.innerHTML=""
     for(let i=0 ; i< 6 ; i++){
-            let reviewContainer= document.getElementById("reviewContainer")
-            let estrellas="";
-            if(reviewsDB[i].calificacionCurso==1){
-                estrellas= `<i class="fas fa-star fa-start-color"></i>
-                            <i class="far fa-star fa-start-color-secondary"></i>
-                            <i class="far fa-star fa-start-color-secondary"></i>
-                            <i class="far fa-star fa-start-color-secondary"></i>
-                            <i class="far fa-star fa-start-color-secondary"></i>`
-            }else if(reviewsDB[i].calificacionCurso==2){
-                estrellas= `<i class="fas fa-star fa-start-color"></i>
-                            <i class="fas fa-star fa-start-color"></i>
-                            <i class="far fa-star fa-start-color-secondary"></i>
-                            <i class="far fa-star fa-start-color-secondary"></i>
-                            <i class="far fa-star fa-start-color-secondary"></i>`
-            }else if(reviewsDB[i].calificacionCurso==3){
-                estrellas= `<i class="fas fa-star fa-start-color"></i>
-                            <i class="fas fa-star fa-start-color"></i>
-                            <i class="fas fa-star fa-start-color"></i>
-                            <i class="far fa-star fa-start-color-secondary"></i>
-                            <i class="far fa-star fa-start-color-secondary"></i>`
-            }else if(reviewsDB[i].calificacionCurso==4){
-                estrellas= `<i class="fas fa-star fa-start-color"></i>
-                            <i class="fas fa-star fa-start-color"></i>
-                            <i class="fas fa-star fa-start-color"></i>
-                            <i class="fas fa-star fa-start-color"></i>
-                            <i class="far fa-star fa-start-color-secondary"></i>`
-            }else if(reviewsDB[i].calificacionCurso==5){
-                estrellas= `<i class="fas fa-star fa-start-color"></i>
-                            <i class="fas fa-star fa-start-color"></i>
-                            <i class="fas fa-star fa-start-color"></i>
-                            <i class="fas fa-star fa-start-color"></i>
-                            <i class="fas fa-star fa-start-color"></i>`
-            }
-            let reviewContent=`
-            <div class="col-md-4 mt-3" id="contReview">
-                <div class="card card-multicolor">
-                    <div class="card-body card-multicolor py-1 px-3">
-                        <h6 class="card-title">${reviewsDB[i].nombreCurso}</h6>
-                        <p class="card-text mb-2">${reviewsDB[i].comentario}</p>
-                        <span class="float-left color-rosa pr-2"><i class="fas fa-user"></i></span><span class="float-left"> ${reviewsDB[i].nombreUser}</span>
-                        <span class="float-right">${estrellas}</span><br>
-                        <span class="float-right color-gris">${reviewsDB[i].fecha}</span>
-                    </div>
-                </div>
-            </div>`
-            reviewContainer.innerHTML+=reviewContent
-            i+=1
+        let reviewContainer= document.getElementById("reviewContainer")
+        let estrellas="";
+        if(reviewsDB[i].calificacionCurso==1){
+            estrellas= `<i class="fas fa-star fa-start-color"></i>
+                        <i class="far fa-star fa-start-color-secondary"></i>
+                        <i class="far fa-star fa-start-color-secondary"></i>
+                        <i class="far fa-star fa-start-color-secondary"></i>
+                        <i class="far fa-star fa-start-color-secondary"></i>`
+        }else if(reviewsDB[i].calificacionCurso==2){
+            estrellas= `<i class="fas fa-star fa-start-color"></i>
+                        <i class="fas fa-star fa-start-color"></i>
+                        <i class="far fa-star fa-start-color-secondary"></i>
+                        <i class="far fa-star fa-start-color-secondary"></i>
+                        <i class="far fa-star fa-start-color-secondary"></i>`
+        }else if(reviewsDB[i].calificacionCurso==3){
+            estrellas= `<i class="fas fa-star fa-start-color"></i>
+                        <i class="fas fa-star fa-start-color"></i>
+                        <i class="fas fa-star fa-start-color"></i>
+                        <i class="far fa-star fa-start-color-secondary"></i>
+                        <i class="far fa-star fa-start-color-secondary"></i>`
+        }else if(reviewsDB[i].calificacionCurso==4){
+            estrellas= `<i class="fas fa-star fa-start-color"></i>
+                        <i class="fas fa-star fa-start-color"></i>
+                        <i class="fas fa-star fa-start-color"></i>
+                        <i class="fas fa-star fa-start-color"></i>
+                        <i class="far fa-star fa-start-color-secondary"></i>`
+        }else if(reviewsDB[i].calificacionCurso==5){
+            estrellas= `<i class="fas fa-star fa-start-color"></i>
+                        <i class="fas fa-star fa-start-color"></i>
+                        <i class="fas fa-star fa-start-color"></i>
+                        <i class="fas fa-star fa-start-color"></i>
+                        <i class="fas fa-star fa-start-color"></i>`
         }
+        let reviewContent=`
+        <div class="col-md-4 mt-3" id="contReview">
+            <div class="card card-multicolor">
+                <div class="card-body card-multicolor py-1 px-3">
+                    <h6 class="card-title">${reviewsDB[i].nombreCurso}</h6>
+                    <p class="card-text mb-2">${reviewsDB[i].comentario}</p>
+                    <span class="float-left color-rosa pr-2"><i class="fas fa-user"></i></span><span class="float-left"> ${reviewsDB[i].nombreUser}</span>
+                    <span class="float-right">${estrellas}</span><br>
+                    <span class="float-right color-gris">${reviewsDB[i].fecha}</span>
+                </div>
+            </div>
+        </div>`
+        reviewContainer.innerHTML+=reviewContent
     }
 }
 
